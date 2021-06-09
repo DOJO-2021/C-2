@@ -10,11 +10,11 @@
 <body>
 <div class="form-wrapper">
 		<main>
-			<h1>Welcome</h1>
-			<form method="POST" action="/simpleBC/LoginServlet" id="form">
+
+			<form method="POST" action="/Komike/PwchangeServlet" id="form">
 				<div class="form-item">
-					<label for="email"></label> <input type="text" name="ID"
-						required="required" placeholder="Email Address"></input>
+					<label for="password"></label> <input type="text" name="PW"
+						required="required" placeholder="Password"></input>
 				</div>
 				<div class="form-item">
 					<label for="password"></label> <input type="text" name="PW"
@@ -25,9 +25,6 @@
 				</div>
 			</form>
 			<div class="form-footer">
-				<p>
-					<a href="#">Create an account</a>
-				</p>
 			</div>
 		</main>
 	</div>
