@@ -1,0 +1,3 @@
+
+test_questionテーブルへの挿入例
+insert into test_question values('java01', 'コマンドライン引数について正しいものはどれか');
