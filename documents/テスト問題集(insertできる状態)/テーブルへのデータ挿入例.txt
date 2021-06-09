@@ -1,3 +1,9 @@
 
 test_questionテーブルへの挿入例
 insert into test_question values('java01', 'コマンドライン引数について正しいものはどれか');
+
+test_choiceテーブルへの挿入例
+insert into test_choice values('java01', '1', '選択肢の内容', '0');
+insert into test_choice values('java01', '2', '選択肢の内容', '0');
+insert into test_choice values('java01', '3', '選択肢の内容', '0');
+insert into test_choice values('java01', '4', '選択肢の内容', '1');
