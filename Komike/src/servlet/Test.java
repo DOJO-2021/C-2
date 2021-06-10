@@ -27,6 +27,10 @@ public class Test extends HttpServlet {
 		dispatcher.forward(request, response);
 
 
+		String select1 = request.getParameter("Question1");
+		String select2 = request.getParameter("Question2");
+		String select3 = request.getParameter("Question3");
+		String select4 = request.getParameter("Question4");
 	}
 
 	/**
@@ -35,6 +39,17 @@ public class Test extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		// リクエストパラメータを取得する
+					request.setCharacterEncoding("UTF-8");
+
+					String question_sentence = request.getParameter("SENTENCE");
+
+					// 結果ページにフォワードする
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tjudge.jsp");
+					dispatcher.forward(request, response);
 	}
+
+
 
 }

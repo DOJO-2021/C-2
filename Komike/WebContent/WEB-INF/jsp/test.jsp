@@ -21,45 +21,48 @@
 <h2>問題ジャンル:HTML</h2>
 <br>
 <table>
+
 <tr>
 <th>問題1</th>
 <th>問題を入れてください</th>
 <td>
-<input type="radio" name="select1" value="選択肢1">選択肢1
-<input type="radio" name="select2" value="選択肢2">選択肢2
-<input type="radio" name="select3" value="選択肢3">選択肢3
-<input type="radio" name="select4" value="選択肢4">選択肢4</td>
+<label><input type="radio" name="Question1" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question1" value="選択肢2">選択肢2</label>
+<label><input type="radio" name="Question1" value="選択肢3">選択肢3</label>
+<label><input type="radio" name="Question1" value="選択肢4">選択肢4</label></td>
+
 </tr>
 
 <tr>
 <th>問題2</th>
 <th>問題を入れてください</th>
 <td>
-<input type="radio" name="select1" value="選択肢1">選択肢1
-<input type="radio" name="select2" value="選択肢2">選択肢2
-<input type="radio" name="select3" value="選択肢3">選択肢3
-<input type="radio" name="select4" value="選択肢4">選択肢4</td>
+<label><input type="radio" name="Question2" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question2" value="選択肢2">選択肢2</label>
+<label><input type="radio" name="Question2" value="選択肢3">選択肢3</label>
+<label><input type="radio" name="Question2" value="選択肢4">選択肢4</label></td>
 </tr>
 
 <tr>
 <th>問題3</th>
 <th>問題を入れてください</th>
 <td>
-<input type="radio" name="select1" value="選択肢1">選択肢1
-<input type="radio" name="select2" value="選択肢2">選択肢2
-<input type="radio" name="select3" value="選択肢3">選択肢3
-<input type="radio" name="select4" value="選択肢4">選択肢4</td>
+<label><input type="radio" name="Question3" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question3" value="選択肢2">選択肢2</label>
+<label><input type="radio" name="Question3" value="選択肢3">選択肢3</label>
+<label><input type="radio" name="Question3" value="選択肢4">選択肢4</label></td>
 </tr>
 
 <tr>
 <th>問題4</th>
 <th>問題を入れてください</th>
 <td>
-<input type="radio" name="select1" value="選択肢1">選択肢1
-<input type="radio" name="select2" value="選択肢2">選択肢2
-<input type="radio" name="select3" value="選択肢3">選択肢3
-<input type="radio" name="select4" value="選択肢4">選択肢4</td>
+<label><input type="radio" name="Question4" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question4" value="選択肢2">選択肢2</label>
+<label><input type="radio" name="Question4" value="選択肢3">選択肢3</label>
+<label><input type="radio" name="Question4" value="選択肢4">選択肢4</label></td>
 </tr>
+
 </table>
 
 
