@@ -9,14 +9,16 @@
 <body>
 <h1>Komike</h1>
 <h2>受講者向け掲示板サイト</h2>
-<ul>
- <li>メニュー⌂</li>
- <li>雑談ルーム</li>
- <li>Q&amp;Aルーム</li>
- <li>理解度テスト</li>
- <li>パスワード変更はこちら</li>
- <li>ログアウトはこちら</li>
-</ul>
+<nav class="nav">
+	<ul>
+		 <li>メニュー⌂</li>
+		 <li>雑談ルーム</li>
+		 <li>Q&amp;Aルーム</li>
+		 <li>理解度テスト</li>
+		 <li>パスワード変更はこちら</li>
+		 <li>ログアウトはこちら</li>
+	</ul>
+</nav>
 <p>雑談ルームへようこそ</p>
 <form method = "post">
 名前<input type = "text" name = "name">
