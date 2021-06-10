@@ -9,7 +9,6 @@
 <body>
 	<div class="form-wrapper">
 		<main>
-			<h1>Welcome</h1>
 			<form method="POST" action="/Komike/LoginServlet" id="form">
 				<div class="form-item">
 					<label for="id"></label> <input type="text" name="ID"
