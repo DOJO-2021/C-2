@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.TestsDao;
+import model.Test_question;
 /**
  * Servlet implementation class Test
  */
@@ -27,10 +29,7 @@ public class Test extends HttpServlet {
 		dispatcher.forward(request, response);
 
 
-		String select1 = request.getParameter("Question1");
-		String select2 = request.getParameter("Question2");
-		String select3 = request.getParameter("Question3");
-		String select4 = request.getParameter("Question4");
+
 	}
 
 	/**
@@ -42,8 +41,24 @@ public class Test extends HttpServlet {
 
 		// リクエストパラメータを取得する
 					request.setCharacterEncoding("UTF-8");
+					/*String select1 = request.getParameter("Question1");
+					String select2 = request.getParameter("Question2");
+					String select3 = request.getParameter("Question3");
+					String select4 = request.getParameter("Question4");
+					String select5 = request.getParameter("Question5");*/
 
-					String question_sentence = request.getParameter("SENTENCE");
+                    int choice_number =  Integer.parseInt(request.getParameter("CHOICE_NUMBER"));
+					String question_number = request.getParameter("QUESTION_NUMBER");
+					String question_sentence = request.getParameter("QUESTION_SENTENCE");
+					String choice = request.getParameter("CHOICE");
+
+
+					// 採点処理を行う
+					TestsDao bDao = new TestsDao();
+
+					// 採点結果をリクエストスコープに格納する
+					request.setAttribute("Test_question",
+							new Test_question (11, "IDまたはPWに間違いがあります。", "IDまたはPWに間違いがあります。", "IDまたはPWに間違いがあります。"));
 
 					// 結果ページにフォワードする
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tjudge.jsp");

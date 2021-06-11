@@ -24,9 +24,9 @@
 
 <tr>
 <th>問題1</th>
-<th>問題を入れてください</th>
+<th>問題をいれてください</th>
 <td>
-<label><input type="radio" name="Question1" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question1" value="選択肢1">ここでは絶対に曲げてはいけない</label>
 <label><input type="radio" name="Question1" value="選択肢2">選択肢2</label>
 <label><input type="radio" name="Question1" value="選択肢3">選択肢3</label>
 <label><input type="radio" name="Question1" value="選択肢4">選択肢4</label></td>
@@ -55,6 +55,16 @@
 
 <tr>
 <th>問題4</th>
+<th>問題を入れてください</th>
+<td>
+<label><input type="radio" name="Question4" value="選択肢1">選択肢1</label>
+<label><input type="radio" name="Question4" value="選択肢2">選択肢2</label>
+<label><input type="radio" name="Question4" value="選択肢3">選択肢3</label>
+<label><input type="radio" name="Question4" value="選択肢4">選択肢4</label></td>
+</tr>
+
+<tr>
+<th>問題5</th>
 <th>問題を入れてください</th>
 <td>
 <label><input type="radio" name="Question4" value="選択肢1">選択肢1</label>
