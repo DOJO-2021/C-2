@@ -9,8 +9,8 @@
 <body>
 <!-- ヘッダー（ここから） -->
 <h1>Komike</h1>
-<h4>受講者向け掲示板サイト</h4>
-<h4>ログアウトはこちら</h4>
+<h3>受講者向け掲示板サイト</h3>
+<h3>ログアウトはこちら</h3>
 
 <!-- パンくずリストここから -->
 	<div class="ol">
@@ -53,7 +53,7 @@
 
 	<table>
 		<tr>
-			<td><li><a href="/Komike/TestServlet">HTML</a></li><br>HTMLのテスト履歴<br>
+			<td><li><a href="/Komike/TestServlet">HTML</a></li><br><c:out value="${result.rank}" /><br>
 			</td>
 			<td><li><a href="/Komike/TestServlet">CSS</a></li><br>CSSのテスト履歴<br>
 			</td>

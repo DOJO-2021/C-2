@@ -20,6 +20,12 @@ public class Tselect extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/Komike/LoginServlet");
+			return;
+		}*/
 		// 理解度テスト選択画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
 		dispatcher.forward(request, response);
@@ -29,6 +35,22 @@ public class Tselect extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/* もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("id") == null) {
+					response.sendRedirect("/simpleBC/LoginServlet");
+					return;
+				}*/
+
+				// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String id = request.getParameter("id");
+				String genre = request.getParameter("genre");
+				String rank = request.getParameter("rank");
+
+				/*request.setAttribute("result",
+						new ("ランクは" + rank + "です"));
+				request.setAttribute("cardList", cardList);*/
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

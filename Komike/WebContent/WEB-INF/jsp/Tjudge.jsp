@@ -8,16 +8,63 @@
 </head>
 <body>
 <h1>Komike</h1><h2>受講者向け掲示板サイト</h2>
-<nav class="nav">
-    <ul>
-     <li>メニュー</li>
-     <li>雑談ルーム</li>
-     <li>Q&amp;Aルーム</li>
-     <li>理解度テスト</li>
-     <li>パスワード変更はこちら</li>
+<h4>ログアウトはこちら</h4>
+
+<!-- パンくずリストここから -->
+	<div class="ol">
+			<ol class="breadcrumb" itemscope
+				itemtype="https://schema.org/BreadcrumbList">
+				<!-- 1つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/Komike/MenuServlet"> <span itemprop="name">メニュー</span>
+				</a>
+					<meta itemprop="position" content="1" /></li>
+
+				<!-- 2つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/Komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
+				</a>
+					<meta itemprop="position" content="2" /></li>
+				<!-- 3つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/Komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
+				</a>
+					<meta itemprop="position" content="3" /></li>
+				<!-- 4つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/Komike/TestServlet"> <span itemprop="name">理解度テスト</span>
+				</a>
+					<meta itemprop="position" content="4" /></li>
+				<!-- 4つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/Komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
+				</a>
+					<meta itemprop="position" content="5" /></li>
+			</ol>
+		</div>
+<!-- パンくずリストここまで -->
     </ul>
    </nav>
 
+<h4>理解度テスト結果</h4>
+<h5>問題ジャンル：HTML　(選んだ問題が反映される)　</h5>
 
+<table>
+		<tr>
+			<td>正解数/問題数<br>15問/20問<br>
+			</td>
+			<td>正解数<br>75%<br>
+			</td>
+			<td>今回のランク<br>ゴールド<br>
+			</td>
+		</tr>
+</table>
+
+<a  href="/Komike/TselectServlet">ジャンル選択</a>
 </body>
 </html>
