@@ -35,6 +35,9 @@
       <span>任意</span>
       添付画像
       <span>Attachment</span>
+      添付画像<input type="file" name="avatar">
+本文<textarea name = "text"></textarea>
+<input type = "submit" name = "submit" value = "書き込む">
       </dt>
 
   </dl>
