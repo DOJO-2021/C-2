@@ -1,20 +1,19 @@
 package model;
 import java.io.Serializable;
-import java.util.ArrayList;
 
 
 public class Test_question implements Serializable {
 
-	private ArrayList <Test_choice> choice_number; //選択番号
-	private ArrayList <Test_choice> question_number ; //問題番号
-	private ArrayList <Test_choice> question_sentence;//問題文
-	private ArrayList <Test_choice> choice;//選択肢文
+	private int choice_number; //選択番号
+	private String question_number; //問題番号
+	private String question_sentence;//問題文
+	private String choice;//選択肢文
 
 
 	//引数があるコンストラクタ
 	public Test_question(int choice_number, String question_number, String question_sentence, String choice) {
 		super();
-		this. <Test_choice> choice_number= choice_number;
+		this.choice_number= choice_number;
 		this.question_number= question_number;
 		this.question_sentence= question_sentence;
 		this.choice= choice;
@@ -22,7 +21,14 @@ public class Test_question implements Serializable {
 	}
 
 
+	public Test_question() {
+		super();
+		this.choice_number= 0;
+		this.question_number= "";
+		this.question_sentence= "";
+		this.choice= "";
 
+	}
 
 	public int getChoice_number() {
 		return choice_number;
