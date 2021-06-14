@@ -27,6 +27,7 @@ public class AddCommentDao{
 			String sql = "insert into chat values (null, ?, ?, ?, current_timestamp)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+
 			// SQL文を完成させる
 			if (ch.getId() != null) {
 				pStmt.setString(1, ch.getId());
@@ -75,30 +76,24 @@ public class AddCommentDao{
 	}
 
 	//データベースから削除するメソッド
-	public boolean delete(int[] id) {
+	public boolean delete(int chat_id) {
 		Connection conn = null;
 		boolean result = false;
-
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
-
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
-
-			// SQL文を完成させる（for文で複数削除に対応）
-			for(int i = 0; i < id.length; i++) {
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
 
 			// SQL文を準備する
-				String sql = "delete from BC where id=?";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+			String sql ="delete from BC where id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				pStmt.setInt(1, id[i]);
-
-				// SQL文を実行する
-				if (pStmt.executeUpdate() == 1) {
-					result = true;
-				}
+			// SQL文を完成させる
+			pStmt.setInt(1, chat_id);
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
 			}
 		}
 		catch (SQLException e) {
@@ -118,16 +113,21 @@ public class AddCommentDao{
 				}
 			}
 		}
-
 		// 結果を返す
 		return result;
-
 	}
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

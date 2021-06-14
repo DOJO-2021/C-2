@@ -52,6 +52,7 @@
 <form method = "post" action="/komike/ChatServlet" name="chat">
 <p>id<input type = "text" name = "id"></p>
 <p>名前<input type = "text" name = "name"></p>
+<input type = "file">
 <p>本文<br>
 <textarea name = "text"></textarea>
 </p>
