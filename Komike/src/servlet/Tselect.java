@@ -53,6 +53,7 @@ public class Tselect extends HttpServlet {
 				request.setAttribute("cardList", cardList);*/
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
 	}
 
 }
