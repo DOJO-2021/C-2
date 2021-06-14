@@ -50,6 +50,7 @@
 <!-- パンくずリストここまで -->
 <p>雑談ルームへようこそ</p>
 <form method = "post" action="/komike/ChatServlet" name="chat">
+<p>id<input type = "text" name = "id"></p>
 <p>名前<input type = "text" name = "name"></p>
 <p>本文<br>
 <textarea name = "text"></textarea>
@@ -57,9 +58,17 @@
 <input type = "submit" name = "submit" value = "書き込む">
 </form>
 
-<c:forEach var="list" items="${listAttribute}">
-<p>ID:<c:out value="${list.id}"/>　名前:<c:out value="${list.name}"/>　日付:<c:out value="${list.time}"/><br>
-<c:out value="${list.text}"/></p>
+<div class="test">
+<c:forEach var="e" items="${infList}" >
+	<p>Chat_ID<c:out value ="${e.chat_id}"/><br>
+	<p>ID<c:out value ="${e.id}"/><br>
+	 <b>名前</b><c:out value ="${e.name}" /><br>
+	 <b>本文</b><c:out value="${e.text}" /><br>
+	 <b>時間</b><c:out value="${e.time}"/><br>
+	 <input type = "submit" name = "submit" value = "削除">
+	</p>
+<hr>
 </c:forEach>
+</div>
 </body>
 </html>

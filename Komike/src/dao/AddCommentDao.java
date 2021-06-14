@@ -11,15 +11,10 @@ import model.Chat;
 
 public class AddCommentDao{
 
-	public AddCommentDao(Chat ch) {
-		if(ch.getName().isEmpty()) {
-			ch.setName("名無し");
-		}
-		if(ch.getText().isEmpty()) {
-			ch.setText("本文無し");
-		}
-
+	//データベースに格納するメソッド
+	public boolean insert(Chat ch) {
 		Connection conn = null;
+		boolean result = false;
 
 		try {
 			// JDBCドライバを読み込む
@@ -27,24 +22,112 @@ public class AddCommentDao{
 
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
-			try {
-				PreparedStatement ps = conn.prepareStatement("insert into chat(name, text) values(?, ?)");
 
-				ps.setString(1, ch.getName());
-				ps.setString(2, ch.getText());
+			// SQL文を準備する
+			String sql = "insert into chat values (null, ?, ?, ?, current_timestamp)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				int r = ps.executeUpdate();
-
-				if(r !=0) {
-					System.out.println(r + "件の書き込みを追加しました");
-				} else {
-					System.out.println("書き込みできませんでした");
-					}
-
-				ps.close();
-				}
-
+			// SQL文を完成させる
+			if (ch.getId() != null) {
+				pStmt.setString(1, ch.getId());
 			}
+			else {
+				pStmt.setString(1, "null");
+			}
+			if (ch.getName() != null) {
+				pStmt.setString(2, ch.getName());
+			}
+			else {
+				pStmt.setString(2, "null");
+			}
+			if (ch.getText() != null) {
+				pStmt.setString(3, ch.getText());
+			}
+			else {
+				pStmt.setString(3, "null");
+			}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
 	}
+
+	//データベースから削除するメソッド
+	public boolean delete(int[] id) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+
+			// SQL文を完成させる（for文で複数削除に対応）
+			for(int i = 0; i < id.length; i++) {
+
+			// SQL文を準備する
+				String sql = "delete from BC where id=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				pStmt.setInt(1, id[i]);
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+
+	}
+
+
+
+
 }
+
+
 
