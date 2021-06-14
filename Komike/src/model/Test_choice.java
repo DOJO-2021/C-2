@@ -1,41 +1,18 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Test_choice implements Serializable {
-	private int choice_number;
-	private boolean true_false;
 	private String question_number;
-	private String choice;
+	private ArrayList<Test_choice_detail> choice_detail;
 
 
 	//コンストラクタの生成
-	public Test_choice(int choice_number, boolean true_false, String question_number, String choice) {
+	public Test_choice(String question_number, ArrayList<Test_choice_detail> choice_detail) {
 		super();
-		this.choice_number = choice_number;
-		this.true_false = true_false;
 		this.question_number = question_number;
-		this. choice =   choice;
-	}
-
-
-	public int getChoice_number() {
-		return choice_number;
-	}
-
-
-	public void setChoice_number(int choice_number) {
-		this.choice_number = choice_number;
-	}
-
-
-	public boolean isTrue_false() {
-		return true_false;
-	}
-
-
-	public void setTrue_false(boolean true_false) {
-		this.true_false = true_false;
+		this.choice_detail = choice_detail;
 	}
 
 
@@ -49,13 +26,12 @@ public class Test_choice implements Serializable {
 	}
 
 
-	public String getChoice() {
-		return choice;
+	public ArrayList<Test_choice_detail> getChoice_detail() {
+		return choice_detail;
 	}
 
 
-	public void setChoice(String choice) {
-		this.choice = choice;
+	public void setChoice_detail(ArrayList<Test_choice_detail> choice_detail) {
+		this.choice_detail = choice_detail;
 	}
 }
-
