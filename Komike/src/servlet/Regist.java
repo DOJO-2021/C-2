@@ -44,7 +44,7 @@ public class Regist extends HttpServlet {
 		UsersDao uDao = new UsersDao();
 		if (uDao.insert(new User(id, password))) {	// 登録成功
 			request.setAttribute("Regist_result",
-			new Regist_result("登録成功！", "会員登録完了しました。", "/komike/Login"));
+			new Regist_result("登録成功！", "新規登録完了しました。", "/komike/Login"));
 		}
 		else {												// 登録失敗
 			request.setAttribute("Regist_result",

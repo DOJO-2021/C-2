@@ -20,10 +20,10 @@ public class UsersDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C-2/Komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Komike", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from USERS where ID = ? and PW = ?";
+			String sql = "select count(*) from USER where id = ? and password = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql); //PreparedStatementはscript要素を無害化してくれる
 			pStmt.setString(1, id);
 			pStmt.setString(2, password);
