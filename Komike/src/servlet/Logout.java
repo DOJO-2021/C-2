@@ -25,7 +25,7 @@ public class Logout extends HttpServlet {
 		session.invalidate();
 
 		// ログインページにリダイレクトする
-		response.sendRedirect("/Komike/Login");
+		response.sendRedirect("/komike/Login");
 	}
 
 }

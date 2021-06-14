@@ -43,11 +43,11 @@ public class Regist extends HttpServlet {
 		// 新規登録処理を行う
 		UsersDao uDao = new UsersDao();
 		if (uDao.insert(new User(id, password))) {	// 登録成功
-			request.setAttribute("result",
+			request.setAttribute("Regist_result",
 			new Regist_result("登録成功！", "会員登録完了しました。", "/komike/Login"));
 		}
 		else {												// 登録失敗
-			request.setAttribute("result",
+			request.setAttribute("Regist_result",
 			new Regist_result("登録失敗！", "もう一度やり直してください。", "/komike/Login"));
 		}
 

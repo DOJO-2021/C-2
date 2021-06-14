@@ -9,14 +9,13 @@
 </head>
 <body>
 <h1>新規登録</h1>
-<form method="POST" action="/Komike/regist_result"></form>
+<form method="POST" action="/komike/regist_result"></form>
 	<h2>
-		<c:out value="${result.title}" />
+		<c:out value="${Regist_result.title}" />
 	</h2>
-
 	<p>
-		<c:out value="${result.message}" />
+		<c:out value="${Regist_result.message}" />
 	</p>
-	<a class="haji" href="${result.backTo}">ログイン画面に戻る</a>
+	<a href="${Regist_result.backTo}">ログイン画面に戻る</a>
 </body>
 </html>

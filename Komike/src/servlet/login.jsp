@@ -11,7 +11,7 @@
 	<div class="form-wrapper">
 		<main>
 			<h1>Welcome</h1>
-			<form method="POST" action="/Komike/Login" id="form">
+			<form method="POST" action="/komike/Login" id="form">
 				<div class="form-item">
 					<label for="id"></label> <input type="text" name="id"
 						required="required" placeholder="ID"></input>
@@ -26,7 +26,7 @@
 			</form>
 			<div class="form-footer">
 				<p>
-					<a href="/Komike/Regist">初めての方はこちら</a>
+					<a href="/komike/Regist">初めての方はこちら</a>
 				</p>
 			</div>
 		</main>

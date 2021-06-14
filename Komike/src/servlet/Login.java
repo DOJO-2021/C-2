@@ -49,12 +49,12 @@ public class Login extends HttpServlet {
 			session.setAttribute("id", new Login_user(id));
 
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/Komike/Menu");
+			response.sendRedirect("/komike/Menu");
 		}
 		else {									// ログイン失敗
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-			request.setAttribute("result",
-			new Regist_result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Komike/Login"));
+			request.setAttribute("Regist_result", //Regist_result.java	の３つのString型をもってくる
+			new Regist_result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/komike/Login"));
 
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist_result.jsp");
