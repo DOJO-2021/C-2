@@ -19,32 +19,32 @@
 				<!-- 1つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/MenuServlet"> <span itemprop="name">メニュー</span>
+					href="/komike/Menu"> <span itemprop="name">メニュー</span>
 				</a>
 					<meta itemprop="position" content="1" /></li>
 
 				<!-- 2つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
+					href="/komike/Chat"> <span itemprop="name">雑談ルーム</span>
 				</a>
 					<meta itemprop="position" content="2" /></li>
 				<!-- 3つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
+					href="/komike/Q_A"> <span itemprop="name">Q&amp;Aルーム</span>
 				</a>
 					<meta itemprop="position" content="3" /></li>
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/TestServlet"> <span itemprop="name">理解度テスト</span>
+					href="/komike/Tselect"> <span itemprop="name">理解度テスト</span>
 				</a>
 					<meta itemprop="position" content="4" /></li>
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
+					href="/komike/Pwchange"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
 			</ol>
@@ -53,19 +53,19 @@
 
 	<table>
 		<tr>
-			<td><li><a href="/Komike/TestServlet">HTML</a></li><br><c:out value="${result.rank}" /><br>
+			<td><li><a href="/komike/Test">HTML</a></li><br><c:out value="${result.rank}" /><br>
 			</td>
-			<td><li><a href="/Komike/TestServlet">CSS</a></li><br>CSSのテスト履歴<br>
+			<td><li><a href="/komike/Test">CSS</a></li><br>CSSのテスト履歴<br>
 			</td>
-			<td><li><a href="/Komike/TestServlet">JavaScript</a></li><br>JavaScriptのテスト履歴<br>
+			<td><li><a href="/komike/Test">JavaScript</a></li><br>JavaScriptのテスト履歴<br>
 			</td>
 		</tr>
 		<tr>
-			<td><li><a href="/Komike/TestServlet">Java</a></li><br>Javaのテスト履歴<br>
+			<td><li><a href="/komike/Test">Java</a></li><br>Javaのテスト履歴<br>
 			</td>
-			<td><li><a href="/Komike/TestServlet">データベース</a></li><br>データベースのテスト履歴<br>
+			<td><li><a href="/komike/Test">データベース</a></li><br>データベースのテスト履歴<br>
 			</td>
-			<td><li><a href="/Komike/TestServlet">サーバーサイドJava</a></li><br>サーバーサイドJavaのテスト履歴<br>
+			<td><li><a href="/komike/Test">サーバーサイドJava</a></li><br>サーバーサイドJavaのテスト履歴<br>
 			</td>
 		</tr>
 	</table>
