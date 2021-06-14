@@ -8,14 +8,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Chat;
 import model.Question;
-
-import java.sql.Date;
 
 
 public class Q_AsDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
+
 	public List<Question> select() {
 		Connection conn = null;
 		List<Question> QuestionList = new ArrayList<Question>();
@@ -26,10 +24,10 @@ public class Q_AsDao {
 	       Class.forName("org.h2.Driver");
 
 	       // データベースに接続する
-	        conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+	        conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 	      // SQL文を準備する
-	       String sql = "select * from q_a";
+	       String sql = "select * from Question";
 	       PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
@@ -45,7 +43,7 @@ public class Q_AsDao {
 				rs.getString("name"),
 				rs.getString("text"),
 				rs.getInt("good_number"),
-				rs.ArrayList<Question>("answer")
+			    null
 				);
 				QuestionList.add(comment);
 			}
@@ -73,7 +71,7 @@ public class Q_AsDao {
 		// 結果を返す
 		return QuestionList;
 
-
+/*
 		public boolean insert(Question data) {
 			Connection conn = null;
 			ArrayList<Question>  = new ArrayList<Question>();
@@ -174,6 +172,6 @@ public class Q_AsDao {
 		}
 
 
-
+*/
 		}
 	}
