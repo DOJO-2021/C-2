@@ -1,0 +1,160 @@
+問題1
+insert into test_question values('java01', '「以下」を意味する比較演算子はどれか。');
+
+insert into test_choice values('java01', 1, '=>', 0);
+insert into test_choice values('java01', 2, '=<', 0);
+insert into test_choice values('java01', 3, '<=', 1);
+insert into test_choice values('java01', 4, '>=', 0);
+
+問題2
+insert into test_question values('java02', 'switch文はどんな時に使うと便利か');
+
+insert into test_choice values('java02', 1, '数回中の動作をループさせたい時', 0);
+insert into test_choice values('java02', 2, 'if文を使った条件が複数ある時', 1);
+insert into test_choice values('java02', 3, '動作と動作の間を繋ぎたい時', 0);
+insert into test_choice values('java02', 4, 'チームで作る時', 0);
+
+問題3
+insert into test_question values('java03', 'int[][] a = new int [3][9]; と宣言した場合、a.lengthの個々の要素数はいくつか。');
+
+insert into test_choice values('java03', 1, '3', 0);
+insert into test_choice values('java03', 2, '6', 0);
+insert into test_choice values('java03', 3, '9', 1);
+insert into test_choice values('java03', 4, '12', 0);
+
+問題4
+insert into test_question values('java04', 'インターフェースにて、変数を定義した場合暗黙的に追加される構文は何か。');
+
+insert into test_choice values('java04', 1, 'public void final', 0);
+insert into test_choice values('java04', 2, 'public final', 0);
+insert into test_choice values('java04', 3, 'public final void', 0);
+insert into test_choice values('java04', 4, 'public static final', 1);
+
+問題5
+insert into test_question values('java05', 'コンストラクタの中に暗黙的に組み込まれる構文はどれか。');
+
+insert into test_choice values('java05', 1, 'super()', 1);
+insert into test_choice values('java05', 2, 'great()', 0);
+insert into test_choice values('java05', 3, 'gone(), 0);
+insert into test_choice values('java05', 4, 'this()', 0);
+
+問題6
+insert into test_question values('java06', 'if文の構文のバリエーションの説明として、適切ではないものはどれか。');
+
+insert into test_choice values('java06', 1, 'ifブロックだけのif文を作れる。', 1);
+insert into test_choice values('java06', 2, 'ifブロックとelseブロックでif文を作れる。', 0);
+insert into test_choice values('java06', 3, 'ifブロックとelse ifブロックでif文を作れる。, 0);
+insert into test_choice values('java06', 4, 'elseブロックを複数持つif文を作れる。', 0);
+
+問題7
+insert into test_question values('java07', 'メンバへのアクセス制御で最も制限が厳しい名称はどれか。');
+
+insert into test_choice values('java07', 1, 'protected', 0);
+insert into test_choice values('java07', 2, 'package private', 0);
+insert into test_choice values('java07', 3, 'private', 1);
+insert into test_choice values('java07', 4, 'public', 0);
+
+問題8
+insert into test_question values('java08', '継承において、サブクラスに継承されないのはどれか。');
+
+insert into test_choice values('java08', 1, 'コンストラクタ', 1);
+insert into test_choice values('java08', 2, 'フィールド', 0);
+insert into test_choice values('java08', 3, 'private以外のメンバ', 0);
+insert into test_choice values('java08', 4, 'メソッド', 0);
+
+問題9
+insert into test_question values('java09', '「等しくない」を意味する比較演算子はどれか。');
+
+insert into test_choice values('java09', 1, '!=', 1);
+insert into test_choice values('java09', 2, '=!', 0);
+insert into test_choice values('java09', 3, 'not=', 0);
+insert into test_choice values('java09', 4, '=not', 0);
+
+問題10
+insert into test_question values('java10', 'do-while文の特徴はどれか。');
+
+insert into test_choice values('java10', 1, '条件式を評価しない', 0);
+insert into test_choice values('java10', 2, '条件式を評価する前に二度動作を行う', 0);
+insert into test_choice values('java10', 3, '条件式を評価する前に一度動作を行う', 1);
+insert into test_choice values('java10', 4, '条件式を評価し、falseであっても動作を行う', 0);
+
+問題11
+insert into test_question values('java11', 'Aというインターフェイスを実装してBというクラスを定義する構文はどれか。');
+
+insert into test_choice values('java11', 1, 'class B extends A,' 0);
+insert into test_choice values('java11', 2, 'class B  interface  A', 0);
+insert into test_choice values('java11', 3, 'class B auto implements A', 0);
+insert into test_choice values('java11', 4, 'class B implements A', 1);
+
+
+問題12
+insert into test_question values('java12', 'int Dojo(int a)をオーバーロードするメソッドはどれか。');
+
+insert into test_choice values('java12', 1, 'super.Dojo();', 0);
+insert into test_choice values('java12', 2, 'this.Dojo();', 0);
+insert into test_choice values('java12', 3, 'this.(Dojo())', 0);
+insert into test_choice values('java12', 4, 'this.(Dojo())', 1);
+
+問題13
+insert into test_question values('java13', 'String型の変数sに、"えEこREHAひDOI"という文字列が格納されているとき、s.length()が返す値はいくつか。');
+
+insert into test_choice values('java13', 1, '11', 1);
+insert into test_choice values('java13', 2, '8', 0);
+insert into test_choice values('java13', 3, '9', 0);
+insert into test_choice values('java13', 4, '6', 0);
+
+問題14
+insert into test_question values('java14', 'web上でキー入力を行うために使うクラスはどれか。');
+
+insert into test_choice values('java14', 1, 'java.util.Getter', 0);
+insert into test_choice values('java14', 2, 'java.util.Scanner', 1);
+insert into test_choice values('java14', 3, 'java.util.Setter', 0);
+insert into test_choice values('java14', 4, 'java.util.Slack'', 0);
+
+問題15
+insert into test_question values('java15', '4つの整数のデータ型で格納可能な整数の範囲が一番大きいのはどれか。');
+
+insert into test_choice values('java15', 1, 'int', 0);
+insert into test_choice values('java15', 2, 'byte', 0);
+insert into test_choice values('java15', 3, 'long', 1);
+insert into test_choice values('java15', 4, 'short', 0);
+
+問題16
+insert into test_question values('java16', 'String型の10をint型に変換する命令はどれか。String型の変数はaとする');
+
+insert into test_choice values('java16', 1, 'int n = parseInt.Integer(a)', 0);
+insert into test_choice values('java16', 2, 'int n = parseString.Integer(a)', 0);
+insert into test_choice values('java16', 3, 'int n = Integer.parseInt(a)', 1);
+insert into test_choice values('java16', 4, 'int n = Integer.parseString(a)', 0);
+
+問題17
+insert into test_question values('java17', 'switch文で使われるbreak文の意味はどれか。');
+
+insert into test_choice values('java17', 1, '処理を中断し、一つのswitch文から抜ける', 1);
+insert into test_choice values('java17', 2, 'その処理を初期化して繰り返す', 0);
+insert into test_choice values('java17', 3, '一度その処理をやめて、また処理を行う', 0);
+insert into test_choice values('java17', 4, '条件に合わなければその処理を二度と使わないように壊す', 0);
+
+問題18
+insert into test_question values('java18', '抽象の場合記述しなくてはならないキーワードはどれか');
+
+insert into test_choice values('java18', 1, 'public', 0);
+insert into test_choice values('java18', 2, 'private', 0);
+insert into test_choice values('java18', 3, 'abstract', 1);
+insert into test_choice values('java18', 4, 'long', 0);
+
+問題19
+insert into test_question values('java19', '抽象クラスの説明として適切ではないものはどれか。');
+
+insert into test_choice values('java19', 1, '通常のメソッドを持つことができる', 0);
+insert into test_choice values('java19', 2, 'フィールドを持つことができる', 0);
+insert into test_choice values('java19', 3, 'コンストラクトを定義できる', 0);
+insert into test_choice values('java19', 4, 'インスタンスを生成できる', 1);
+
+問題20
+insert into test_question values('java20', 'ループカウンタ i の値を3から9まで1ずつ増やすfor文として適切なものはどれか。');
+
+insert into test_choice values('java20', 1, 'for (i = 3; i < 9; i++) { }', 1);
+insert into test_choice values('java20', 2, 'for (i = 2; i < 10; i++) { }', 0);
+insert into test_choice values('java20', 3, 'for (i = 4; i < 9; i++) { }', 0);
+insert into test_choice values('java20', 4, 'for (i = 1; i < 10; i++) { }', 0);

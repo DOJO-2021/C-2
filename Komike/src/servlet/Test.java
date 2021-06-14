@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,10 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.TestsDao;
-import model.Test_choice;
-import model.Test_choice_detail;
 /**
  * Servlet implementation class Test
  */
@@ -51,16 +46,16 @@ public class Test extends HttpServlet {
 
 
 					String question_number = request.getParameter("QUESTION_NUMBER");
-					ArrayList<Test_choice_detail> choice_detail = request.getParameter("CHOICE_DETAIL");
+					//ArrayList<Test_choice_detail> choice_detail = request.getParameter("CHOICE_DETAIL");
 
 
 
 					// 採点処理を行う
-					TestsDao bDao = new TestsDao();
+					//TestsDao bDao = new TestsDao();
 
 					// 採点結果をリクエストスコープに格納する
-					request.setAttribute("Test_question",
-							new Test_choice ("Java", 11));
+					//request.setAttribute("Test_question",
+							//new Test_choice ("Java", 11));
 
 					// 結果ページにフォワードする
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tjudge.jsp");

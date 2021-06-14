@@ -8,8 +8,8 @@ public class Test_choice_detail {
 	//コンストラクタの生成
 		public Test_choice_detail(int choice_number, boolean true_false, String choice) {
 			super();
-			this.choice_number = choice_number;
-			this.true_false = true_false;
+			this.choice_number = choice_number;//選択番号
+			this.true_false = true_false;//正誤フラグ
 			this. choice =   choice;
 		}
 
