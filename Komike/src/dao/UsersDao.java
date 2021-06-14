@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import model.User;
 
+
 public class UsersDao {
 	// ログインできるならtrueを返す
 	public boolean isLoginOK(String id, String password) {
