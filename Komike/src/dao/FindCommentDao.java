@@ -12,7 +12,7 @@ import model.Chat;
 
 //データベースから掲示板の内容を取り出すクラス
 public class FindCommentDao {
-	public List<Chat> findcomment() {
+	public static List<Chat> findcomment() {
 		//id name commnetを書くのするリスト
 		Connection conn = null;
 		List<Chat> list = new ArrayList<Chat>();
@@ -31,6 +31,7 @@ public class FindCommentDao {
 				try {
 				//sqlを送信
 					ResultSet rs = st.executeQuery(sql);
+
 					// SQL文を完成させる
 					while(rs.next()) {
 						Chat ch = new Chat();
@@ -38,7 +39,7 @@ public class FindCommentDao {
 						ch.setId(rs.getString("id"));
 						ch.setName(rs.getString("name"));
 						ch.setText(rs.getString("text"));
-						ch.setTime(rs.getTimestamp("time"));
+						ch.setTime(rs.getDate("time"));
 
 						list.add(ch);
 					}
@@ -75,14 +76,6 @@ public class FindCommentDao {
 
 	    }
 
-
-
-	public class FindComment {
-		public List<Chat> executeFindComment() {
-			FindCommentDao fcdao = new FindCommentDao ();
-			List<Chat> list = fcdao.findcomment();
-			return list;
-		}
-	}
 }
+
 
