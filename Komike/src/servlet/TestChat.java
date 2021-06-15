@@ -36,6 +36,16 @@ public class TestChat {
 					System.out.println("登録失敗！");
 				}
 
+				// delete()のテスト
+				int insId = insRec.getChat_id();
+
+				System.out.println("---------- delete()のテスト ----------");
+				if (dao.delete(insId)) {
+					System.out.println("削除成功！");
+				}
+				else {
+					System.out.println("削除失敗！");
+				}
 	}
 
 }

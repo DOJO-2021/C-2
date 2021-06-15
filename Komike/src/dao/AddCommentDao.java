@@ -5,6 +5,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Chat;
@@ -25,7 +26,7 @@ public class AddCommentDao{
 
 			// SQL文を準備する
 			String sql = "insert into chat values (null, ?, ?, ?, current_timestamp)";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 
 			// SQL文を完成させる
@@ -51,6 +52,11 @@ public class AddCommentDao{
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
+			}
+
+			ResultSet rs = pStmt.getGeneratedKeys();
+			if(rs.next()) {
+				ch.setChat_id(rs.getInt(1));
 			}
 		}
 		catch (SQLException e) {
@@ -86,11 +92,12 @@ public class AddCommentDao{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
 
 			// SQL文を準備する
-			String sql ="delete from BC where id=?";
+			String sql ="delete from chat where chat_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 			pStmt.setInt(1, chat_id);
+
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import model.Chat;
  * Servlet implementation class ChatServlet
  */
 @WebServlet("/ChatServlet")
+@MultipartConfig
 public class ChatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +53,7 @@ public class ChatServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*//idの情報の取得
+		/*//セッションスコープからidの情報の取得
 		HttpSession session= request.getSession();
 		String id = (String) session.getAttribute("id");
 		*/
@@ -67,9 +69,31 @@ public class ChatServlet extends HttpServlet {
 			AddCommentDao cDao = new AddCommentDao();
 			cDao.insert(new Chat(0, id, name, text, null));
 
-			//掲示板にフォワード
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
-			rd.forward(request, response);
+
+			//削除機能の実装
+			//削除ボタンが押されたらchat_idをもとに削除する
+			if(request.getParameter("submit").equals("削除")) {
+				int chat_id = Integer.parseInt(request.getParameter("chat_id"));
+				cDao.delete(chat_id);
+			}
+
+/*
+			//画像表示の処理
+			//リクエストの情報を取得する処理
+			Collection<Part> parts = request.getParts();
+
+			//formから情報を取得
+			String ar = request.getParameter("image");
+
+			//アップされたファイル名
+			String uploadFileName = "";
+
+			String uploadFolder = this.getServletContext().getRealPath("/image/uplode");
+*/
+			//掲示板にリダイレクトする
+			response.sendRedirect("/komike/ChatServlet");
+
+
 
 	}
 
