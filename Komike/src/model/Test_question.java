@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Test_question implements Serializable {
 	private String question_number; //問題番号
 	private String question_sentence;//問題文
-	private ArrayList<Test_choice_detail> choice_detail;
+	private ArrayList<Test_choice_detail> choice_detail;//問題文の子を持ってくる
 
 
 	//private int choice_number; //選択番号

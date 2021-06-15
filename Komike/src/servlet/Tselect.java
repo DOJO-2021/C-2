@@ -26,6 +26,7 @@ public class Tselect extends HttpServlet {
 			response.sendRedirect("/Komike/LoginServlet");
 			return;
 		}*/
+		//今までやってきたテスト結果をSQL文を取得する
 		// 理解度テスト選択画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
 		dispatcher.forward(request, response);

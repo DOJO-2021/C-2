@@ -25,7 +25,7 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		//Tselect.javaがpostした内容のデータベースを取得する
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
 		dispatcher.forward(request, response);
 
@@ -41,12 +41,6 @@ public class Test extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		/*String select1 = request.getParameter("Question1");
-		String select2 = request.getParameter("Question2");
-		String select3 = request.getParameter("Question3");
-		String select4 = request.getParameter("Question4");
-		String select5 = request.getParameter("Question5");*/
-
 
 		//■requestスコープからジャンル情報を取得
 

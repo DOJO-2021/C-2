@@ -10,7 +10,7 @@ public class Test_choice_detail {
 			super();
 			this.choice_number = choice_number;//選択番号
 			this.true_false = true_false;//正誤フラグ
-			this. choice =   choice;
+			this. choice =   choice;//選択肢文　(これら3つの変数はchoice_detailの中身)
 		}
 
 		public int getChoice_number() {
