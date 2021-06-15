@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UsersDao;
+import model.Regist_result;
+import model.User;
+
 /**
  * Servlet implementation class Pwchange
  */
@@ -30,7 +34,27 @@ public class Pwchange extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+
+
+
+		// パスワード変更処理を行う
+		UsersDao uDao = new UsersDao();
+		if (uDao.update(new User(id,password))) {	// 登録成功
+			request.setAttribute("Regist_result",
+			new Regist_result("登録成功！", "新規登録完了しました。", "/komike/Login"));
+		}
+		else {												// 登録失敗
+			request.setAttribute("Regist_result",
+			new Regist_result("登録失敗！", "もう一度やり直してください。", "/komike/Login"));
+		}
+
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist_result.jsp");
+		dispatcher.forward(request, response);
+	}
 }

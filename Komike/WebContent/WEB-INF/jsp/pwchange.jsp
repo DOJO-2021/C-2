@@ -15,12 +15,11 @@
 			<h3>パスワード変更</h3>
 			<form method="POST" action="/komike/Pwchange" id="form">
 				<div class="form-item">
-					<label for="password"></label> <input type="text" name="PW"
-						required="required" placeholder="以前のパスワード"></input>
+					<label for="password"></label>
+					<input type="text" name="password" required="required" placeholder="以前のパスワード"></input>
 				</div>
 				<div class="form-item">
-					<label for="password"></label> <input type="text" name="PW"
-						required="required" placeholder="新規パスワード"></input>
+					<label for="password"></label> <input type="text" name="PW" required="required" placeholder="新規パスワード"></input>
 				</div>
 				<div class="button-panel">
 					<input type="submit" class="button" title="Login" value="変更"></input>
