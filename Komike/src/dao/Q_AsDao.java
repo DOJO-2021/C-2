@@ -71,10 +71,12 @@ public class Q_AsDao {
 		// 結果を返す
 		return QuestionList;
 
-/*
-		public boolean insert(Question data) {
+	}
+
+
+		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
+		public boolean insert(Question question) {
 			Connection conn = null;
-			ArrayList<Question>  = new ArrayList<Question>();
 			boolean result = false;
 
 			try {
@@ -82,66 +84,48 @@ public class Q_AsDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 				// SQL文を準備する
-				String sql = "insert into Question values (question_id,id,title,name,text,good_number,answer)";
+				String sql = "insert into Question values (null,?,?,?,?,?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (data.getQuestion_id() != null) {
-					pStmt.setInt(1, data.getQuestion_id());
+				//question.getQuestion_id();
+				//String null OK
+				//Int    null NG  0はOK
+				//Question null OK
+
+
+				if (question.getId() != null) {
+					pStmt.setString(1, question.getId());
 				}
 				else {
-					pStmt.setInt(1, "null");
+					pStmt.setString(1, "null");
 				}
-				if (card.getDepartment() != null) {
-					pStmt.setString(2, card.getDepartment());
+				if (question.getTitle() != null) {
+					pStmt.setString(2, question.getTitle());
 				}
 				else {
 					pStmt.setString(2, "null");
 				}
-				if (card.getName() != null) {
-					pStmt.setString(3, card.getName());
+				if (question.getName() != null) {
+					pStmt.setString(3, question.getName());
 				}
 				else {
 					pStmt.setString(3, "null");
 				}
-				if (card.getZipcode() != null) {
-					pStmt.setString(4, card.getZipcode());
+				if (question.getText() != null) {
+					pStmt.setString(4,question.getText());
 				}
 				else {
 					pStmt.setString(4, "null");
 				}
-				if (card.getAddress() != null) {
-					pStmt.setString(5, card.getAddress());
+				if (question.getGood_number() != 0) {
+					pStmt.setInt(5, question.getGood_number());
 				}
 				else {
-					pStmt.setString(5, "null");
-				}
-				if (card.getPhone() != null) {
-					pStmt.setString(6, card.getPhone());
-				}
-				else {
-					pStmt.setString(6, "null");
-				}
-				if (card.getFax() != null) {
-					pStmt.setString(7, card.getFax());
-				}
-				else {
-					pStmt.setString(7, "null");
-				}
-				if (card.getEmail() != null) {
-					pStmt.setString(8, card.getEmail());
-				}
-				else {
-					pStmt.setString(8, "null");
-				}
-				if (card.getPhone() != null) {
-					pStmt.setString(9, card.getPhone());
-				}
-				else {
-					pStmt.setString(9, "null");
+					pStmt.setInt(5, 0);
 				}
 
 				// SQL文を実行する
@@ -166,12 +150,13 @@ public class Q_AsDao {
 					}
 				}
 			}
-
 			// 結果を返す
 			return result;
 		}
 
 
-*/
 		}
-	}
+
+
+
+
