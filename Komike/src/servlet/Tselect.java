@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Test_question;
 
 /**
  * Servlet implementation class Tselect
@@ -26,7 +29,7 @@ public class Tselect extends HttpServlet {
 			response.sendRedirect("/Komike/LoginServlet");
 			return;
 		}*/
-		//今までやってきたテスト結果をSQL文を取得する
+
 		// 理解度テスト選択画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
 		dispatcher.forward(request, response);
@@ -42,18 +45,15 @@ public class Tselect extends HttpServlet {
 					response.sendRedirect("/simpleBC/LoginServlet");
 					return;
 				}*/
+		//今までやってきたテスト結果をSQL文を取得する
+			String question_number = request.getParameter("QUESTION_NUMBER");
+			String question_sentence = request.getParameter("QUESTION_SENTENCE");
+			ArrayList<Test_question> questions = new ArrayList<Test_question>();
 
-				// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String id = request.getParameter("id");
-				String genre = request.getParameter("genre");
-				String rank = request.getParameter("rank");
 
-				/*request.setAttribute("result",
-						new ("ランクは" + rank + "です"));
-				request.setAttribute("cardList", cardList);*/
-		// TODO Auto-generated method stub
-		doGet(request, response);
+			//テスト画面にフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Test.jsp");
+			dispatcher.forward(request, response);
 
 	}
 

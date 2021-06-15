@@ -53,19 +53,19 @@
 
 	<table>
 		<tr>
-			<td><li><a href="/komike/Test">HTML</a></li><br><c:out value="${result.rank}" /><br>
+			<td><li><a href="/komike/Test?key=html">HTML</a></li><br><c:out value="${result.rank}" /><br>
 			</td>
-			<td><li><a href="/komike/Test">CSS</a></li><br>CSSのテスト履歴<br>
+			<td><li><a href="/komike/Test?key=css">CSS</a></li><br>CSSのテスト履歴<br>
 			</td>
-			<td><li><a href="/komike/Test">JavaScript</a></li><br>JavaScriptのテスト履歴<br>
+			<td><li><a href="/komike/Test?key=JavaScript">JavaScript</a></li><br>JavaScriptのテスト履歴<br>
 			</td>
 		</tr>
 		<tr>
-			<td><li><a href="/komike/Test">Java</a></li><br>Javaのテスト履歴<br>
+			<td><li><a href="/komike/Test?key=Java">Java</a></li><br>Javaのテスト履歴<br>
 			</td>
-			<td><li><a href="/komike/Test">データベース</a></li><br>データベースのテスト履歴<br>
+			<td><li><a href="/komike/Test?key=data">データベース</a></li><br>データベースのテスト履歴<br>
 			</td>
-			<td><li><a href="/komike/Test">サーバーサイドJava</a></li><br>サーバーサイドJavaのテスト履歴<br>
+			<td><li><a href="/komike/Test?key=surver">サーバーサイドJava</a></li><br>サーバーサイドJavaのテスト履歴<br>
 			</td>
 		</tr>
 	</table>

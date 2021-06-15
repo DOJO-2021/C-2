@@ -2,12 +2,13 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Test_choice_detail;
 import model.Test_question;
 
 public class TestsDao {
@@ -23,52 +24,68 @@ public class TestsDao {
 
 					// データベースに接続する
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+					try {
+						// SQL文を準備する
+							Statement st = conn.createStatement();
+							String sql = "select * from test_question";
+							String sql_choice = "";
 
-					// SQL文を準備する
-					String sql = "select * from question";
-					PreparedStatement pStmt = conn.prepareStatement(sql);
+							try {
+							//sqlを送信
+								ResultSet rs = st.executeQuery(sql);
+
+								// SQL文を完成させる
+								while(rs.next()) {
+									Test_question te = new Test_question();
+									te.setQuestion_number(rs.getString("question_number"));
+									te.setQuestion_sentence(rs.getString("question_sentence"));
+
+									ResultSet rs_choice = st.executeQuery(sql_choice);
+									while(rs_choice.next()){
+										Test_choice_detail tcd = new Test_choice_detail();
+										tcd.setChoice_number(0);
+										tcd.setTrue_false(false);
+										tcd.setChoice(rs.getString("choice"));
+
+										te.getChoice_detail().add(tcd);
+									}
 
 
-					// SQL文を実行し、結果表を取得する
-					ResultSet rs = pStmt.executeQuery();
+									questionList.add(te);
+								}
 
-					// SQL文を完成させる
-					while(rs.next()) {
-						Test_question comment = new Test_question(
-						rs.getString("question_number"),
-						rs.getString("question_sentence"),
-						rs.getString("choice"),
-						rs.getInt("choice_number"),//選択番号
-						rs.getBoolean("true_false")//正誤フラグ
+								rs.close();
+								st.close();
 
+							}catch(SQLException e) {
+			                    e.printStackTrace();
+			                }
+						} catch (SQLException e) {
+				                e.printStackTrace();
+				            }finally {
+				                // データベース接続の切断
+				                if (conn != null) {
+				                    try {
+				                        conn.close();
 
-						);
-						questionList.add(comment);
+				                    } catch (SQLException e) {
+				                        e.printStackTrace();
+				                    }
+				                }
+				            }
+				        } catch (SQLException e) {
+				            e.printStackTrace();
+				            System.out.println("Connection Failed.");
+				            return null;
+				        }
+						catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						questionList = null;
 					}
-				}
-				catch (SQLException e) {
-					e.printStackTrace();
-					questionList = null;
-				}
-				catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					questionList = null;
-				}
-				finally {
-					// データベースを切断
-					if (conn != null) {
-						try {
-							conn.close();
-						}
-						catch (SQLException e) {
-							e.printStackTrace();
-							questionList = null;
-						}
-					}
-				}
+				        return questionList;
 
-				// 結果を返す
-				return questionList;
+				    }
+
 			}
 
-}
+

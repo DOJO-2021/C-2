@@ -16,12 +16,19 @@ public class Test_question implements Serializable {
 	//引数があるコンストラクタ
 	public Test_question( String question_number, String question_sentence, ArrayList<Test_choice_detail> choice_detail) {
 		super();
-
 		this.question_number= question_number;
 		this.question_sentence= question_sentence;
 		this.choice_detail = choice_detail;
 
 	}
+	//引数がないコンストラクタ
+	public Test_question() {
+		super();
+		this.question_number = "";
+		this.question_sentence = "";
+		this.choice_detail = new ArrayList<Test_choice_detail>();
+	}
+
 
 
 	public String getQuestion_number() {
