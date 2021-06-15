@@ -1,4 +1,5 @@
 package model;
+//削除予定
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,7 +7,6 @@ import java.util.ArrayList;
 public class Test_choice implements Serializable {
 	private String question_number;
 	private ArrayList<Test_choice_detail> choice_detail;
-
 
 	//コンストラクタの生成
 	public Test_choice(String question_number, ArrayList<Test_choice_detail> choice_detail) {

@@ -15,7 +15,7 @@ public class TestsDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 			public List<Test_question> select() {
 				Connection conn = null;
-				List<Test_question> chatList = new ArrayList<Test_question>();
+				List<Test_question> questionList = new ArrayList<Test_question>();
 
 				try {
 					// JDBCドライバを読み込む
@@ -25,7 +25,7 @@ public class TestsDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
 
 					// SQL文を準備する
-					String sql = "select * from chat";
+					String sql = "select * from question";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
@@ -35,22 +35,24 @@ public class TestsDao {
 					// SQL文を完成させる
 					while(rs.next()) {
 						Test_question comment = new Test_question(
-						rs.getInt("choice_number"),
 						rs.getString("question_number"),
 						rs.getString("question_sentence"),
-						rs.getString("choice")
+						rs.getString("choice"),
+						rs.getInt("choice_number"),//選択番号
+						rs.getBoolean("true_false")//正誤フラグ
+
 
 						);
-					chatList.add(comment);
+						questionList.add(comment);
 					}
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					chatList = null;
+					questionList = null;
 				}
 				catch (ClassNotFoundException e) {
 					e.printStackTrace();
-					chatList = null;
+					questionList = null;
 				}
 				finally {
 					// データベースを切断
@@ -60,13 +62,13 @@ public class TestsDao {
 						}
 						catch (SQLException e) {
 							e.printStackTrace();
-							chatList = null;
+							questionList = null;
 						}
 					}
 				}
 
 				// 結果を返す
-				return chatList;
+				return questionList;
 			}
 
 }
