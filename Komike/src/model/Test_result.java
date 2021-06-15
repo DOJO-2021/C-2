@@ -3,12 +3,12 @@ package model;
 import java.io.Serializable;
 
 public class Test_result implements Serializable {
-	private int rank;
-	private int correct_answer;
-	private int number;
-	private double correct_answer_rate;
-	private String id;
-	private String genre;
+	private int rank;						//ランク
+	private int correct_answer;			//正解数
+	private int number;					//受けた回数
+	private double correct_answer_rate;	//正解率
+	private String id;						//ユーザーid
+	private String genre;					//ジャンル
 
 
 	//コンストラクタの生成

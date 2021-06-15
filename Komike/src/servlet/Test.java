@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import model.Test_question;
 
 /**
  * Servlet implementation class Test
@@ -40,26 +37,28 @@ public class Test extends HttpServlet {
 		doGet(request, response);
 
 		// リクエストパラメータを取得する
+		//■requestスコープからジャンルとIDを取得
 		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("ID");
+		String genre = request.getParameter("GENRE");
 
-		//■requestスコープからジャンル情報を取得
+		// 選ばれたラジオボタンの情報を取得
+		//String s = request.getParameter("radiobutton");
+		String[] arr = request.getParameterValues("Question1");
+
+		//それぞれのラジオボタンから抜き出した選択肢を正誤フラグと比べる
+		//そこからあっていた数だけ正解数correct_answerに代入する
 
 
-		//String question_number = request.getParameter("QUESTION_NUMBER");
-		//ArrayList<Test_choice> choice_detail = request.getParameter("CHOICE_DETAIL");
+		//(正解数/20)×100のパーセンテージにして正解数correct_answer_rateに代入する
 
-		//■TestDaoからジャンル情報を指定して、問題文を取得する
-		//	取得した問題文をリクエストスコープに格納する
-
-		// 採点処理を行う
-		//TestsDao bDao = new TestsDao();
-		//ArrayList<Test_question> questions = bDao.select("java");
+		//正解数に応じてランクの数字を決める
 
 		// 採点結果をリクエストスコープに格納する
 		//request.setAttribute("Test_question",
 		//new Test_choice ("Java", 11));
 
-		ArrayList<Test_question> questions = new ArrayList<Test_question>();
+		//ArrayList<Test_question> questions = new ArrayList<Test_question>();
 
 
 		// 結果ページにフォワードする
