@@ -65,7 +65,7 @@
 		</tr>
 </table>
 
-<a  href="/Komike/TselectServlet">ジャンル選択</a>
+<a  href="/komike/Tselect">ジャンル選択</a>
 </form>
 </body>
 </html>

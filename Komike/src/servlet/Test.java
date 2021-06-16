@@ -34,17 +34,17 @@ public class Test extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+
 
 		// リクエストパラメータを取得する
 		//■requestスコープからジャンルとIDを取得
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
+		/*String id = request.getParameter("ID");
 		String genre = request.getParameter("GENRE");
 
 		// 選ばれたラジオボタンの情報を取得
 		//String s = request.getParameter("radiobutton");
-		String[] arr = request.getParameterValues("Question1");
+		String[] arr = request.getParameterValues("Question1");*/
 
 		//それぞれのラジオボタンから抜き出した選択肢を正誤フラグと比べる
 		//そこからあっていた数だけ正解数correct_answerに代入する
@@ -60,6 +60,12 @@ public class Test extends HttpServlet {
 
 		//ArrayList<Test_question> questions = new ArrayList<Test_question>();
 
+		if(false) {
+			//エラーメッセージの出力
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tjudge.jsp");
