@@ -33,18 +33,27 @@ public class Pwchange extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		/*// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/simpleBC/LoginServlet");
+			return;
+		} */
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 
-
-
 		// パスワード変更処理を行う
 		UsersDao uDao = new UsersDao();
 		if (uDao.update(new User(id,password))) {	// 登録成功
+
+		/*	// セッションスコープにIDを格納する
+			HttpSession session = request.getSession();
+			session.setAttribute("id", new Login_user(id));
+	*/
 			request.setAttribute("Regist_result",
 			new Regist_result("登録成功！", "新規登録完了しました。", "/komike/Login"));
 		}

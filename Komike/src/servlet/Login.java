@@ -37,11 +37,11 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		request.setCharacterEncoding("UTF-8"); //リクエストパラメータの文字コードを指定する。
+		String id = request.getParameter("id"); //名前を指定してリクエストパラメータの値を取り出す。
 		String password = request.getParameter("password");
 
-		// ログイン処理を行う
+		// ログイン処理を行う→UsersDaoのインスタンス化
 		UsersDao uDao = new UsersDao();
 		if (uDao.isLoginOK(id, password)) {	// ログイン成功
 			// セッションスコープにIDを格納する
@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("id", new Login_user(id));
 
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/komike/Menu");
+			response.sendRedirect("/komike/MenuServlet");
 		}
 		else {									// ログイン失敗
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
