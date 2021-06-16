@@ -9,7 +9,7 @@ import java.io.Serializable;
 		private String name;
 		private String text;
 
-		//コンストラクタの生成
+		//引数があるコンストラクタの生成
 		public Answer(int question_id, int answer_id, String id, String name, String text ) {
 			super();
 			this.question_id = question_id;
@@ -17,6 +17,16 @@ import java.io.Serializable;
 			this.id = id;
 			this.name = name;
 			this.text = text;
+		}
+
+		//引数がないコンストラクタ
+		public Answer() {
+			super();
+			this.question_id =0;
+			this.answer_id = 0;
+			this.id = "";
+			this.name = "";
+			this.text = "";
 		}
 
 		public int getQuestion_id() {
@@ -59,11 +69,4 @@ import java.io.Serializable;
 			this.text = text;
 		}
 
-
-
-
-
-
-
-
-}
+		}
