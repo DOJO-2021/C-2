@@ -41,7 +41,7 @@
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
+					href="/komike/Pwchange"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
 			</ol>

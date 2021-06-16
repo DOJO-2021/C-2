@@ -32,13 +32,14 @@ public class FindCommentDao {
 				//sqlを送信
 					ResultSet rs = st.executeQuery(sql);
 
-					// SQL文を完成させる
+					// SQL文を完成させる　〇
 					while(rs.next()) {
 						Chat ch = new Chat();
 						ch.setChat_id(rs.getInt("chat_id"));
 						ch.setId(rs.getString("id"));
 						ch.setName(rs.getString("name"));
 						ch.setText(rs.getString("text"));
+						ch.setImage_name(rs.getString("image_name"));
 						ch.setTime(rs.getDate("time"));
 
 						list.add(ch);

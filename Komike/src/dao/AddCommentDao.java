@@ -25,7 +25,7 @@ public class AddCommentDao{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into chat values (null, ?, ?, ?, current_timestamp)";
+			String sql = "insert into chat values (null, ?, ?, ?, ?, current_timestamp)";
 			PreparedStatement pStmt = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 
@@ -36,7 +36,7 @@ public class AddCommentDao{
 			else {
 				pStmt.setString(1, "null");
 			}
-			if (ch.getName() != null) {
+			if (ch.getName() != null ) {
 				pStmt.setString(2, ch.getName());
 			}
 			else {
@@ -47,6 +47,12 @@ public class AddCommentDao{
 			}
 			else {
 				pStmt.setString(3, "null");
+			}
+			if (ch.getImage_name() != null) {
+				pStmt.setString(4, ch.getImage_name());
+			}
+			else {
+				pStmt.setString(4, "null");
 			}
 
 			// SQL文を実行する
