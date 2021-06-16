@@ -17,46 +17,47 @@
 				<!-- 1つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/MenuServlet"> <span itemprop="name">メニュー</span>
+					href="/komike/MenuServlet"> <span itemprop="name">メニュー</span>
 				</a>
 					<meta itemprop="position" content="1" /></li>
 
 				<!-- 2つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
+					href="/komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
 				</a>
 					<meta itemprop="position" content="2" /></li>
 				<!-- 3つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
+					href="/komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
 				</a>
 					<meta itemprop="position" content="3" /></li>
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/TestServlet"> <span itemprop="name">理解度テスト</span>
+					href="/komike/TestServlet"> <span itemprop="name">理解度テスト</span>
 				</a>
 					<meta itemprop="position" content="4" /></li>
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/Komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
+					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
 <p>雑談ルームへようこそ</p>
-<form method = "post" action="/komike/ChatServlet" name="chat">
+<form method = "post" action="/komike/ChatServlet" name="chat" enctype ="multipart/form-data">
 <p>id<input type = "text" name = "id" ></p>
-<p>名前<input type = "text" name = "name"></p>
+<p>名前<input type = "text" name = "name" accept = "image/*"></p>
 <p>添付画像<input type = "file" name  = "image"></p>
+<canvas id = "preview" style ="max-width:200px;"></canvas><br>
 <p>本文<br>
 <textarea name = "text" id = "text"></textarea>
 </p>
-<input type = "submit" name = "submit" value = "書き込む" onclick = "return cancelsubmit()">
+<input type = "submit" name = "submit" value = "書き込む" onclick = "return cancelsubmit()" onchange  ="previewImage(this);">
 </form>
 
 <div class="test">
@@ -66,10 +67,11 @@
 		ID<c:out value ="${e.id}"/><br>
 	 <b>名前</b><c:out value ="${e.name}" /><br>
 	 <b>本文</b><c:out value="${e.text}" /><br>
+	 <img src="${'/Nyample/images/'+=image}">
 	 <b>時間</b><c:out value="${e.time}"/><br>
  <form method = "post" action="/komike/ChatServlet" name="chat2">
  <input type="hidden" name="chat_id" value="<c:out value ="${e.chat_id}"/>">
-	 <input type = "submit" name = "submit" value = "削除">
+	 <input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
 </form>
 <hr>
 </c:forEach>
@@ -77,14 +79,43 @@
 </div>
 </body>
 <script>
-function cancelsubmit(){
+function cancelsubmit(obj){
 	if(document.getElementById("text").value === ""){
 		window.alert("コメントを入力してください");
 		return false;
 	}
 }
 
+function previewImage(obj){
+	var fileReader = new FileReader();
 
+	fileReader.onload = (function(){
+
+		var canvas = document.getElementById('preview');
+		var ctx = canvas.getContext('2d');
+		var image = new Image();
+		image.src = fileReader.result;
+		console.log(fileReader.result)
+
+		image.onload = (function(){
+			canvas.width = image.width;
+			canvas.height = image.height;
+			ctx.drawImage(image, 0, 0);
+		});
+	});
+	fileReader.readAsDataURL(obj.files[0]);
+	console.log(fileReader.result)
+}
+
+function deletesubmit(){
+	var result = window.confirm("削除してもよろしいですか");
+
+	if(result){
+		return ture;
+	}else {
+		return false;
+	}
+}
 
 </script>
 </html>

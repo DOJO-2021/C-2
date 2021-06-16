@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import dao.AddCommentDao;
 import dao.FindCommentDao;
@@ -19,7 +20,7 @@ import model.Chat;
  * Servlet implementation class ChatServlet
  */
 @WebServlet("/ChatServlet")
-@MultipartConfig
+@MultipartConfig(location = "C:\\pleiades\\workspace\\Komike\\WebContent\\images")
 public class ChatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -77,19 +78,12 @@ public class ChatServlet extends HttpServlet {
 				cDao.delete(chat_id);
 			}
 
-/*
 			//画像表示の処理
-			//リクエストの情報を取得する処理
-			Collection<Part> parts = request.getParts();
 
-			//formから情報を取得
-			String ar = request.getParameter("image");
+			Part part = request.getPart("image");//画像のパラメータを取得
 
-			//アップされたファイル名
-			String uploadFileName = "";
+			String image = this.getFileName(part);
 
-			String uploadFolder = this.getServletContext().getRealPath("/image/uplode");
-*/
 			//掲示板にリダイレクトする
 			response.sendRedirect("/komike/ChatServlet");
 
