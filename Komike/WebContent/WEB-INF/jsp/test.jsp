@@ -80,7 +80,7 @@
 </table>
 
 
-<input type="submit" name="Judge" value="回答終了">
+<input type="submit" name="JUDGE" value="回答終了">
 </form>
 </body>
 </html>

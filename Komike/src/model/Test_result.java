@@ -22,6 +22,16 @@ public class Test_result implements Serializable {
 		this.genre =  genre;
 	}
 
+	//引数がないコンストラクタ
+		public Test_result() {
+			super();
+			this.rank = 0;
+			this.correct_answer = 0;
+			this.number =  0;
+			this.correct_answer_rate = 0;
+			this.id = "";
+			this.genre = "";
+		}
 
 	public int getRank() {
 		return rank;

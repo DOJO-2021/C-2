@@ -11,7 +11,7 @@
 <h1>Komike</h1>
 <h3>受講者向け掲示板サイト</h3>
 <h3>ログアウトはこちら</h3>
-
+<form method="POST" action="/komike/Tselect">
 <!-- パンくずリストここから -->
 	<div class="ol">
 			<ol class="breadcrumb" itemscope
@@ -69,5 +69,6 @@
 			</td>
 		</tr>
 	</table>
+ </form>
 </body>
 </html>
