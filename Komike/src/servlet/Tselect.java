@@ -45,10 +45,13 @@ public class Tselect extends HttpServlet {
 					response.sendRedirect("/simpleBC/LoginServlet");
 					return;
 				}*/
-		//今までやってきたテスト結果をSQL文を取得する
+			//リクエストパラメータを取得する
 			String question_number = request.getParameter("QUESTION_NUMBER");
 			String question_sentence = request.getParameter("QUESTION_SENTENCE");
 			ArrayList<Test_question> questions = new ArrayList<Test_question>();
+
+			// 検索結果をリクエストスコープに格納する
+			request.setAttribute("questions", questions);
 
 
 			//テスト画面にフォワードする
