@@ -28,10 +28,11 @@ public class TestsDao {
 						// SQL文を準備する
 							Statement st = conn.createStatement();
 							String sql = "select * from test_question";
-							String sql_choice = "";
+							String sql_choice = "select * from test_choice";
+
 
 							try {
-							//sqlを送信
+								// SQL文を実行し、結果表を取得する
 								ResultSet rs = st.executeQuery(sql);
 
 								// SQL文を完成させる
@@ -40,7 +41,9 @@ public class TestsDao {
 									te.setQuestion_number(rs.getString("question_number"));
 									te.setQuestion_sentence(rs.getString("question_sentence"));
 
+									st_test_question.setInt(1, te.getQuestion_number());
 									ResultSet rs_choice = st.executeQuery(sql_choice);
+
 									while(rs_choice.next()){
 										Test_choice_detail tcd = new Test_choice_detail();
 										tcd.setChoice_number(0);
