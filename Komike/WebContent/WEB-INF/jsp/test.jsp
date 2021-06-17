@@ -52,20 +52,10 @@
 <h2>理解度テスト</h2>
 <h2>問題ジャンル:HTML</h2>
 <br>
-<form method="POST" action="/komike/Test">
+<form method="POST" action="/komike/TestServlet">
 <table>
-<% for(Test_question test_question : questionList){ %>
-<tr>
-<th>問題1</th>
-<th><%= te.getQuestion_sentence() %></th>
-<td>
-<% for(Test_choice_detail test_choice_detail : test_question.getChoice_detail()){ %>
-<label><input type="radio" name="Question1" value="1"><%= tcd.getChoice() %></label>
-</td>
 
-</tr>
-<% } // endfor %>
-<% } // endfor %>
+
 <tr>
 <th>問題2</th>
 <th>問題を入れてください</th>
