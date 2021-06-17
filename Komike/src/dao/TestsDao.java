@@ -2,9 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,17 +23,18 @@ public class TestsDao {
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 					try {
 						// SQL文を準備する
-							Statement st = conn.createStatement();
 							String sql = "select * from test_question";
-							String sql_choice = "select * from test_choice";
+							PreparedStatement st = conn.prepareStatement(sql);
 
+							String sql_choice = "select * from test_choice where question_number = ?";
+							PreparedStatement st_chioce = conn.prepareStatement(sql_choice);
 
 							try {
 								// SQL文を実行し、結果表を取得する
-								ResultSet rs = st.executeQuery(sql);
+								ResultSet rs = st.executeQuery();
 
 								// SQL文を完成させる
 								while(rs.next()) {
@@ -41,14 +42,14 @@ public class TestsDao {
 									te.setQuestion_number(rs.getString("question_number"));
 									te.setQuestion_sentence(rs.getString("question_sentence"));
 
-									st_test_question.setInt(1, te.getQuestion_number());
-									ResultSet rs_choice = st.executeQuery(sql_choice);
+									st_chioce.setString(1, te.getQuestion_number());
+									ResultSet rs_choice = st_chioce.executeQuery();
 
 									while(rs_choice.next()){
 										Test_choice_detail tcd = new Test_choice_detail();
-										tcd.setChoice_number(0);
-										tcd.setTrue_false(false);
-										tcd.setChoice(rs.getString("choice"));
+										tcd.setChoice_number(rs_choice.getInt("choice_number"));
+										tcd.setTrue_false(rs_choice.getBoolean("True_false"));
+										tcd.setChoice(rs_choice.getString("choice"));
 
 										te.getChoice_detail().add(tcd);
 									}
