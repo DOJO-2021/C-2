@@ -67,7 +67,7 @@ public class UsersDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C-2/Komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/Komike", "sa", "");
 
 			// SQL文を準備する
 			String sql = "insert into USER values (?, ?)";
@@ -119,7 +119,7 @@ public class UsersDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C-2/Komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/Komike", "sa", "");
 
 			// SQL文を準備する
 			String sql = "update USER set password =? where id =?"; //UPDATE user SET password = 'okutomi' WHERE ID='dojo';
