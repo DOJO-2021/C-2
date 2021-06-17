@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// リクエストパラメータを取得する
+		// リクエストパラメータを取得する、（クライアントがおくってくる情報のこと）
 		request.setCharacterEncoding("UTF-8"); //リクエストパラメータの文字コードを指定する。
 		String id = request.getParameter("id"); //名前を指定してリクエストパラメータの値を取り出す。
 		String password = request.getParameter("password");

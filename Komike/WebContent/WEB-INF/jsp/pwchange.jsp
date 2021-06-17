@@ -13,10 +13,10 @@
 			<h1>Komike</h1>
 			<h2>受講者向け掲示板サイト</h2>
 			<h3>パスワード変更</h3>
-			<form method="POST" action="/komike/Pwchange" id="form">
+			<form method="POST" action="/komike/PwchangeServlet" id="form">
 				<div class="form-item">
 					<label for="password"></label>
-					<input type="text" name="id" required="required" placeholder="以前のパスワード"></input>
+					<input type="text" name="password1" required="required" placeholder="以前のパスワード"></input>
 				</div>
 				<div class="form-item">
 					<label for="password"></label>

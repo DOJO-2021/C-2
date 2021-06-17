@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UsersDao;
+import model.Login_user;
 import model.Regist_result;
 import model.User;
 
 /**
  * Servlet implementation class Pwchange
  */
-@WebServlet("/Pwchange")
+@WebServlet("/PwchangeServlet")
 public class Pwchange extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,6 +26,14 @@ public class Pwchange extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/komike/Login");
+			return;
+		}
+
+
 		// パスワード変更ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/pwchange.jsp");
 		dispatcher.forward(request, response);
@@ -44,8 +53,15 @@ public class Pwchange extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		//String id = request.getParameter("id");
+		//ユーザーIDを取得
+		Login_user user = (Login_user)session.getAttribute("id");
+		String id = user.getId();
+		//新パスワード
 		String password = request.getParameter("password");
+
+		//旧パスワードがあっていないときのエラー処理
+
 
 		// パスワード変更処理を行う
 		UsersDao uDao = new UsersDao();
@@ -53,7 +69,7 @@ public class Pwchange extends HttpServlet {
 			// session.setAttribute("id", new Login_user(id));
 
 			request.setAttribute("Regist_result",
-			new Regist_result("登録成功！", "新規登録完了しました。", "/komike/Login"));
+			new Regist_result("登録成功！", "変更完了しました。", "/komike/Login"));
 		}
 		else {												// 登録失敗
 			request.setAttribute("Regist_result",
