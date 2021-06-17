@@ -5,43 +5,66 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Komike(仮)</title>
+<title>質問ルーム</title>
 </head>
 <body>
   <h1>Komike(仮)</h1>
   <h2>受講者向け掲示板サイト</h2>
     <p><label>キーワード検索：<input type="search" name="search" size="30" maxlength="255"></label></p>
-  <ul>
-    <li><a href="menu.jsp">メニュー</a></li>
-    <li><a href="cahat.jsp">雑談ルーム</a></li>
-    <li><a href="q_a.jsp">Q&amp;Aルーム</a></li>
-    <li><a href="regist"></a>理解度テスト</li>
-    <li><a href="pwchange">パスワード変更はこちら</a></li>
-  </ul>
+<!-- パンくずリストここから -->
+	<div class="ol">
+			<ol class="breadcrumb" itemscope
+				itemtype="https://schema.org/BreadcrumbList">
+				<!-- 1つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/MenuServlet"> <span itemprop="name">メニュー</span>
+				</a>
+					<meta itemprop="position" content="1" /></li>
+
+				<!-- 2つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
+				</a>
+					<meta itemprop="position" content="2" /></li>
+				<!-- 3つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
+				</a>
+					<meta itemprop="position" content="3" /></li>
+				<!-- 4つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/TestServlet"> <span itemprop="name">理解度テスト</span>
+				</a>
+					<meta itemprop="position" content="4" /></li>
+				<!-- 4つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
+				</a>
+					<meta itemprop="position" content="5" /></li>
+			</ol>
+		</div>
+<!-- パンくずリストここまで -->
   <h3>分からないことを質問してみましょう</h3>
     <p>質問は以下の欄に入力してください</p>
+<!-- 質問ルームへの書き込み内容を記入するフォーム -->
 
-<form>
-  <dl>
-    <dt>
-      <span>任意</span>
-      名前
-      <span>name</span>
-      </dt>
+<p>質問ルームへようこそ</p>
+<form method="Post" action="/komike/Q_AServlet">
 
-      <dd>
-        <input type="text" class="名前" name="name" value="">
-      </dd>
-      <dt>
-      <span>任意</span>
-      添付画像
-      <span>Attachment</span>
-      添付画像<input type="file" name="avatar"><br>
-本文<textarea name = "text"></textarea>
-<input type = "submit" name = "submit" value = "書き込む">
-      </dt>
 
-  </dl>
+     <p>id<input type = "text" name = "id" ></p>
+     <p>タイトル<input type = "text" name = "title"></p>
+     <p> 名前<input type="text"  name="name" ></p>
+     <p>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></p><br>
+     <p>本文<br><textarea name = "text"></textarea></p>
+      <input type = "submit" name = "submit" value = "書き込む">
+
+
 </form>
 <br>
 <c:forEach var="e" items="${questionList}" >
@@ -50,8 +73,9 @@
     <b>タイトル</b><c:out value ="${e.title}"/><br>
     <b>名前</b><c:out value ="${e.name}"/><br>
     <b>本文</b><c:out value ="${e.text}"/><br>
+    <img src="${'/komike/images/'+=e.image_name}"><br>
     <b>評価数</b><c:out value ="${e.good_number}"/>
-<form method="post" action="/komike/Q_A.java">
+<form method="post" action="/komike/Q_AServlet">
   </form>
 </c:forEach>
 

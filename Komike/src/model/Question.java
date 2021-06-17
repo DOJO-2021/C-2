@@ -10,17 +10,19 @@ public class Question implements Serializable {
 	private String title;
 	private String name;
 	private String text;
+	private String image_name;
 	private int good_number;
 	private ArrayList<Answer> Answer;
 
 	//コンストラクタの生成
-			public Question(int question_id, String id, String title, String name, String text, int good_number, ArrayList<Answer> answer) {
+			public Question(int question_id, String id, String title, String name, String text, String image_name, int good_number, ArrayList<Answer> answer) {
 				super();
 				this.question_id =question_id;
 				this.id = id;
 				this.title = title;
 				this.name = name;
 				this.text = text;
+				this.image_name = image_name;
 				this.good_number =good_number;
 				this.Answer = answer;
             }
@@ -32,6 +34,7 @@ public class Question implements Serializable {
 					this.title = "";
 					this.name = "";
 					this.text = "";
+					this.image_name = "";
 					this.good_number =0;
 					this.Answer = new ArrayList<Answer>();
 			}
@@ -65,6 +68,12 @@ public class Question implements Serializable {
 			public void setText(String text) {
 				this.text = text;
 			}
+			public String getImage_name() {
+				return image_name;
+			}
+			public void setImage_name(String image_name) {
+				this.image_name = image_name;
+			}
 			public int getGood_number() {
 				return good_number;
 			}
@@ -77,5 +86,6 @@ public class Question implements Serializable {
 			public void setAnswer(ArrayList<Answer> answer) {
 				Answer = answer;
 			}
+
 
 }

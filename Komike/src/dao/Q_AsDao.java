@@ -37,14 +37,15 @@ public class Q_AsDao {
 			// SQL文を完成させる
 			while(rs.next()) {
 				Question comment = new Question(
-				rs.getInt("question_id"),
-				rs.getString("id"),
-				rs.getString("title"),
-				rs.getString("name"),
-				rs.getString("text"),
-				rs.getInt("good_number"),
-			    null
-				);
+						rs.getInt("question_id"),
+						rs.getString("id"),
+						rs.getString("title"),
+						rs.getString("name"),
+						rs.getString("text"),
+						rs.getString("image_name"),
+						rs.getInt("good_number"),
+						null
+						);
 				QuestionList.add(comment);
 			}
 		}
@@ -87,7 +88,7 @@ public class Q_AsDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 				// SQL文を準備する
-				String sql = "insert into Question values (null,?,?,?,?,?)";
+				String sql = "insert into Question values (null,?,?,?,?,?,?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -121,11 +122,17 @@ public class Q_AsDao {
 				else {
 					pStmt.setString(4, "null");
 				}
-				if (question.getGood_number() != 0) {
-					pStmt.setInt(5, question.getGood_number());
+				if (question.getImage_name() != null) {
+					pStmt.setString(5, question.getImage_name());
 				}
 				else {
-					pStmt.setInt(5, 0);
+					pStmt.setString(5, "null");
+				}
+				if (question.getGood_number() != 0) {
+					pStmt.setInt(6, question.getGood_number());
+				}
+				else {
+					pStmt.setInt(6, 0);
 				}
 
 				// SQL文を実行する
