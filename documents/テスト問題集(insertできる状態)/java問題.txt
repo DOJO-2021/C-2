@@ -35,7 +35,7 @@ insert into test_question values('java05', 'コンストラクタの中に暗黙
 
 insert into test_choice values('java05', 1, 'super()', 1);
 insert into test_choice values('java05', 2, 'great()', 0);
-insert into test_choice values('java05', 3, 'gone(), 0);
+insert into test_choice values('java05', 3, 'gone()', 0);
 insert into test_choice values('java05', 4, 'this()', 0);
 
 問題6
@@ -109,7 +109,7 @@ insert into test_question values('java14', 'web上でキー入力を行うため
 insert into test_choice values('java14', 1, 'java.util.Getter', 0);
 insert into test_choice values('java14', 2, 'java.util.Scanner', 1);
 insert into test_choice values('java14', 3, 'java.util.Setter', 0);
-insert into test_choice values('java14', 4, 'java.util.Slack'', 0);
+insert into test_choice values('java14', 4, 'java.util.Slack', 0);
 
 問題15
 insert into test_question values('java15', '4つの整数のデータ型で格納可能な整数の範囲が一番大きいのはどれか。');
