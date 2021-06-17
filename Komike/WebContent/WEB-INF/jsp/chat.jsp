@@ -51,7 +51,6 @@
 <p>雑談ルームへようこそ</p>
 <!-- 掲示板への書き込み内容を記入するフォーム -->
 <form method = "post" action="/komike/ChatServlet" name="chat" enctype="multipart/form-data">
-	<p>id<input type = "text" name = "id" ></p>
 	<p>名前<input type = "text" name = "name"></p>
 	<p>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></p>
 	<!-- 添付画像のプレビューを表示 -->

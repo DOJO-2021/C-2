@@ -1,0 +1,83 @@
+
+
+
+
+insert into test_question values('サーバーサイドJava01', 'JavaのServletにおいて、クライアントからPOSTリクエストを処理するメソッドは何ですか');
+
+
+insert into test_question values('サーバーサイドJava02', 'Webアプリにおいて、リクエストスコープの有効範囲はいつまでですか');
+
+
+insert into test_question values('サーバーサイドJava03', 'SQLインジェクション攻撃に対応したJDBCのインターフェースは何ですか');
+
+
+insert into test_question values('サーバーサイドJava04', '同じWebアプリを複数のユーザーが共有する場合には、何というスコープに共有データを格納しますか');
+
+
+insert into test_question values('サーバーサイドJava05', 'JavaBeansのコードでgetName()というゲッタは、ELでは何というプロパティになりますか？');
+
+
+insert into test_question values('サーバーサイドJava06', 'DAOパターンとして作成されるクラスは、MVCモデルのどれに該当しますか');
+
+
+insert into test_question values('サーバーサイドJava07', 'JavaのWebアプリにおいて、セッションスコープの有効範囲は、いつまでですか？');
+
+
+insert into test_question values('サーバーサイドJava08', 'ServletAからServletBにリダイレクトし、さらにServletBからJspAにフォワードした場合、WebブラウザのURL欄には、ServletA、ServletB、JspAのどれが表示されますか');
+
+
+insert into test_question values('サーバーサイドJava09', 'JavaのServletやJSPの説明として、適切なものは');
+
+
+insert into test_question values('サーバーサイドJava10', 'MVCモデルにおけるコントローラー（Controller）の役割の説明として正しいものはどれですか');
+
+
+insert into test_question values('サーバーサイドJava11', 'JavaBeansのルールに該当しないものを選んでください');
+
+
+
+insert into test_question values('サーバーサイドJava12', 'Servletの説明として、正しいものはどれですか');
+
+
+
+insert into test_question values('サーバーサイドJava13', '次のようなWebアプリケーションで以下の1～4の操作を行った場合の処理の流れ①に当てはまるものを選んでください
+＜条件＞
+・init()、doGet()、destroy()メソッドを持つサーブレットクラスAがある
+・サーブレットクラスAにはフィルタBが設定されている
+・ServletContextEventインターフェースを実装したリスナーCがある
+＜操作＞
+1.サーバを起動　CのcontextInitialized()メソッドが実行
+2.サーブレットAをリクエスト　Aのinit()メソッド　→　BのdoFilter()メソッド　→　①　の順で実行
+3.サーブレットAをリクエスト　BのdoFilter()メソッド　→　AのdoGet()メソッド　の順で実行
+4.サーバを終了　Aのdestroy()メソッド　→　CのcontextDestroy()メソッド　の順で実行
+');
+
+
+
+insert into test_question values('サーバーサイドJava14', 'アプリケーションスコープの注意点として、正しいものはどれですか');
+
+
+
+insert into test_question values('サーバーサイドJava15', 'POSTリクエストの使い方として正しいものはどれですか');
+
+
+
+insert into test_question values('サーバーサイドJava16', 'Coreタグライブラリで prefix="c" とした場合、コレクションから繰り返してデータを取り出すタグは、何ですか？');
+
+
+
+insert into test_question values('サーバーサイドJava17', 'Coreタグライブラリで prefix="c" とした場合、スコープに保存されたインスタンスを使って分岐を行うタグは、何ですか？');
+
+
+
+insert into test_question values('サーバーサイドJava18', 'Eclipseの動的Webプロジェクトにおいて、ユーザーから直接リクエストできないファイルを
+置く場所はどこですか？');
+
+
+
+insert into test_question values('サーバーサイドJava19', 'EL式でスコープに保存されているインスタンスを取得する場合、どのように記述するのが正しいですか');
+
+
+
+insert into test_question values('サーバーサイドJava20', '404ページが表示される原因として、考えられる原因は何ですか');
+

@@ -10,11 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.AddCommentDao;
 import dao.FindCommentDao;
 import model.Chat;
+import model.Login_user;
 
 /**
  * Servlet implementation class ChatServlet
@@ -54,10 +56,8 @@ public class ChatServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*//セッションスコープからidの情報の取得
-		HttpSession session= request.getSession();
-		String id = (String) session.getAttribute("id");
-		*/
+
+
 
 		// リクエストパラメータを取得する　partで取得できるようにする
 
@@ -75,7 +75,10 @@ public class ChatServlet extends HttpServlet {
 
 		//パラメータを取得
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		//セッションスコープからidの情報の取得
+		HttpSession session = request.getSession();
+		Login_user user = (Login_user)session.getAttribute("id");
+		String id = user.getId();
 		String name = request.getParameter("name");
 		String text = request.getParameter("text");
 
@@ -92,7 +95,7 @@ public class ChatServlet extends HttpServlet {
 			//画像のファイル名のパラメータを取得
 			Part part = request.getPart("image");//画像のパラメータを取得
 			String image = this.getFileName(part);//画像のファイル名の取得
-			//ファイルの書込み
+			//ファイルの書込み(ファイルが選択されていなかったら、NULLを挿入)
 			if(part == null) {
 			part.write(null);
 			}

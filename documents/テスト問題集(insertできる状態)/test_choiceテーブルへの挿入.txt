@@ -1,0 +1,122 @@
+
+insert into test_choice values('サーバーサイドjava01', 1, 'doPutメソッド', 0);
+insert into test_choice values('サーバーサイドjava01', 2, 'doPostメソッド', 1);
+insert into test_choice values('サーバーサイドjava01', 3, 'doOptionsメソッド', 0);
+insert into test_choice values('サーバーサイドjava01', 4, 'doGetメソッド', 0);
+
+
+insert into test_choice values('サーバーサイドjava02', 1, '一つのリクエストからレスポンスの間まで', 1);
+insert into test_choice values('サーバーサイドjava02', 2, 'Webブラウザが閉じるまで、またはプログラムで削除するまで', 0);
+insert into test_choice values('サーバーサイドjava02', 3, 'Webアプリを終了するまで', 0);
+insert into test_choice values('サーバーサイドjava02', 4, 'Webアプリケーションサーバを終了するまで', 0);
+
+
+insert into test_choice values('サーバーサイドjava03', 1, 'java.sql.Connection', 0);
+insert into test_choice values('サーバーサイドjava03', 2, 'java.sql.DriverManager', 0);
+insert into test_choice values('サーバーサイドjava03', 3, 'java.sql.PreparedStatement', 1);
+insert into test_choice values('サーバーサイドjava03', 4, 'java.sql.ResultSet', 0);
+
+
+insert into test_choice values('サーバーサイドjava04', 1, 'ページスコープ', 0);
+insert into test_choice values('サーバーサイドjava04', 2, 'リクエストスコープ', 0);
+insert into test_choice values('サーバーサイドjava04', 3, 'セッションスコープ', 0);
+insert into test_choice values('サーバーサイドjava04', 4, 'アプリケーションスコープ', 1);
+
+
+insert into test_choice values('サーバーサイドjava05', 1, 'getName', 0);
+insert into test_choice values('サーバーサイドjava05', 2, 'name', 1);
+insert into test_choice values('サーバーサイドjava05', 3, 'getName()', 0);
+insert into test_choice values('サーバーサイドjava05', 4, 'name()', 0);
+
+
+insert into test_choice values('サーバーサイドjava06', 1, 'M', 1);
+insert into test_choice values('サーバーサイドjava06', 2, 'V', 0);
+insert into test_choice values('サーバーサイドjava06', 3, 'C', 0);
+insert into test_choice values('サーバーサイドjava06', 4, 'どれにも該当しない', 0);
+
+
+insert into test_choice values('サーバーサイドjava07', 1, '１つのリクエストからレスンポンスの間まで', 0);
+insert into test_choice values('サーバーサイドjava07', 2, 'Webブラウザを閉じるまで、またはプログラムで削除するまで', 1);
+insert into test_choice values('サーバーサイドjava07', 3, 'Webアプリを終了するまで', 0);
+insert into test_choice values('サーバーサイドjava07', 4, 'Webアプリケーションサーバを終了するまで', 0);
+
+
+insert into test_choice values('サーバーサイドjava08', 1, 'ServletA', 0);
+insert into test_choice values('サーバーサイドjava08', 2, 'ServletB', 1);
+insert into test_choice values('サーバーサイドjava08', 3, 'JspA', 0);
+insert into test_choice values('サーバーサイドjava08', 4, 'ServletAとJspAの両方', 0);
+
+
+insert into test_choice values('サーバーサイドjava09', 1, 'Servletは、JSPに変換されてから実行される。', 0);
+insert into test_choice values('サーバーサイドjava09', 2, 'JSPは、Servletに変換されてから実行される', 1);
+insert into test_choice values('サーバーサイドjava09', 3, 'Servletは、HTMLに変換されてから実行される', 0);
+insert into test_choice values('サーバーサイドjava09', 4, 'JSPは、HTMLに変換されてから実行される', 0);
+
+
+insert into test_choice values('サーバーサイドjava10', 1, 'アプリケーションの主たる処理やデータの格納などを行う', 0);
+insert into test_choice values('サーバーサイドjava10', 2, 'ユーザーに対して、画面の表示を行う', 0);
+insert into test_choice values('サーバーサイドjava10', 3, 'ユーザーからの要求を受け取り、処理の実行をモデルに依頼し、その結果の表示をビューに依頼する', 1);
+insert into test_choice values('サーバーサイドjava10', 4, 'いずれにも該当しない', 0);
+
+
+insert into test_choice values('サーバーサイドjava11', 1, 'publicで引数のないコンストラクタを持つ', 0);
+insert into test_choice values('サーバーサイドjava11', 2, 'フィールドはカプセル化しない', 1);
+insert into test_choice values('サーバーサイドjava11', 3, '直列化可能である', 0);
+insert into test_choice values('サーバーサイドjava11', 4, 'クラスはpublicでパッケージに所属する', 0);
+
+
+insert into test_choice values('サーバーサイドjava12', 1, 'Javaで開発されたプログラムであり、クライアントの要求に応じてWebアプリケーションサーバー上で実行される', 1);
+insert into test_choice values('サーバーサイドjava12', 2, 'Javaで開発されたプログラムであり、サーバからダウンロードして実行される', 0);
+insert into test_choice values('サーバーサイドjava12', 3, '
+Javaで開発されたプログラムをアプリケーションの部品として取り扱うための規約である', 0);
+insert into test_choice values('サーバーサイドjava12', 4, 'Javaで開発されたプログラムを実行するインタプリタであり，バイトコードと呼ばれる中間コードを実行する機能をもつ。', 0);
+
+
+insert into test_choice values('サーバーサイドjava13', 1, 'Aのinit()メソッド', 0);
+insert into test_choice values('サーバーサイドjava13', 2, 'AのdoGet()メソッド', 1);
+insert into test_choice values('サーバーサイドjava13', 3, 'BのdoFilter()メソッド', 0);
+insert into test_choice values('サーバーサイドjava13', 4, 'CのcontextInitialized()メソッド', 0);
+
+insert into test_choice values('サーバーサイドjava14', 1, '保存したインスタンスの更新を複数のユーザーがほぼ同時に行った場合、不整合が発生することがある', 0);
+insert into test_choice values('サーバーサイドjava14', 2, 'アプリケーションスコープを削除、またはアプリケーションを終了するまで、メモリにインスタンスが残るので、大量のインスタンスを保存するとメモリを圧迫する', 0);
+insert into test_choice values('サーバーサイドjava14', 3, '保存したインスタンスはアプリケーションが終了すると失われる', 0);
+insert into test_choice values('サーバーサイドjava14', 4, 'すべて正しい', 1);
+
+
+insert into test_choice values('サーバーサイドjava15', 1, 'リクエストパラメータが情報の登録に利用される場合', 0);
+insert into test_choice values('サーバーサイドjava15', 2, 'リクエストパラメータが情報を取得するために利用される場合', 1);
+insert into test_choice values('サーバーサイドjava15', 3, 'どちらも該当する', 0);
+insert into test_choice values('サーバーサイドjava15', 4, 'どちらも該当しない', 0);
+
+
+insert into test_choice values('サーバーサイドjava16', 1, '<c:set>', 0);
+insert into test_choice values('サーバーサイドjava16', 2, '<c:out>', 0);
+insert into test_choice values('サーバーサイドjava16', 3, '<c:if>', 0);
+insert into test_choice values('サーバーサイドjava16', 4, '<c:forEach>', 1);
+
+
+insert into test_choice values('サーバーサイドjava17', 1, '<c:set>', 0);
+insert into test_choice values('サーバーサイドjava17', 2, '<c:out>', 0);
+insert into test_choice values('サーバーサイドjava17', 3, '<c:if>', 1);
+insert into test_choice values('サーバーサイドjava17', 4, '<c:forEach> 
+', 0);
+
+
+insert into test_choice values('サーバーサイドjava18', 1, 'WebContent以下', 0);
+insert into test_choice values('サーバーサイドjava18', 2, 'WebContent/Web-INF以下', 1);
+insert into test_choice values('サーバーサイドjava18', 3, 'Javaリソース以下', 0);
+insert into test_choice values('サーバーサイドjava18', 4, 'build以下', 0);
+
+
+insert into test_choice values('サーバーサイドjava19', 1, '${属性名}', 1);
+insert into test_choice values('サーバーサイドjava19', 2, '${”属性名”}', 0);
+insert into test_choice values('サーバーサイドjava19', 3, '&{属性名}', 0);
+insert into test_choice values('サーバーサイドjava19', 4, '&{”属性名”}', 0);
+
+
+insert into test_choice values('サーバーサイドjava20', 1, 'リクエストしたファイルやサーブレットクラス、またはWebアプリケーションがアプリケーションサーバにない', 1);
+insert into test_choice values('サーバーサイドjava20', 2, 'リクエストしたサーブレットクラスにリクエストメソッドに対応したメソッドが定義されていない', 0);
+insert into test_choice values('サーバーサイドjava20', 3, 'アプリケーションサーバがリクエストされたサーブレットクラス/JＳＰファイルを実行している途中で、サーバー内部で問題が起きた', 0);
+insert into test_choice values('サーバーサイドjava20', 4, 'レスポンスされたHTMLの構文に致命的な誤りがあり、ブラウザが内容を表示できない', 0);
+
+
