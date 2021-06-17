@@ -15,7 +15,7 @@ import model.Test_result;
 /**
  * Servlet implementation class Test
  */
-@WebServlet("/Test")
+@WebServlet("/TestServlet")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
