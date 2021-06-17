@@ -1,0 +1,170 @@
+test_questionテーブルへの挿入例
+insert into test_question values('java01', 'コマンドライン引数について正しいものはどれか');
+test_choiceテーブルへの挿入例
+insert into test_choice values('java01', 1, '選択肢の内容', 0);
+insert into test_choice values('java01', 2, '選択肢の内容', 0);
+insert into test_choice values('java01', 3, '選択肢の内容', 0);
+insert into test_choice values('java01', 4, '選択肢の内容', 1);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+--------------------------------------------------------------------------------
+--問1
+insert into test_question values('HTML01', '要素内の言語を指定する属性とは何か');
+
+insert into test_choice values('HTML01', 1, '<lang>', 1);
+insert into test_choice values('HTML01', 2, '<title>', 0);
+insert into test_choice values('HTML01', 3, '<class>', 0);
+insert into test_choice values('HTML01', 4, '<id>', 0);
+
+
+--問2
+insert into test_question values('HTML02', 'HTML文書の文字コードを設定するためのタグとは何か');
+
+insert into test_choice values('HTML02', 1, '<html>', 0);
+insert into test_choice values('HTML02', 2, '<head>', 0);
+insert into test_choice values('HTML02', 3, '<meta>', 1);
+insert into test_choice values('HTML02', 4, '<title>', 0);
+
+--問3
+insert into test_question values('HTML03', 'HTMLで最も大きい見出しを意味するタグは何か');
+
+insert into test_choice values('HTML03', 1, '<h1>', 1);
+insert into test_choice values('HTML03', 2, '<p>', 0);
+insert into test_choice values('HTML03', 3, '<ul>', 0);
+insert into test_choice values('HTML03', 4, '<a>', 0);
+
+--問4
+insert into test_question values('HTML04', 'HTMLで段落を意味するタグはどれか');
+
+insert into test_choice values('HTML04', 1, '<h1>', 0);
+insert into test_choice values('HTML04', 2, '<p>', 1);
+insert into test_choice values('HTML04', 3, '<ul>', 0);
+insert into test_choice values('HTML04', 4, '<a>', 0);
+
+--問5
+insert into test_question values('HTML05', '並び順に意味を持たないリストを表現する場合に利用するタグとは何か');
+
+insert into test_choice values('HTML05', 1, '<ul>', 1);
+insert into test_choice values('HTML05', 2, '<li>', 0);
+insert into test_choice values('HTML05', 3, '<ol>', 0);
+insert into test_choice values('HTML05', 4, '<dl>', 0);
+
+--問6
+insert into test_question values('HTML06', 'HTML構文は大きくhead要素と()要素の2つに分けられる。()内に入る言葉は何か');
+
+insert into test_choice values('HTML06', 1, '<meta>', 0);
+insert into test_choice values('HTML06', 2, '<body>', 1);
+insert into test_choice values('HTML06', 3, '<title>', 0);
+insert into test_choice values('HTML06', 4, '<p>', 0);
+
+--問7
+insert into test_question values('HTML07', 'HTMLにおいて、改行を行うためのタグはどれか');
+
+insert into test_choice values('HTML07', 1, '<a>', 0);
+insert into test_choice values('HTML07', 2, '<br>', 1);
+insert into test_choice values('HTML07', 3, '<html>', 0);
+insert into test_choice values('HTML07', 4, '<li>', 0);
+
+--問8
+insert into test_question values('HTML08', 'HTMLで画像をsample.pngという画像を表示するタグはどれか');
+
+insert into test_choice values('HTML08', 1, '<alt img="sample.png">', 0);
+insert into test_choice values('HTML08', 2, '<img src="sample.png">', 1);
+insert into test_choice values('HTML08', 3, '<src img="sample.png">', 0);
+insert into test_choice values('HTML08', 4, '<img alt="sample.png">', 0);
+
+--問9
+insert into test_question values('HTML09', 'HTMLの要素でテーブルのタイトルを表すものは何か');
+
+insert into test_choice values('HTML09', 1, '<caption>', 1);
+insert into test_choice values('HTML09', 2, '<table>', 0);
+insert into test_choice values('HTML09', 3, '<title>', 0);
+insert into test_choice values('HTML09', 4, '<tfoot>', 0);
+
+--問10
+insert into test_question values('HTML10', 'リンクを貼るためのタグとは何か');
+
+insert into test_choice values('HTML10', 1, '<a>', 1);
+insert into test_choice values('HTML10', 2, '<p>', 0);
+insert into test_choice values('HTML10', 3, '<img>', 0);
+insert into test_choice values('HTML10', 4, '<ul>', 0);
+
+--問11
+insert into test_question values('HTML11', 'HTMLのタグで、順序のあるリストを示すものはどれか');
+
+insert into test_choice values('HTML11', 1, '<ol>', 1);
+insert into test_choice values('HTML11', 2, '<lo>', 0);
+insert into test_choice values('HTML11', 3, '<ul>', 0);
+insert into test_choice values('HTML11', 4, '<lu>', 0);
+
+--問12
+insert into test_question values('HTML12', 'HTMLの要素でハイパーリンクを表すものは何か');
+
+insert into test_choice values('HTML12', 1, '<link>', 0);
+insert into test_choice values('HTML12', 2, '<area>', 0);
+insert into test_choice values('HTML12', 3, '<object>', 0);
+insert into test_choice values('HTML12', 4, '<a>', 1);
+
+--問13
+insert into test_question values('HTML13', 'meta要素に指定できない属性はどれか');
+
+insert into test_choice values('HTML13', 1, 'scheme', 1);
+insert into test_choice values('HTML13', 2, 'charset', 0);
+insert into test_choice values('HTML13', 3, 'content', 0);
+insert into test_choice values('HTML13', 4, 'name', 0);
+
+--問14
+insert into test_question values('HTML14', 'titleタグについての説明で、間違っているものはどれか。');
+
+insert into test_choice values('HTML14', 1, 'headタグ内に記述する必要がある', 0);
+insert into test_choice values('HTML14', 2, 'SEO対策として、title要素は重要である', 0);
+insert into test_choice values('HTML14', 3, 'HTML4.01,HTML5ともにtitleは必須タグである', 3);
+insert into test_choice values('HTML14', 4, 'titleには文書の内容を表す文章を記述する', 0);
+
+--問15
+insert into test_question values('HTML15', 'ヘッダー部分をまとめるためのタグはどれか');
+
+insert into test_choice values('HTML15', 1, '<header>', 1);
+insert into test_choice values('HTML15', 2, '<main>', 0);
+insert into test_choice values('HTML15', 3, '<class>', 0);
+insert into test_choice values('HTML15', 4, '<body>', 0);
+
+--問16
+insert into test_question values('HTML16', '汎用ブロックと呼ばれる何の意味も持たないタグで、どんな要素でもまとめられるタグはどれか');
+
+insert into test_choice values('HTML16', 1, '<img>', 0);
+insert into test_choice values('HTML16', 2, '<html>', 0);
+insert into test_choice values('HTML16', 3, '<div>', 1);
+insert into test_choice values('HTML16', 4, '<ul>', 0);
+
+--問17
+insert into test_question values('HTML17', 'Webページに表示できない形式のものはどれか');
+
+insert into test_choice values('HTML17', 1, 'JPEG', 0);
+insert into test_choice values('HTML17', 2, 'PNG', 0);
+insert into test_choice values('HTML17', 3, 'PICTURE', 1);
+insert into test_choice values('HTML17', 4, 'GIF', 0);
+
+--問18
+insert into test_question values('HTML18', 'ファイルやフォルダの名前の付け方で、つけてはいけないファイル名の例はどれか');
+
+insert into test_choice values('HTML18', 1, 'about.html', 0);
+insert into test_choice values('HTML18', 2, 'about-me.html', 0);
+insert into test_choice values('HTML18', 3, 'about_me.html', 0);
+insert into test_choice values('HTML18', 4, 'aboutMe.html', 1);
+
+--問19
+insert into test_question values('HTML19', 'ファイルに書いたHTMLがどのバージョンのHTMLに準拠して作成されているかを示しているものをなんというか');
+
+insert into test_choice values('HTML19', 1, 'CATTYPE宣言', 0);
+insert into test_choice values('HTML19', 2, 'DOGTYPE宣言', 0);
+insert into test_choice values('HTML19', 3, 'DOCTYPE宣言', 1);
+insert into test_choice values('HTML19', 4, 'CODTYPE宣言', 0);
+
+--問20
+insert into test_question values('HTML20', '段落を表すタグはどれか');
+
+insert into test_choice values('HTML20', 1, '<nav>', 0);
+insert into test_choice values('HTML20', 2, '<title>', 0);
+insert into test_choice values('HTML20', 3, '<p>', 1);
+insert into test_choice values('HTML20', 4, '<b>', 0);
