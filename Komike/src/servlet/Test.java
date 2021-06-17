@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//import dao.TestsDao;
+import model.Test_result;
+
 /**
  * Servlet implementation class Test
  */
@@ -39,12 +42,26 @@ public class Test extends HttpServlet {
 		// リクエストパラメータを取得する
 		//■requestスコープからジャンルとIDを取得
 		request.setCharacterEncoding("UTF-8");
-		/*String id = request.getParameter("ID");
+		String id = request.getParameter("ID");
 		String genre = request.getParameter("GENRE");
 
 		// 選ばれたラジオボタンの情報を取得
 		//String s = request.getParameter("radiobutton");
-		String[] arr = request.getParameterValues("Question1");*/
+		String[] q1 = request.getParameterValues("Question1");
+		String[] q2 = request.getParameterValues("Question2");
+		String[] q3 = request.getParameterValues("Question3");
+		String[] q4 = request.getParameterValues("Question4");
+		String[] q5 = request.getParameterValues("Question5");
+		String[] q6 = request.getParameterValues("Question6");
+		String[] q7 = request.getParameterValues("Question7");
+		String[] q8 = request.getParameterValues("Question8");
+		String[] q9 = request.getParameterValues("Question9");
+		String[] q10 = request.getParameterValues("Question10");
+		String[] q11 = request.getParameterValues("Question11");
+		String[] q12 = request.getParameterValues("Question12");
+
+		request.setAttribute("Test_result",
+				new Test_result(1, 15,  2,49, "reborn","CSS"));
 
 		//それぞれのラジオボタンから抜き出した選択肢を正誤フラグと比べる
 		//そこからあっていた数だけ正解数correct_answerに代入する

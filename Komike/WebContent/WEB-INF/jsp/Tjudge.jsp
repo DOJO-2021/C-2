@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,15 +53,16 @@
 
 
 <h4>理解度テスト結果</h4>
-<h5>問題ジャンル：HTML　(選んだ問題が反映される)　</h5>
+<h5>問題ジャンル：<c:out value="${Test_result.genre}" />　(選んだ問題が反映される)　</h5>
 
 <table>
+
 		<tr>
-			<td>正解数/問題数<br>15問/20問<br>
+			<td>正解数/問題数<br><c:out value="${Test_result.correct_answer}" />問/20問<br>
 			</td>
-			<td>正解数<br>75%<br>
+			<td>正解数<br><c:out value="${Test_result.correct_answer_rate}" />%<br>
 			</td>
-			<td>今回のランク<br>ゴールド<br>
+			<td>今回のランク<br><c:out value="${Test_result.rank}" /><br>
 			</td>
 		</tr>
 </table>
