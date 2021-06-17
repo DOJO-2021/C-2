@@ -19,7 +19,7 @@ public class UsersDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/Komike", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from USER where id = ? and password = ?";

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UsersDao;
 import model.Regist_result;
@@ -34,12 +35,12 @@ public class Pwchange extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/simpleBC/LoginServlet");
+			response.sendRedirect("/komike/Login");
 			return;
-		} */
+		}
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
@@ -49,11 +50,8 @@ public class Pwchange extends HttpServlet {
 		// パスワード変更処理を行う
 		UsersDao uDao = new UsersDao();
 		if (uDao.update(new User(id,password))) {	// 登録成功
+			// session.setAttribute("id", new Login_user(id));
 
-		/*	// セッションスコープにIDを格納する
-			HttpSession session = request.getSession();
-			session.setAttribute("id", new Login_user(id));
-	*/
 			request.setAttribute("Regist_result",
 			new Regist_result("登録成功！", "新規登録完了しました。", "/komike/Login"));
 		}
