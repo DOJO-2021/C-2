@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,50 +55,36 @@
 <br>
 <form method="POST" action="/komike/TestServlet">
 <table>
-
-
-<tr>
-<th>問題2</th>
-<th>問題を入れてください</th>
-<td>
-<label><input type="radio" name="Question2" value="1">選択肢1</label>
-<label><input type="radio" name="Question2" value="2">選択肢2</label>
-<label><input type="radio" name="Question2" value="3">選択肢3</label>
-<label><input type="radio" name="Question2" value="4">選択肢4</label></td>
-</tr>
-
-<tr>
-<th>問題3</th>
-<th>問題を入れてください</th>
-<td>
-<label><input type="radio" name="Question3" value="1">選択肢1</label>
-<label><input type="radio" name="Question3" value="2">選択肢2</label>
-<label><input type="radio" name="Question3" value="3">選択肢3</label>
-<label><input type="radio" name="Question3" value="4">選択肢4</label></td>
-</tr>
-
-<tr>
-<th>問題4</th>
-<th>問題を入れてください</th>
-<td>
-<label><input type="radio" name="Question4" value="1">選択肢1</label>
-<label><input type="radio" name="Question4" value="2">選択肢2</label>
-<label><input type="radio" name="Question4" value="3">選択肢3</label>
-<label><input type="radio" name="Question4" value="4">選択肢4</label></td>
-</tr>
-
-<tr>
-<th>問題5</th>
-<th>問題を入れてください</th>
-<td>
-<label><input type="radio" name="Question5" value="1">選択肢1</label>
-<label><input type="radio" name="Question5" value="2">選択肢2</label>
-<label><input type="radio" name="Question5" value="3">選択肢3</label>
-<label><input type="radio" name="Question5" value="4">選択肢4</label></td>
-</tr>
-
+	<c:forEach var="e" items="${questions}">
+		<tr>
+		<th>問題</th>
+			<td>
+				<h4><c:out value ="${e.question_sentence}"/></h4><!--問題文-->
+			</td>
+		</tr>
+		<tr>
+		<tr>
+			<td>
+				<label><input type="radio" name="Question2" value="1"><c:out value ="${e.choice}"/></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label><input type="radio" name="Question2" value="2">選択肢2</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label><input type="radio" name="Question2" value="3">選択肢3</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label><input type="radio" name="Question2" value="4">選択肢4</label>
+			</td>
+		</tr>
+	</c:forEach>
 </table>
-
 
 <input type="submit" name="JUDGE" value="回答終了">
 </form>

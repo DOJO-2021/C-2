@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.TestsDao;
+import model.Test_question;
 //import dao.TestsDao;
 import model.Test_result;
 
@@ -24,6 +27,23 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//リクエストパラメータを取得する
+		String question_number = request.getParameter("QUESTION_NUMBER");
+		String question_sentence = request.getParameter("QUESTION_SENTENCE");
+
+		String choice_number = request.getParameter("CHOICE_NUMBER");
+		String true_false = request.getParameter("TRUE_FALSE");
+		String choice = request.getParameter("CHOICE");
+
+
+
+		TestsDao TDao=new TestsDao();
+		List<Test_question> questions =TDao.select();
+
+
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("questions", questions);
 		// TODO Auto-generated method stub
 		//Tselect.javaがpostした内容のデータベースを取得する
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
