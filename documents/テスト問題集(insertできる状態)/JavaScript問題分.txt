@@ -1,0 +1,170 @@
+test_questionテーブルへの挿入例
+insert into test_question values('java01', 'コマンドライン引数について正しいものはどれか');
+test_choiceテーブルへの挿入例
+insert into test_choice values('java01', 1, '選択肢の内容', 0);
+insert into test_choice values('java01', 2, '選択肢の内容', 0);
+insert into test_choice values('java01', 3, '選択肢の内容', 0);
+insert into test_choice values('java01', 4, '選択肢の内容', 1);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+-----------------------------------------------------------------------------
+
+--問1
+insert into test_question values('JavaScript01', 'JavaScriptにおいて、ループカウンタiを0から10未満まで変化させて処理を行うfor文として適切なものはどれか');
+
+insert into test_choice values('JavaScript01', 1, 'for (i < 10; i++; var i = 0)', 0);
+insert into test_choice values('JavaScript01', 2, 'for (var i = 0; i < 10; i++)', 1);
+insert into test_choice values('JavaScript01', 3, 'for (i++; var i = 0; i < 10)', 0);
+insert into test_choice values('JavaScript01', 4, 'for (i++; i < 10; var i = 0)', 0);
+
+--問2
+insert into test_question values('JavaScript02', '制御構造の構文で数値の比較を条件式に使い、指定した範囲の回数だけ繰り返すように指定できる構文はどれか');
+
+insert into test_choice values('JavaScript02', 1, 'switch文', 0);
+insert into test_choice values('JavaScript02', 2, 'for文', 1);
+insert into test_choice values('JavaScript02', 3, 'while文', 0);
+insert into test_choice values('JavaScript02', 4, 'if else文', 0);
+
+--問3
+insert into test_question values('JavaScript03', 'if文のバリエーションとして適切なものはどれか');
+
+insert into test_choice values('JavaScript03', 1, 'elseブロックだけがある', 0);
+insert into test_choice values('JavaScript03', 2, 'else ifブロックだけがある', 0);
+insert into test_choice values('JavaScript03', 3, 'else ifブロックとelseブロックがある', 0);
+insert into test_choice values('JavaScript03', 4, 'ifブロックだけがある', 1);
+
+--問4
+insert into test_question values('JavaScript04', 'JavaScriptをHTMLファイルに直接記述する場合、記述するタグはどれか');
+
+insert into test_choice values('JavaScript04', 1, '<script>', 1);
+insert into test_choice values('JavaScript04', 2, '<body>', 0);
+insert into test_choice values('JavaScript04', 3, '<head>', 0);
+insert into test_choice values('JavaScript04', 4, '<title>', 0);
+
+--問5
+insert into test_question values('JavaScript05','JavaScriptで一行コメントアウトするときに記述するものは、次のうちどれか');
+
+insert into test_choice values('JavaScript05', 1, '//', 1);
+insert into test_choice values('JavaScript05', 2, '/* ? */', 0);
+insert into test_choice values('JavaScript05', 3, '{ }', 0);
+insert into test_choice values('JavaScript05', 4, ';', 0);
+
+--問6
+insert into test_question values('JavaScript06','JavaScriptにおいて、a = a * 2; と同じ処理を複合代入演算子で表記したものはどれか');
+
+insert into test_choice values('JavaScript06', 1, 'a =* 2', 0);
+insert into test_choice values('JavaScript06', 2, 'a**;', 0);
+insert into test_choice values('JavaScript06', 3, 'a *= 2;', 1);
+insert into test_choice values('JavaScript06', 4, '**a;', 0);
+
+--問7
+insert into test_question values('JavaScript07','JavaScriptで論理和演算子(OR)を表す演算子は次のうちどれか');
+
+insert into test_choice values('JavaScript07', 1, '||', 1);
+insert into test_choice values('JavaScript07', 2, '//', 0);
+insert into test_choice values('JavaScript07', 3, '&&', 0);
+insert into test_choice values('JavaScript07', 4, '!', 0);
+
+--問8
+insert into test_question values('JavaScript08','JavaScriptでconsole.log(3+5);と入力した際に出力される結果はどれか');
+
+insert into test_choice values('JavaScript08', 1, '3+5', 0);
+insert into test_choice values('JavaScript08', 2, '35', 0);
+insert into test_choice values('JavaScript08', 3, '8', 1);
+insert into test_choice values('JavaScript08', 4, '3-5', 0);
+
+--問9
+insert into test_question values('JavaScript09','定数の定義をする際に必要なものはどれか');
+
+insert into test_choice values('JavaScript09', 1, 'let', 0);
+insert into test_choice values('JavaScript09', 2, 'const', 1);
+insert into test_choice values('JavaScript09', 3, 'num', 0);
+insert into test_choice values('JavaScript09', 4, 'log', 0);
+
+--問10 
+insert into test_question values('JavaScript10','配列の存在しないインデックス番号の要素や、オブジェクトの存在しないプロパティの要素を取得しようとするとどのような結果が表示されるか');
+
+insert into test_choice values('JavaScript10', 1, 'UNDEFEATED', 0);
+insert into test_choice values('JavaScript10', 2, 'consoleError', 0);
+insert into test_choice values('JavaScript10', 3, 'FLOAT', 0);
+insert into test_choice values('JavaScript10', 4, 'undefined', 1);
+
+--問11
+insert into test_question values('JavaScript11','変数の定義をする際に必要なものはどれか');
+
+insert into test_choice values('JavaScript11', 1, 'let', 1);
+insert into test_choice values('JavaScript11', 2, 'const', 0);
+insert into test_choice values('JavaScript11', 3, 'num', 0);
+insert into test_choice values('JavaScript11', 4, 'log', 0);
+
+--問12
+insert into test_question values('JavaScript12','字下げを意味する用語はどれか');
+
+insert into test_choice values('JavaScript12', 1, 'インデックス', 0);
+insert into test_choice values('JavaScript12', 2, 'バッククォート', 0);
+insert into test_choice values('JavaScript12', 3, 'インデント', 1);
+insert into test_choice values('JavaScript12', 4, 'インサート', 0);
+
+--問13
+insert into test_question values('JavaScript13','JavaScriptで等しいことを表す比較演算子はどれか');
+
+insert into test_choice values('JavaScript13', 1, 'a equals b', 0);
+insert into test_choice values('JavaScript13', 2, 'a = b', 0);
+insert into test_choice values('JavaScript13', 3, 'a === b', 1);
+insert into test_choice values('JavaScript13', 4, 'a != b', 0);
+
+--問14
+insert into test_question values('JavaScript14','JavaScriptで変数の値を更新するコードを書き忘れると何が起きてしまうか');
+
+insert into test_choice values('JavaScript14', 1, '無限ループ', 1);
+insert into test_choice values('JavaScript14', 2, '強制終了', 0);
+insert into test_choice values('JavaScript14', 3, 'エスケープ処理', 0);
+insert into test_choice values('JavaScript14', 4, 'シャットダウン', 0);
+
+--問15
+insert into test_question values('JavaScript15','計算式の省略で number += 1はどのように省略して書くことができるか');
+
+insert into test_choice values('JavaScript15', 1, 'number ++', 1);
+insert into test_choice values('JavaScript15', 2, 'number = 1', 0);
+insert into test_choice values('JavaScript15', 3, 'number +', 0);
+insert into test_choice values('JavaScript15', 4, 'number =+', 0);
+
+--問16
+insert into test_question values('JavaScript16','配列の要素数を全て取得できるものはどれか');
+
+insert into test_choice values('JavaScript16', 1, '配列.length', 1);
+insert into test_choice values('JavaScript16', 2, '配列.const', 0);
+insert into test_choice values('JavaScript16', 3, '配列.log', 0);
+insert into test_choice values('JavaScript16', 4, '配列.i ++', 0);
+
+--問17
+insert into test_question values('JavaScript17','関数を定義する際に必要なものはどれか');
+
+insert into test_choice values('JavaScript17', 1, 'window(){}', 0);
+insert into test_choice values('JavaScript17', 2, 'const(){}', 0);
+insert into test_choice values('JavaScript17', 3, 'setDispatcher(){}', 0);
+insert into test_choice values('JavaScript17', 4, 'function(){}', 1);
+
+--問18
+insert into test_question values('JavaScript18','呼び出し元で受け取る処理結果をなんというか');
+
+insert into test_choice values('JavaScript18', 1, '引数', 0);
+insert into test_choice values('JavaScript18', 2, '戻り値', 1);
+insert into test_choice values('JavaScript18', 3, '関数', 0);
+insert into test_choice values('JavaScript18', 4, '真偽値', 0);
+
+--問19
+insert into test_question values('JavaScript19','returnによる処理で適切なものはどれか');
+
+insert into test_choice values('JavaScript19', 1, '戻り値だけを返す性質', 0);
+insert into test_choice values('JavaScript19', 2, '戻り値だけでなく、関数の処理を終了させる性質', 1);
+insert into test_choice values('JavaScript19', 3, '関数に追加情報を与える性質', 0);
+insert into test_choice values('JavaScript19', 4, '呼び出し元に値を渡さず、終了させる性質', 0);
+
+--問20
+insert into test_question values('JavaScript20','jQueryとは何か');
+
+insert into test_choice values('JavaScript20', 1, 'Javaのフレームワーク', 0);
+insert into test_choice values('JavaScript20', 2, 'JavaScriptのフレームワーク', 1);
+insert into test_choice values('JavaScript20', 3, 'JavaScriptを難しく長い文章でより複雑にしたもの', 0);
+insert into test_choice values('JavaScript20', 4, 'オブジェクト指向でよく使われるもの', 0);
