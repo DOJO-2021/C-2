@@ -43,7 +43,7 @@ insert into test_question values('java06', 'if文の構文のバリエーショ�
 
 insert into test_choice values('java06', 1, 'ifブロックだけのif文を作れる。', 1);
 insert into test_choice values('java06', 2, 'ifブロックとelseブロックでif文を作れる。', 0);
-insert into test_choice values('java06', 3, 'ifブロックとelse ifブロックでif文を作れる。, 0);
+insert into test_choice values('java06', 3, 'ifブロックとelse ifブロックでif文を作れる。', 0);
 insert into test_choice values('java06', 4, 'elseブロックを複数持つif文を作れる。', 0);
 
 問題7
@@ -81,7 +81,7 @@ insert into test_choice values('java10', 4, '条件式を評価し、falseであ
 問題11
 insert into test_question values('java11', 'Aというインターフェイスを実装してBというクラスを定義する構文はどれか。');
 
-insert into test_choice values('java11', 1, 'class B extends A,' 0);
+insert into test_choice values('java11', 1, 'class B extends A ', 0);
 insert into test_choice values('java11', 2, 'class B  interface  A', 0);
 insert into test_choice values('java11', 3, 'class B auto implements A', 0);
 insert into test_choice values('java11', 4, 'class B implements A', 1);
