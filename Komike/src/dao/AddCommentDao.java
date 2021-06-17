@@ -22,7 +22,7 @@ public class AddCommentDao{
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
 			String sql = "insert into chat values (null, ?, ?, ?, ?, current_timestamp)";
@@ -95,7 +95,7 @@ public class AddCommentDao{
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
 			String sql ="delete from chat where chat_id=?";

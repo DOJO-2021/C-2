@@ -54,6 +54,7 @@
 	<p>id<input type = "text" name = "id" ></p>
 	<p>名前<input type = "text" name = "name"></p>
 	<p>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></p>
+	<!-- 添付画像のプレビューを表示 -->
 	<canvas id = "preview" style ="max-width:200px;"></canvas><br>
 	<p>本文<br>
 	<textarea name = "text" id = "text"></textarea>
@@ -66,13 +67,13 @@
 <c:forEach var="e" items="${infList}" >
 		<p>Chat_ID<c:out value ="${e.chat_id}"/></p><br>
 		<b>ID</b><c:out value ="${e.id}"/><br>
-		 <b>名前</b><c:out value ="${e.name}" /><br>
-		 <b>本文</b><c:out value="${e.text}" /><br>
-		 <img src="${'/komike/images/'+=e.image_name}"><br>
-		 <b>時間</b><c:out value="${e.time}"/><br>
+		<b>名前</b><c:out value ="${e.name}" /><br>
+		<b>本文</b><c:out value="${e.text}" /><br>
+		<img src="${'/komike/images/'+=e.image_name}"><br>
+		<b>時間</b><c:out value="${e.time}"/><br>
 	 <form method = "post" action="/komike/ChatServlet" name="chat2">
 	 	<input type="hidden" name="chat_id" value="<c:out value ="${e.chat_id}"/>">
-		 <input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
+		<input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
 	</form>
 	<hr>
 </c:forEach>

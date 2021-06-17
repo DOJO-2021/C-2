@@ -93,8 +93,10 @@ public class ChatServlet extends HttpServlet {
 			Part part = request.getPart("image");//画像のパラメータを取得
 			String image = this.getFileName(part);//画像のファイル名の取得
 			//ファイルの書込み
-			part.write(image);
-			cDao.insert(new Chat(0, id, name, text, image,null));
+			if(part == null) {
+			part.write(null);
+			}
+			cDao.insert(new Chat(0, id, name, text, image, null));
 		}
 
 			//掲示板にリダイレクトする　〇

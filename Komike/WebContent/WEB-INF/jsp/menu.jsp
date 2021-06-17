@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +48,22 @@
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
+<form method = "post" action="/komike/ChatServlet" name="chat">
+  <p><label>キーワード検索：<input type="search" name="key" size="30" maxlength="255"></label></p>
+ </form>
 
+<h2>いまよく聞かれている質問</h2>
+<!-- データベースから今までの掲示板の内容を全件表示 -->
+<div class="test">
+<c:forEach var="e" items="${infList}" >
+		<p>QUESTION_ID<c:out value ="${e.question_id}"/></p><br>
+		<b>ID</b><c:out value ="${e.id}"/><br>
+		<b>件名</b><c:out value ="${e.title}" /><br>
+		<b>名前</b><c:out value ="${e.name}" /><br>
+		<b>本文</b><c:out value="${e.text}" /><br>
+		<b>高評価</b><c:out value="${e.good_number}"/><br>
+	<hr>
+</c:forEach>
+</div>
 </body>
 </html>
