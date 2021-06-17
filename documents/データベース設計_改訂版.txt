@@ -21,6 +21,7 @@ id varchar (15) not null,
 title varchar (20) not null,
 name varchar (15) not null,
 text varchar (200) not null,
+image_name(100) not null,
 good_number int not null
 )
 
