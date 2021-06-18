@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="paginathing.min.js"></script>
 <title>雑談ルーム</title>
+<link rel = "stylesheet" href = "/C-2/komike/css/chat.css">
 </head>
 <body>
 <h1>Komike</h1>
@@ -49,34 +52,55 @@
 		</div>
 <!-- パンくずリストここまで -->
 <p>雑談ルームへようこそ</p>
-<!-- 掲示板への書き込み内容を記入するフォーム -->
-<form method = "post" action="/komike/ChatServlet" name="chat" enctype="multipart/form-data">
-	<p>名前<input type = "text" name = "name"></p>
-	<p>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></p>
-	<!-- 添付画像のプレビューを表示 -->
-	<canvas id = "preview" style ="max-width:200px;"></canvas><br>
-	<p>本文<br>
-	<textarea name = "text" id = "text"></textarea>
-	</p>
-	<input type = "submit" name = "submit" value = "書き込む"  onclick  ="return cancelsubmit()">
-</form>
-
 <!-- データベースから今までの掲示板の内容を全件表示 -->
-<div class="test">
+<div class="items">
 <c:forEach var="e" items="${infList}" >
+	<div class = "item">
 		<p>Chat_ID<c:out value ="${e.chat_id}"/></p><br>
-		<b>ID</b><c:out value ="${e.id}"/><br>
+	</div>
+	<div class = "item">
+
+	</div>
+	<div class = "item">
 		<b>名前</b><c:out value ="${e.name}" /><br>
+	</div>
+	<div class = "item">
 		<b>本文</b><c:out value="${e.text}" /><br>
+	</div>
+	<div class = "item">
 		<img src="${'/komike/images/'+=e.image_name}"><br>
+	</div>
+	<div class = "item">
 		<b>時間</b><c:out value="${e.time}"/><br>
+	</div>
 	 <form method = "post" action="/komike/ChatServlet" name="chat2">
 	 	<input type="hidden" name="chat_id" value="<c:out value ="${e.chat_id}"/>">
+	 		<input type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
 		<input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
 	</form>
 	<hr>
 </c:forEach>
 </div>
+
+<!-- 掲示板への書き込み内容を記入するフォーム -->
+<table class = chat>
+	<form method = "post" action="/komike/ChatServlet" name="chat" enctype="multipart/form-data">
+		<tr>
+			<td>名前<input type = "text" name = "name"></td>
+		</tr>
+		<tr>
+		<td>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></td>
+		</tr>
+		<!-- 添付画像のプレビューを表示 -->
+		<canvas id = "preview" style ="max-width:200px;"></canvas>
+		<tr>
+			<td>本文<textarea name = "text" id = "text" cols = "40" rows = "6"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type = "submit" name = "submit" value = "書き込む"  onclick  ="return cancelsubmit()"></td>
+		</tr>
+	</form>
+</table>
 </body>
 <script>
 //「書き込み」を押したときに、本文が空であったらfalseを返し、書き込み出来なくする機能
@@ -86,6 +110,7 @@ function cancelsubmit(){
 		return false;
 	}
 }
+
 
 //画像を表示させる機能
 function previewImage(obj){
@@ -122,5 +147,14 @@ function deletesubmit(){
 	}
 }
 
+jQuery(document).ready(function($){
+    $('.items').paginathing({
+        perPage: 4,
+        firstLast: false,
+        prevText:'prev' ,
+        nextText:'next' ,
+        activeClass: 'active',
+    })
+});
 </script>
 </html>

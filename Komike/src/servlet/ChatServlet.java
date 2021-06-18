@@ -38,6 +38,8 @@ public class ChatServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+
+
 		//データベースから全件取得 　〇
 		List<Chat> infList = FindCommentDao.findcomment();
 
@@ -59,17 +61,6 @@ public class ChatServlet extends HttpServlet {
 
 
 
-		// リクエストパラメータを取得する　partで取得できるようにする
-
-//		Part p = request.getPart("chat_id");
-//		try(InputStream inputStream = p.getInputStream()) {
-//			BufferedReader bufReader = new BufferedReader(new InputStreamReader(inputStream));
-//			//実際のデータを取ってくる
-//			String val = (String)bufReader.lines().collect(Collectors.joining());
-//		} catch (IOException e) {
-//			throw new RuntimeException(e);
-//		}
-
 		//AddCommentDaoのインスタンスを生成
 		AddCommentDao cDao = new AddCommentDao();
 
@@ -79,6 +70,7 @@ public class ChatServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Login_user user = (Login_user)session.getAttribute("id");
 		String id = user.getId();
+		System.out.println(id);
 		String name = request.getParameter("name");
 		String text = request.getParameter("text");
 
@@ -86,9 +78,18 @@ public class ChatServlet extends HttpServlet {
 		//削除機能の実装　〇
 		//削除ボタンが押されたらchat_idをもとに削除する
 		if(request.getParameter("submit").equals("削除")) {
+			String getId = request.getParameter("getId");
+			System.out.println(getId);
 			int chat_id = Integer.parseInt(request.getParameter("chat_id"));
+			//セッションスコープのIDとデータベースのIDが同じであったら削除
+			if(id.equals(getId)) {
 			cDao.delete(chat_id);
+			}
+			else {
+				System.out.println("IDが違うため削除できません");
+			}
 		}
+
 		//登録処理の実装
 		//書き込みボタンを押されたら、登録処理を行う
 		else if(request.getParameter("submit").equals("書き込む")) {

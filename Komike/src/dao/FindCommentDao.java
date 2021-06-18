@@ -12,6 +12,7 @@ import java.util.List;
 import model.Answer;
 import model.Chat;
 import model.Question;
+import model.Test_result;
 
 //データベースから掲示板の内容を取り出すクラス
 public class FindCommentDao {
@@ -231,6 +232,73 @@ public class FindCommentDao {
 
 	    }
 
+	//ランクを取得するメソッド
+	public static List<Test_result> rank(int id) {
+		//id name commnetを書くのするリスト
+		Connection conn = null;
+		List<Test_result> list = new ArrayList<Test_result>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
+			try {
+			// SQL文を準備する
+				Statement st = conn.createStatement();
+				String sql = "select rank from question_result where id = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				try {
+				//sqlを送信
+					pStmt.setInt(1, id);
+
+					ResultSet rs = st.executeQuery(sql);
+
+					// SQL文を完成させる　〇
+					while(rs.next()) {
+						Test_result ch = new Test_result();
+						ch.setRank(rs.getInt("rank"));
+						list.add(ch);
+					}
+
+					rs.close();
+					st.close();
+
+				}catch(SQLException e) {
+                    e.printStackTrace();
+                }
+			} catch (SQLException e) {
+	                e.printStackTrace();
+	            }finally {
+	                // データベース接続の切断
+	                if (conn != null) {
+	                    try {
+	                        conn.close();
+
+	                    } catch (SQLException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            System.out.println("Connection Failed.");
+	            return null;
+	        }
+			catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			list = null;
+		}
+	        return list;
+
+	    }
+
+
+
 }
+
+
 
 

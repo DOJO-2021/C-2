@@ -44,14 +44,6 @@ public class MenuServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 
-		request.setCharacterEncoding("UTF-8");
-		String key = request.getParameter("key");
-		List<Question> question = FindCommentDao.search(key);
-				//検索結果をリクエストスコープに格納　〇
-				request.setAttribute("question", question);
-
-				response.sendRedirect("/komike/MenuServlet");
-
 	}
 
 }
