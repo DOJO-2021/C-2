@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Answer;
 import model.Question;
 
 
@@ -30,6 +31,10 @@ public class Q_AsDao {
 	       String sql = "select * from Question";
 	       PreparedStatement pStmt = conn.prepareStatement(sql);
 
+	       // SQL文を準備するAnswerテーブル
+	       String sql_2 = "select * from Answer where question_id = ?";
+	       PreparedStatement pStmt1 = conn.prepareStatement(sql_2);
+
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -46,8 +51,27 @@ public class Q_AsDao {
 						rs.getInt("good_number"),
 						null
 						);
+
+				pStmt1.setInt(1, comment.getQuestion_id());
+				ResultSet rsr = pStmt1.executeQuery();
+
+					while(rsr.next()) {
+						Answer ans = new Answer();
+						  ans.setQuestion_id(rsr.getInt("question_id"));
+						  ans.setAnswer_id(rsr.getInt("answer_id"));
+						  ans.setId(rsr.getString("id"));
+						  ans.setName(rsr.getString("name"));
+						  ans.setText(rsr.getString("text"));
+
+						  comment.getAnswer().add(ans);
+					}
+
+
 				QuestionList.add(comment);
 			}
+			rs.close();
+
+
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

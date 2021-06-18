@@ -10,7 +10,6 @@
 <body>
   <h1>Komike(仮)</h1>
   <h2>受講者向け掲示板サイト</h2>
-    <p><label>キーワード検索：<input type="search" name="search" size="30" maxlength="255"></label></p>
 <!-- パンくずリストここから -->
 	<div class="ol">
 			<ol class="breadcrumb" itemscope
@@ -49,6 +48,11 @@
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
+<form method = "post" action="/komike/MenuServlet" name="chat">
+  <p><label>キーワード検索：<input type="search" name="key" size="30" maxlength="255"></label></p>
+  <input type = "submit" name = "submit" value = "検索する">
+ </form>
+
   <h3>分からないことを質問してみましょう</h3>
     <p>質問は以下の欄に入力してください</p>
 <!-- 質問ルームへの書き込み内容を記入するフォーム -->
@@ -75,6 +79,8 @@
     <b>本文</b><c:out value ="${e.text}"/><br>
     <img src="${'/komike/images/'+=e.image_name}"><br>
     <b>評価数</b><c:out value ="${e.good_number}"/>
+
+
 <form method="post" action="/komike/Q_AServlet">
   </form>
 </c:forEach>
