@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン￤Komike</title>
-<!--後でCSS反映 <link rel="stylesheet" href="/Komike/css/〇〇〇"> -->
+<link rel="stylesheet" href="/komike/css/login.css">
 </head>
 <body>
 	<div class="form-wrapper">

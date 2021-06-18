@@ -25,14 +25,14 @@ public class Pwchange extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/komike/Login");
 			return;
 		}
-
 
 		// パスワード変更ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/pwchange.jsp");
@@ -42,7 +42,8 @@ public class Pwchange extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
@@ -54,26 +55,41 @@ public class Pwchange extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		//String id = request.getParameter("id");
+
 		//ユーザーIDを取得
-		Login_user user = (Login_user)session.getAttribute("id");
+		Login_user user = (Login_user) session.getAttribute("id");
 		String id = user.getId();
-		//新パスワード
-		String password = request.getParameter("password");
 
-		//旧パスワードがあっていないときのエラー処理
 
+		String password = request.getParameter("password");         //旧パスワード
+		String password2 = request.getParameter("password2");    //新パスワード
+
+
+		//古いパスワードと入力されたものが一致しているかどうか
+		UsersDao uDao = new UsersDao();
+		if (uDao.isLoginOK(id, password)) {	// 一致してた
+			// メニューサーブレットにリダイレクトする
+			request.setAttribute("Regist_result",
+					new Regist_result("登録成功！", "変更完了しました。", "/komike/Login"));
+		}
+		else {// 一致してない
+			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+			request.setAttribute("Regist_result", //Regist_result.java	の３つのString型をもってくる
+			new Regist_result("ログイン失敗！", "パスワードに間違いがあります。", "/komike/PwchangeServlet"));
+
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist_result.jsp");
+			dispatcher.forward(request, response);
+		}
 
 		// パスワード変更処理を行う
-		UsersDao uDao = new UsersDao();
-		if (uDao.update(new User(id,password))) {	// 登録成功
-			// session.setAttribute("id", new Login_user(id));
-
+		UsersDao usDao = new UsersDao();
+		if (usDao.update(new User(id, password2))) { // 登録成功
 			request.setAttribute("Regist_result",
-			new Regist_result("登録成功！", "変更完了しました。", "/komike/Login"));
-		}
-		else {												// 登録失敗
+					new Regist_result("登録成功！", "変更完了しました。", "/komike/Login"));
+		} else { // 登録失敗
 			request.setAttribute("Regist_result",
-			new Regist_result("登録失敗！", "もう一度やり直してください。", "/komike/Login"));
+					new Regist_result("登録失敗！", "もう一度やり直してください。", "/komike/Login"));
 		}
 
 		// 結果ページにフォワードする
@@ -81,3 +97,4 @@ public class Pwchange extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 }
+
