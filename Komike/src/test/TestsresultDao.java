@@ -5,93 +5,67 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-import model.Test_result;
+import model.Test_question;
 
 public class TestsresultDao {
 
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
-			public List<Test_result> select() {
-				Connection conn = null;
+	// 正解ならtrueを返す
+	public List<Test_question> select() {
+		Connection conn = null;
+		List<Test_question> questionList = new ArrayList<Test_question>();
 
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
 
-				try {
-					// JDBCドライバを読み込む
-					Class.forName("org.h2.Driver");
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
 
-					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
-					try {
-						// SQL文を準備する
-							String sql = "select * from test_question";
-							PreparedStatement st = conn.prepareStatement(sql);
+			// SQL文を準備する test_question用
+			String sql = "select * from test_question";
+			PreparedStatement st = conn.prepareStatement(sql);
 
+			// SQL文を準備する test_choice用
+			String sql_choice = "select * from test_choice where question_number = ?";
+			PreparedStatement st_chioce = conn.prepareStatement(sql_choice);
 
+			// SELECT文を実行し、true_falseを取り出す
+			ResultSet rs = pStmt.executeQuery();
 
-							try {
-								// SQL文を実行し、結果表を取得する
-								ResultSet rs = st.executeQuery();
-
-								// SQL文を完成させる
-								while(rs.next()) {
-									Test_result te = new Test_result();
-									rs.getInt("rank");
-									rs.getInt("correct_answer");
-									rs.getInt("number");
-									rs.getDouble("correct_answer_rate");
-									rs.getString("id");
-									rs.getString("genre");
-
-
-									//ResultSet rs = st_chioce.executeQuery();
-
-									/*while(rs_choice.next()){
-										Test_choice_detail tcd = new Test_choice_detail();
-										tcd.setChoice_number(rs_choice.getInt("choice_number"));
-										tcd.setTrue_false(rs_choice.getBoolean("True_false"));
-										tcd.setChoice(rs_choice.getString("choice"));
-
-										te.getChoice_detail().add(tcd);
-									}*/
-
-
-									
-								}
-
-								rs.close();
-								st.close();
-
-							}catch(SQLException e) {
-			                    e.printStackTrace();
-			                }
-						} catch (SQLException e) {
-				                e.printStackTrace();
-				            }finally {
-				                // データベース接続の切断
-				                if (conn != null) {
-				                    try {
-				                        conn.close();
-
-				                    } catch (SQLException e) {
-				                        e.printStackTrace();
-				                    }
-				                }
-				            }
-				        } catch (SQLException e) {
-				            e.printStackTrace();
-				            System.out.println("Connection Failed.");
-				            return null;
-				        }
-						catch (ClassNotFoundException e) {
-						e.printStackTrace();
-						
-					}
-				        return questionList;
-
-				    }
-
+			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+			rs.next();
+			if (rs.getInt("count(*)") == 1) {
+				QuestionResult = true;
 			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			QuestionResult = false;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			QuestionResult = false;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					QuestionResult = false;
+				}
+			}
+		}
+
+		// 結果を返す
+		return QuestionResult;
+	}
+}
 /*public List<Test_question> select(String key) {
 Connection conn = null;
 	ArrayList<Test_question> results = new ArrayList<Test_question>();
