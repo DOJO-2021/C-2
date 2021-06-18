@@ -38,7 +38,7 @@
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/Test"> <span itemprop="name">理解度テスト</span>
+					href="/komike/Tselect"> <span itemprop="name">理解度テスト</span>
 				</a>
 					<meta itemprop="position" content="4" /></li>
 				<!-- 4つめ -->

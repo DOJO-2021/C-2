@@ -19,20 +19,20 @@
 				<!-- 1つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/Menu"> <span itemprop="name">メニュー</span>
+					href="/komike/MenuServlet"> <span itemprop="name">メニュー</span>
 				</a>
 					<meta itemprop="position" content="1" /></li>
 
 				<!-- 2つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/Chat"> <span itemprop="name">雑談ルーム</span>
+					href="/komike/ChatServlet"> <span itemprop="name">雑談ルーム</span>
 				</a>
 					<meta itemprop="position" content="2" /></li>
 				<!-- 3つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/Q_A"> <span itemprop="name">Q&amp;Aルーム</span>
+					href="/komike/Q_AServlet"> <span itemprop="name">Q&amp;Aルーム</span>
 				</a>
 					<meta itemprop="position" content="3" /></li>
 				<!-- 4つめ -->
@@ -44,7 +44,7 @@
 				<!-- 4つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/Pwchange"> <span itemprop="name">パスワード変更はこちら</span>
+					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
 			</ol>
