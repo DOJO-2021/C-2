@@ -27,8 +27,7 @@ public class TestsresultDao {
 							String sql = "select * from test_question";
 							PreparedStatement st = conn.prepareStatement(sql);
 
-							String sql_choice = "select * from test_choice where question_number = ?";
-							PreparedStatement st_chioce = conn.prepareStatement(sql_choice);
+
 
 							try {
 								// SQL文を実行し、結果表を取得する
@@ -37,11 +36,15 @@ public class TestsresultDao {
 								// SQL文を完成させる
 								while(rs.next()) {
 									Test_result te = new Test_result();
-									te.setrank(rs.getInt("rank"));
-									te.setQuestion_sentence(rs.getInt("correct_answer"));
+									rs.getInt("rank");
+									rs.getInt("correct_answer");
+									rs.getInt("number");
+									rs.getDouble("correct_answer_rate");
+									rs.getString("id");
+									rs.getString("genre");
 
-									st_chioce.setString(1, te.getQuestion_number());
-									ResultSet rs_choice = st_chioce.executeQuery();
+
+									//ResultSet rs = st_chioce.executeQuery();
 
 									/*while(rs_choice.next()){
 										Test_choice_detail tcd = new Test_choice_detail();
@@ -53,7 +56,7 @@ public class TestsresultDao {
 									}*/
 
 
-									questionList.add(te);
+									
 								}
 
 								rs.close();
@@ -82,7 +85,7 @@ public class TestsresultDao {
 				        }
 						catch (ClassNotFoundException e) {
 						e.printStackTrace();
-						questionList = null;
+						
 					}
 				        return questionList;
 
