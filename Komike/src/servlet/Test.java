@@ -27,6 +27,10 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//リクエストパラメータを取得する
+		String question_number = request.getParameter("QUESTION_NUMBER");
+		String question_sentence = request.getParameter("QUESTION_SENTENCE");
+
 
 		TestsDao TDao=new TestsDao();
 		List<Test_question> questions =TDao.select();

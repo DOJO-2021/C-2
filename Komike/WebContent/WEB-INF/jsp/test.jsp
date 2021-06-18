@@ -65,11 +65,11 @@
 		<tr>
 		<c:forEach var="d" items="${e.choice_detail}">
 			<td>
-				<label><input type="radio" name="Question2" value="1"><c:out value ="${d.choice}"/></label>
+				<label><input type="radio" name="${e.question_number}" value="${d.choice_number}"><c:out value ="${d.choice}"/></label>
 			</td>
 		</tr>
 		</c:forEach>
-	</c:forEach>
+		</c:forEach>
 </table>
 
 <input type="submit" name="JUDGE" value="回答終了">
