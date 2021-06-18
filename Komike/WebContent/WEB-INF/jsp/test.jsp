@@ -63,26 +63,12 @@
 			</td>
 		</tr>
 		<tr>
-		<tr>
+		<c:forEach var="d" items="${e.choice_detail}">
 			<td>
-				<label><input type="radio" name="Question2" value="1"><c:out value ="${e.choice}"/></label>
+				<label><input type="radio" name="Question2" value="1"><c:out value ="${d.choice}"/></label>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<label><input type="radio" name="Question2" value="2">選択肢2</label>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label><input type="radio" name="Question2" value="3">選択肢3</label>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label><input type="radio" name="Question2" value="4">選択肢4</label>
-			</td>
-		</tr>
+		</c:forEach>
 	</c:forEach>
 </table>
 
