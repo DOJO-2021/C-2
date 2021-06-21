@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.TestsDao;
+import dao.TestsresultDao;
 import model.Test_question;
-//import dao.TestsDao;
 import model.Test_result;
 
 /**
@@ -60,6 +60,7 @@ public class Test extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("ID");
 		String genre = request.getParameter("GENRE");
+		//boolean true_false = request.getParameter("GENRE");
 
 		// 選ばれたラジオボタンの情報を取得
 		//String s = request.getParameter("radiobutton");
@@ -75,6 +76,11 @@ public class Test extends HttpServlet {
 		String[] q10 = request.getParameterValues("Question10");
 		String[] q11 = request.getParameterValues("Question11");
 		String[] q12 = request.getParameterValues("Question12");
+
+		//Daoからデータを持ってくる
+		TestsresultDao TRDao=new TestsresultDao();
+		//List<Test_question> questions =TRDao.select(true_false);
+
 
 		request.setAttribute("Test_result",
 				new Test_result(1, 15,  2,49, "reborn","CSS"));
