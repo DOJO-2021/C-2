@@ -10,7 +10,7 @@
 <body>
 	<div class="form-wrapper">
 		<main>
-			<h1>Welcome</h1>
+	<div class = "komike"><img src="/komike/images/Komike.png" width="220" height="240" alt="写真"></div>
 			<form method="POST" action="/komike/Login" id="form">
 				<div class="form-item">
 					<label for="id"></label> <input type="text" name="id"

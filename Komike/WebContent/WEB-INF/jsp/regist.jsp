@@ -5,14 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>新規登録 ¦ Komike</title>
-<!--後でCSS反映 <link rel="stylesheet" href="/Komike/css/〇〇〇"> -->
+<link rel="stylesheet" href="/komike/css/login.css">
 </head>
 <body>
 	<div class="form-wrapper">
+	<div class = "komike"><img src="/komike/images/Komike.png" width="220" height="240" alt="写真"></div>
 		<main>
-			<h1>Komike</h1>
-			<h2>受講者向け掲示板サイト</h2>
-			<h3>新規登録</h3>
+			<h2>新規登録</h2>
 			<form method="POST" action="/komike/Regist" id="form">
 				<div class="form-item">
 					<label for="id"></label> <input type="text" name="id"
