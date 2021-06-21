@@ -49,7 +49,7 @@ public class Q_AsDao {
 						rs.getString("text"),
 						rs.getString("image_name"),
 						rs.getInt("good_number"),
-						null
+						new ArrayList<Answer>()
 						);
 
 				pStmt1.setInt(1, comment.getQuestion_id());
@@ -184,7 +184,75 @@ public class Q_AsDao {
 			// 結果を返す
 			return result;
 		}
+			//Anwerのinsert文
+		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
+		public boolean insert(Answer answer) {
+			Connection conn = null;
+			boolean result = false;
 
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
+
+				// SQL文を準備する
+				String sql = "insert into Question values (null,?,?,?)";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				//question.getQuestion_id();
+				//String null OK
+				//Int    null NG  0はOK
+				//Question null OK
+
+
+				if (answer.getId() != null) {
+					pStmt.setString(1, answer.getId());
+				}
+				else {
+					pStmt.setString(1, "null");
+				}
+				if (answer.getName() != null) {
+					pStmt.setString(2, answer.getName());
+				}
+				else {
+					pStmt.setString(2, "null");
+				}
+
+				if (answer.getText() != null) {
+					pStmt.setString(3,answer.getText());
+				}
+				else {
+					pStmt.setString(3, "null");
+				}
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			// 結果を返す
+			return result;
+		}
 
 		}
 
