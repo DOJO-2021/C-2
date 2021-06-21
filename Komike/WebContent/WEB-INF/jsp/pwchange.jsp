@@ -5,14 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード変更</title>
-<!--後でCSS反映 <link rel="stylesheet" href="/C-2/css/〇〇〇"> -->
+<link rel="stylesheet" href="/komike/css/login.css">
 </head>
 <body>
 	<div class="form-wrapper">
+		<div class = "komike"><img src="/komike/images/Komike.png" width="220" height="240" alt="写真"></div>
 		<main>
-			<h1>Komike</h1>
-			<h2>受講者向け掲示板サイト</h2>
-			<h3>パスワード変更</h3>
+			<h2>パスワード変更</h2>
 			<form method="POST" action="/komike/PwchangeServlet" id="form">
 				<div class="form-item">
 					<label for="password"></label>
@@ -23,7 +22,7 @@
 					 <input type="text" name="password2"placeholder="新規パスワード"></input>
 				</div>
 				<div class="button-panel">
-					<input type="submit" class="button" title="Login" value="変更"></input>
+					<input type="submit" class="button" title="change" value="変更"></input>
 				</div>
 			</form>
 			<div class="form-footer"></div>

@@ -22,7 +22,7 @@
 						required="required" placeholder="Password"></input>
 				</div>
 				<div class="button-panel">
-					<input type="submit" class="button" title="Login" value="登録"></input>
+					<input type="submit" class="button" title="regist" value="登録"></input>
 				</div>
 			</form>
 			<div class="form-footer"></div>

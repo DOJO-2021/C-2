@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+/* fontawesome */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+	font-family: 'FontAwesome', sans-serif;
+}
+
+/* Simple Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*ヘッダーのロゴ*/
+.komike {
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%; /* 横幅を割合で指定 */
+	height: auto; /* 高さは自動指定 */
+}
+
+/*パンくずリスト*/
+.ol {
+	border: 1px solid #aaaaaa; /* 境界線を実線で指定する */
+	background: #cccccc; /* 背景の色を指定する */
+	text-align: left; /* インライン要素のセンタリングを指定する */
+	margin: 0px auto; /* ブロックレベル要素のセンタリングを指定する */
+}
+
+.breadcrumb {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.breadcrumb li {
+	display: inline; /*横に並ぶように*/
+	list-style: none;
+	font-weight: bold; /*太字*/
+}
+
+.breadcrumb li:after { /* ?を表示*/
+	font-family: FontAwesome;
+	content: '\f0da';
+	padding: 0 0.2em;
+	color:white;
+}
+
+.breadcrumb li:last-child:after {
+	content: '';
+}
+
+.breadcrumb li a {
+	text-decoration: none;
+	color: #888;
+}
+
+.breadcrumb li:first-child a:before {
+	/*家アイコン*/
+	font-family: FontAwesome;
+	content: '\f015';
+	font-weight: normal;
+	font-size: 1.1em;
+	color: #f3948f;
+}
+
+.breadcrumb li a:hover {
+	text-decoration: underline;
+}
+
+/*パンくずリストここまで*/
