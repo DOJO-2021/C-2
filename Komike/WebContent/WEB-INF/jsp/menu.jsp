@@ -8,11 +8,13 @@
 <title>メニュー</title>
 <link rel="stylesheet" href="/komike/css/menu.css">
 </head>
-<body>
-	<div class="komike">
-		<img src="/komike/images/Komike.png" width="220" height="240" alt="写真">
+<body class = "body">
+	<div class="head">
+		<div>
+			<img src="/komike/images/Komike2.png" width="500" height="180"
+				alt="写真">
+		</div>
 	</div>
-	<h2>受講者向け掲示板サイト</h2>
 	<!-- パンくずリストここから -->
 	<div class="ol">
 		<ol class="breadcrumb" itemscope
@@ -79,5 +81,10 @@
 			<hr>
 		</c:forEach>
 	</div>
+	<!-- フッター（ここから） -->
+	<div class="footer">
+		<p>&copy;Copyright DOJO2021. All rights reserved.</p>
+	</div>
+	<!-- フッター（ここまで） -->
 </body>
 </html>
