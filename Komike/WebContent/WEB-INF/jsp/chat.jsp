@@ -6,9 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="paginathing.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.pagination.js"></script>
 <title>雑談ルーム</title>
-<link rel = "stylesheet" href = "/C-2/komike/css/chat.css">
 </head>
 <body>
 <h1>Komike</h1>
@@ -55,30 +54,19 @@
 <!-- データベースから今までの掲示板の内容を全件表示 -->
 <div class="items">
 <c:forEach var="e" items="${infList}" >
-	<div class = "item">
+<div class = "item">
 		<p>Chat_ID<c:out value ="${e.chat_id}"/></p><br>
-	</div>
-	<div class = "item">
-
-	</div>
-	<div class = "item">
 		<b>名前</b><c:out value ="${e.name}" /><br>
-	</div>
-	<div class = "item">
 		<b>本文</b><c:out value="${e.text}" /><br>
-	</div>
-	<div class = "item">
 		<img src="${'/komike/images/'+=e.image_name}"><br>
-	</div>
-	<div class = "item">
 		<b>時間</b><c:out value="${e.time}"/><br>
-	</div>
 	 <form method = "post" action="/komike/ChatServlet" name="chat2">
 	 	<input type="hidden" name="chat_id" value="<c:out value ="${e.chat_id}"/>">
 	 		<input type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
 		<input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
 	</form>
 	<hr>
+</div>
 </c:forEach>
 </div>
 
@@ -146,15 +134,20 @@ function deletesubmit(){
 		return false;
 	}
 }
-
-jQuery(document).ready(function($){
-    $('.items').paginathing({
-        perPage: 4,
-        firstLast: false,
-        prevText:'prev' ,
-        nextText:'next' ,
-        activeClass: 'active',
-    })
+/*
+$(function() {
+	$('.items').paginathing({//親要素のclassを記述
+		perPage: 5,//1ページあたりの表示件数
+		prevText:'前へ',//1つ前のページへ移動するボタンのテキスト
+		nextText:'次へ',//1つ次のページへ移動するボタンのテキスト
+		activeClass: 'navi-active',//現在のページ番号に任意のclassを付与できます
+	})
 });
+*/
+
+$('.items').pagination({
+    itemElement : '> .item' // アイテムの要素
+});
+
 </script>
 </html>

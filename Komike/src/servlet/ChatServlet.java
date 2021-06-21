@@ -70,7 +70,7 @@ public class ChatServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Login_user user = (Login_user)session.getAttribute("id");
 		String id = user.getId();
-		System.out.println(id);
+
 		String name = request.getParameter("name");
 		String text = request.getParameter("text");
 

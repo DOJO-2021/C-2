@@ -233,7 +233,7 @@ public class FindCommentDao {
 	    }
 
 	//ランクを取得するメソッド
-	public static List<Test_result> rank(int id) {
+	public static List<Test_result> rank(String id) {
 		//id name commnetを書くのするリスト
 		Connection conn = null;
 		List<Test_result> list = new ArrayList<Test_result>();
@@ -252,7 +252,8 @@ public class FindCommentDao {
 
 				try {
 				//sqlを送信
-					pStmt.setInt(1, id);
+					pStmt.setString(1, id);
+
 
 					ResultSet rs = st.executeQuery(sql);
 
