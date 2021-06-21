@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import dao.FindCommentDao;
 import model.Login_user;
 import model.Question;
-import model.Test_result;
 
 /**
  * Servlet implementation class Menu
@@ -39,11 +38,6 @@ public class MenuServlet extends HttpServlet {
 		//検索結果をリクエストスコープに格納　〇
 		request.setAttribute("infList", infList);
 
-		//データベースから全件取得 　ランクを表示する
-		List<Test_result> List = FindCommentDao.rank(id);
-
-		//検索結果をリクエストスコープに格納　〇
-		request.setAttribute("List", List);
 
 
 

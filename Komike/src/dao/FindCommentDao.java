@@ -247,7 +247,7 @@ public class FindCommentDao {
 			try {
 			// SQL文を準備する
 				Statement st = conn.createStatement();
-				String sql = "select rank from question_result where id = ?";
+				String sql = "select rank from test_result where id = ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				try {

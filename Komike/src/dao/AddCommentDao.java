@@ -131,9 +131,9 @@ public class AddCommentDao{
 		return result;
 	}
 
-	
+
 //評価数の更新処理
-	public boolean update(Question q) {
+	public boolean update(Question q, int number) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -149,7 +149,7 @@ public class AddCommentDao{
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setInt(1, q.getGood_number());
+			pStmt.setInt(1, number);
 			pStmt.setInt(2, q.getQuestion_id());
 
 
