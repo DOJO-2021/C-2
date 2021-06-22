@@ -36,9 +36,9 @@ public class TestsresultDao {
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = st_chioce.executeQuery();
 
-			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+			// その問題の正解がtrueならtrueにしてそれ以外はfalseにする
 			rs.next();//nextメソッド
-			if (rs.getBoolean("true_false") == true) { //count(*)をもってくることでID、PW当てはまった一件を取得できる。
+			if (rs.getBoolean("true_false") == true) {
 				TestResult = true;
 			}
 

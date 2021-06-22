@@ -1,18 +1,24 @@
 package test;
-import java.util.List;
-
-import model.Test_question;
+import dao.TestsresultDao;
 
 public class TestsresultTestDao {
 	public static void main(String[] args) {
-		TestsresultTestDao dao = new TestsresultTestDao();
 
-		// select()のテスト
-		System.out.println("---------- select()のテスト ----------");
-		List<Test_question> ResultList = dao.select(new Test_question(0, "", ""));
-		for (Test_question card : ResultList) {
-			
-			
-		}
+		testIsResultOK1();	// テストのデータが見つかる場合のテスト
 	}
+
+	public static void testIsResultOK1() {
+		TestsresultDao dao = new TestsresultDao();
+		if (dao.select("java01", 1)) {
+			System.out.println("testIsLoginOK1：テストが成功しました");
+		}else {
+			System.out.println("testIsLoginOK1：テストが失敗しました");
+		}
+
+	}
+
+
+
+
+
 }
