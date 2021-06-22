@@ -16,6 +16,7 @@
 <h2>問題ジャンル:</h2>
 <br>
 <form method="POST" action="/komike/TestServlet">
+<input type="text" name="testType" value="${Select.genre}">
 <table>
 	<c:forEach var="e" items="${questions}">
 		<tr>
