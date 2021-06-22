@@ -58,6 +58,8 @@
 <!-- 質問ルームへの書き込み内容を記入するフォーム -->
 
 <p>質問ルームへようこそ</p>
+
+<!-- 質問ルームへの書き込み内容を記入するフォーム -->
 <form method="Post" action="/komike/Q_AServlet">
 
 
@@ -71,6 +73,8 @@
 
 </form>
 <br>
+<!-- データベースから今までの掲示板の内容を全件表示 -->
+
 <c:forEach var="e" items="${questionList}" >
     <p>Question_ID<c:out value ="${e.question_id}"/></p><br>
        ID<c:out value ="${e.id}"/><br>
@@ -79,10 +83,19 @@
     <b>本文</b><c:out value ="${e.text}"/><br>
     <img src="${'/komike/images/'+=e.image_name}"><br>
     <b>評価数</b><c:out value ="${e.good_number}"/>
-
-
-<form method="post" action="/komike/Q_AServlet">
-  </form>
+		 <form method="Post" action="/komike/Q_AServlet">
+		 		<p> 名前<input type="text"  name="name" ></p>
+		 		<p>本文<br><textarea name = "text"></textarea></p>
+		 		<input type = "submit" name = "submit" value = "回答する">
+		 </form>
+    <hr>
+	    <c:forEach var="a" items="${e.answer}" >
+			<p>Question_ID<c:out value ="${a.question_id}"/></p><br>
+			<p>Answer_ID<c:out value ="${a.answer_id}"/></p>
+				ID<c:out value ="${e.id}"/><br>
+			<b>名前</b><c:out value ="${a.name}"/><br>
+			<b>本文</b><c:out value ="${a.text}"/><br>
+		</c:forEach>
 </c:forEach>
 
 </body>

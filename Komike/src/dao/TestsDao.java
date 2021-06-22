@@ -104,11 +104,7 @@ public class TestsDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 					try {
 						// SQL文を準備する test_question用
-							String sql = "select * from test_question"
-							+	"where question_number IN ("
-							+	"select distinct (test_question.question_number) from test_question join test_choice on test_question.question_number = test_choice.question_number"
-							+	"where test_question.question_number like=?"
-							+ ")";
+							String sql = "select * from test_question where question_number IN ( select distinct (test_question.question_number) from test_question join test_choice on test_question.question_number = test_choice.question_number where test_question.question_number like ?)";
 							PreparedStatement st = conn.prepareStatement(sql);
 							st.setString(1, key + "%");
 

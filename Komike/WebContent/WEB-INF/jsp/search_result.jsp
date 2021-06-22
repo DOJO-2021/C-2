@@ -1,18 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>理解度テスト|選択画面</title>
+<title>検索結果</title>
 </head>
 <body>
-<!-- ヘッダー（ここから） -->
 <h1>Komike</h1>
-<h3>受講者向け掲示板サイト</h3>
-<h3>ログアウトはこちら</h3>
-<form method="POST" action="/komike/Tselect">
+<h2>受講者向け掲示板サイト</h2>
 <!-- パンくずリストここから -->
 	<div class="ol">
 			<ol class="breadcrumb" itemscope
@@ -51,26 +48,20 @@
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
+ <c:forEach var="e" items="${question}" >
+		<p>QUESTION_ID<c:out value ="${e.question_id}"/></p><br>
+		<b>ID</b><c:out value ="${e.id}"/><br>
+		<b>件名</b><c:out value ="${e.title}" /><br>
+		<b>名前</b><c:out value ="${e.name}" /><br>
+		<b>本文</b><c:out value="${e.text}" /><br>
+		<b>高評価</b><c:out value="${e.good_number}"/><br>
 
-	<table>
-		<!--<c:forEach var="e" items="${results}">-->
-		<tr>
-			<td><li><a href="/komike/TestServlet?key=HTML">HTML</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-			<td><li><a href="/komike/TestServlet?key=css">CSS</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-			<td><li><a href="/komike/TestServlet?key=JavaScript">JavaScript</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-		</tr>
-		<tr>
-			<td><li><a href="/komike/TestServlet?key=java">Java</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-			<td><li><a href="/komike/TestServlet?key=SQL">データベース</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-			<td><li><a href="/komike/TestServlet?key=サーバーサイド">サーバーサイドJava</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
-			</td>
-		</tr>
-	</table>
- </form>
+			<c:forEach var="a" items="${e.answer}" >
+				<p>QUESTION_ID<c:out value ="${a.question_id}"/></p><br>
+				<b>ID</b><c:out value ="${a.id}" /><br>
+				<b>名前</b><c:out value ="${a.name}" /><br>
+				<b>本文</b><c:out value="${a.text}" /><br>
+			</c:forEach>
+</c:forEach>
 </body>
 </html>
