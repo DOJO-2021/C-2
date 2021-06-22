@@ -29,6 +29,8 @@ public class Test extends HttpServlet {
 			throws ServletException, IOException {
 		//リクエストパラメータを取得する
 		String key = request.getParameter("key");
+		/*int questions = request.getParameter("questions");*/
+
 
 		TestsDao TDao = new TestsDao();
 		//List<Test_question> questions =TDao.select();
@@ -37,6 +39,9 @@ public class Test extends HttpServlet {
 		//Tselect.jspのジャンル名がTest.jspの問題番号に使う
 		request.setAttribute("Select",
 				new Select(key));
+		/*for(int questions=1; questions < 20; questions++;) {
+		}
+		*/
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questions", questions);
