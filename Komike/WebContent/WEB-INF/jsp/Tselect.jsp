@@ -6,10 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>理解度テスト|選択画面</title>
+<link rel="stylesheet" href="/komike/css/menu.css">
 </head>
-<body>
-<!-- ヘッダー（ここから） -->
-<h1>Komike</h1>
+<body class = "body">
+	<div class="head">
+		<div>
+			<img src="/komike/images/Komike2.png" width="500" height="180"
+				alt="写真">
+		</div>
+	</div>
 <h3>受講者向け掲示板サイト</h3>
 <h3>ログアウトはこちら</h3>
 <form method="POST" action="/komike/Tselect">
@@ -42,7 +47,7 @@
 					href="/komike/Tselect"> <span itemprop="name">理解度テスト</span>
 				</a>
 					<meta itemprop="position" content="4" /></li>
-				<!-- 4つめ -->
+				<!-- 5つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
 					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
@@ -53,24 +58,29 @@
 <!-- パンくずリストここまで -->
 
 	<table>
-		<!--<c:forEach var="e" items="${results}">-->
+
 		<tr>
-			<td><li><a href="/komike/TestServlet?key=HTML">HTML</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=HTML" class="btn-circle-3d-dent">HTML</a><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=css">CSS</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><li><a href="/komike/TestServlet?key=css">CSS</a></li><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=JavaScript">JavaScript</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><li><a href="/komike/TestServlet?key=JavaScript">JavaScript</a></li><br>
 			</td>
 		</tr>
 		<tr>
-			<td><li><a href="/komike/TestServlet?key=java">Java</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><li><a href="/komike/TestServlet?key=java">Java</a></li><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=SQL">データベース</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><li><a href="/komike/TestServlet?key=SQL">データベース</a></li><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=サーバーサイド">サーバーサイドJava</a></li><br><c:out value="${e.correct_answer}" /><c:out value="${e.rank}" /><br>
+			<td><li><a href="/komike/TestServlet?key=サーバーサイド">サーバーサイドJava</a></li><br>
 			</td>
 		</tr>
 	</table>
  </form>
+ <!-- フッター（ここから） -->
+	<div class="footer">
+		<p>&copy;Copyright DOJO2021. All rights reserved.</p>
+	</div>
+	<!-- フッター（ここまで） -->
 </body>
 </html>
