@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 //データベースのTrue_falseの値を持ってくる
 public class TestsresultDao {
-//List<Test_question> select
-	//boolean isLoginOK
+
 	// 引数judgeで検索項目を指定し、検索結果のリストを返す
 	public boolean select(String question_number, int choice_number) {
 		Connection conn = null;

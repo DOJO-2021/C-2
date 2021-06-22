@@ -58,32 +58,32 @@ public class Test extends HttpServlet {
 		// リクエストパラメータを取得する
 		//■requestスコープからジャンルとIDを取得
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
-		String genre = request.getParameter("GENRE");
+		String question_number = request.getParameter("question_number");
+		//Int choice_number = request.getParameter("choice_number");
 		//boolean true_false = request.getParameter("GENRE");
 
 		// 選ばれたラジオボタンの情報を取得
 		//String s = request.getParameter("radiobutton");
-		String[] q1 = request.getParameterValues("Question1");
-		String[] q2 = request.getParameterValues("Question2");
-		String[] q3 = request.getParameterValues("Question3");
-		String[] q4 = request.getParameterValues("Question4");
-		String[] q5 = request.getParameterValues("Question5");
-		String[] q6 = request.getParameterValues("Question6");
-		String[] q7 = request.getParameterValues("Question7");
-		String[] q8 = request.getParameterValues("Question8");
-		String[] q9 = request.getParameterValues("Question9");
-		String[] q10 = request.getParameterValues("Question10");
-		String[] q11 = request.getParameterValues("Question11");
-		String[] q12 = request.getParameterValues("Question12");
+
 
 		//Daoからデータを持ってくる
-		TestsresultDao TRDao=new TestsresultDao();
-		//List<Test_question> questions =TRDao.select(true_false);
+		TestsresultDao dao = new TestsresultDao();
+		if (dao.select("question_number", 2)) {
+			//それがもしtrueなら正解になる
+			System.out.println("正解!");
+			request.setAttribute("Test_result",
+					new Test_result(1, 15,  2,49, "reborn","CSS"));
+		}else {
+			//それがもしfalseなら不正解になる
+			System.out.println("不正解・・・");
+			request.setAttribute("Test_result",
+					new Test_result(1, 14,  2,44, "reborn","CSS"));
+		}
 
 
-		request.setAttribute("Test_result",
-				new Test_result(1, 15,  2,49, "reborn","CSS"));
+
+		/*request.setAttribute("Test_result",
+				new Test_result(1, 15,  2,49, "reborn","CSS"));*/
 
 		//それぞれのラジオボタンから抜き出した選択肢を正誤フラグと比べる
 		//そこからあっていた数だけ正解数correct_answerに代入する
