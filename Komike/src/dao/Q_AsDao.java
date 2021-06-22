@@ -186,7 +186,7 @@ public class Q_AsDao {
 		}
 			//Anwerのinsert文
 		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-		public boolean insert(Answer answer) {
+		public boolean a_insert(Answer answer) {
 			Connection conn = null;
 			boolean result = false;
 
@@ -198,7 +198,7 @@ public class Q_AsDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 				// SQL文を準備する
-				String sql = "insert into Question values (null,?,?,?)";
+				String sql = "insert into answer values (?,null,?,?,?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -207,25 +207,26 @@ public class Q_AsDao {
 				//Int    null NG  0はOK
 				//Question null OK
 
+				pStmt.setInt(1, answer.getQuestion_id());
 
 				if (answer.getId() != null) {
-					pStmt.setString(1, answer.getId());
-				}
-				else {
-					pStmt.setString(1, "null");
-				}
-				if (answer.getName() != null) {
-					pStmt.setString(2, answer.getName());
+					pStmt.setString(2, answer.getId());
 				}
 				else {
 					pStmt.setString(2, "null");
 				}
-
-				if (answer.getText() != null) {
-					pStmt.setString(3,answer.getText());
+				if (answer.getName() != null) {
+					pStmt.setString(3, answer.getName());
 				}
 				else {
 					pStmt.setString(3, "null");
+				}
+
+				if (answer.getText() != null) {
+					pStmt.setString(4,answer.getText());
+				}
+				else {
+					pStmt.setString(4, "null");
 				}
 
 				// SQL文を実行する
