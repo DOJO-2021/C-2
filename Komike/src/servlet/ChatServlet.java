@@ -101,8 +101,8 @@ public class ChatServlet extends HttpServlet {
 			Part part = request.getPart("image");//画像のパラメータを取得
 			String image = this.getFileName(part);//画像のファイル名の取得
 			//ファイルの書込み(ファイルが選択されていなかったら、NULLを挿入)
-			if(part == null) {
-				part.write(null);
+			if(!image.equals("")) {
+				part.write(image);
 			}
 			cDao.insert(new Chat(0, id, name, text, image, null));
 		}
