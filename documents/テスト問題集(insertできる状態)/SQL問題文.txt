@@ -1,167 +1,167 @@
 
 1.
-insert into test_question values('SQL01', 'ユーザーテーブル（user）からすべての列を取り出したいときに正しいものはどれか');
+insert into test_question values('データベース01', 'ユーザーテーブル（user）からすべての列を取り出したいときに正しいものはどれか');
 
-insert into test_choice values('SQL01', 1, 'select + from user;', 0);
-insert into test_choice values('SQL01', 2, 'select @ from user;', 0);
-insert into test_choice values('SQL01', 3, 'select & from user;', 0);
-insert into test_choice values('SQL01', 4, 'select * from user;', 1);
+insert into test_choice values('データベース01', 1, 'select + from user;', 0);
+insert into test_choice values('データベース01', 2, 'select @ from user;', 0);
+insert into test_choice values('データベース01', 3, 'select & from user;', 0);
+insert into test_choice values('データベース01', 4, 'select * from user;', 1);
 
 2.
-insert into test_question values('SQL02', 'ユーザーライセンスの適用が向いているタイプのシステムはどれか');
+insert into test_question values('データベース02', 'ユーザーライセンスの適用が向いているタイプのシステムはどれか');
 
-insert into test_choice values('SQL02', 1, 'ECサイト', 0);
-insert into test_choice values('SQL02', 2, 'SNS', 0);
-insert into test_choice values('SQL02', 3, 'オンラインゲーム', 0);
-insert into test_choice values('SQL02', 4, '小規模の社内システム', 1);
+insert into test_choice values('データベース02', 1, 'ECサイト', 0);
+insert into test_choice values('データベース02', 2, 'SNS', 0);
+insert into test_choice values('データベース02', 3, 'オンラインゲーム', 0);
+insert into test_choice values('データベース02', 4, '小規模の社内システム', 1);
 
 
 3.
-insert into test_question values('SQL03', 'ある会社の社員管理表においてレコードを特定するキーとして適切なものはどれか');
+insert into test_question values('データベース03', 'ある会社の社員管理表においてレコードを特定するキーとして適切なものはどれか');
 
-insert into test_choice values('SQL03', 1, '住所;', 0);
-insert into test_choice values('SQL03', 2, '氏名', 0);
-insert into test_choice values('SQL03', 3, '社員番号', 1);
-insert into test_choice values('SQL03', 4, '生年月日', 0);
+insert into test_choice values('データベース03', 1, '住所;', 0);
+insert into test_choice values('データベース03', 2, '氏名', 0);
+insert into test_choice values('データベース03', 3, '社員番号', 1);
+insert into test_choice values('データベース03', 4, '生年月日', 0);
 
 4.
 
-insert into test_question values('SQL04', 'トランザクションの４つの分離レベルでないものはどれか');
+insert into test_question values('データベース04', 'トランザクションの４つの分離レベルでないものはどれか');
 
-insert into test_choice values('SQL04', 1, 'リードコミッテッド', 0);
-insert into test_choice values('SQL04', 2, 'ヘビーヘッドログ', 1);
-insert into test_choice values('SQL04', 3, 'リピーダブルリード', 0);
-insert into test_choice values('SQL04', 4, 'シリアライザブル', 0);
+insert into test_choice values('データベース04', 1, 'リードコミッテッド', 0);
+insert into test_choice values('データベース04', 2, 'ヘビーヘッドログ', 1);
+insert into test_choice values('データベース04', 3, 'リピーダブルリード', 0);
+insert into test_choice values('データベース04', 4, 'シリアライザブル', 0);
 
 5.
 
-insert into test_question values('SQL05', '複数の利用者がデータベースの同じレコードを更新するときに、データの整合性を保つために行う制御として、適切なものはどれか。');
+insert into test_question values('データベース05', '複数の利用者がデータベースの同じレコードを更新するときに、データの整合性を保つために行う制御として、適切なものはどれか。');
 
-insert into test_choice values('SQL05', 1, '正規化', 0);
-insert into test_choice values('SQL05', 2, 'ロールバック', 0);
-insert into test_choice values('SQL05', 3, 'ロック／アンロック', 1);
-insert into test_choice values('SQL05', 4, 'デッドロック', 0);
+insert into test_choice values('データベース05', 1, '正規化', 0);
+insert into test_choice values('データベース05', 2, 'ロールバック', 0);
+insert into test_choice values('データベース05', 3, 'ロック／アンロック', 1);
+insert into test_choice values('データベース05', 4, 'デッドロック', 0);
 
 6.
-insert into test_question values('SQL06', 'ユーザーテーブル（user）に新規のデータを挿入したいとき正しいものはどれか');
+insert into test_question values('データベース06', 'ユーザーテーブル（user）に新規のデータを挿入したいとき正しいものはどれか');
 
-insert into test_choice values('SQL06', 1, 'insert to user values(...', 0);
-insert into test_choice values('SQL06', 2, 'insert into user value(...', 0);
-insert into test_choice values('SQL06', 3, 'insert into user values(...', 1);
-insert into test_choice values('SQL06', 4, 'inserts into user value(...', 0);
+insert into test_choice values('データベース06', 1, 'insert to user values(...', 0);
+insert into test_choice values('データベース06', 2, 'insert into user value(...', 0);
+insert into test_choice values('データベース06', 3, 'insert into user values(...', 1);
+insert into test_choice values('データベース06', 4, 'inserts into user value(...', 0);
 
 7.
 
-insert into test_question values('SQL07', 'データベースが持っている機能として間違えているものはなにか');
+insert into test_question values('データベース07', 'データベースが持っている機能として間違えているものはなにか');
 
-insert into test_choice values('SQL07', 1, '参照', 0);
-insert into test_choice values('SQL07', 2, '復旧', 1);
-insert into test_choice values('SQL07', 3, '登録', 0);
-insert into test_choice values('SQL07', 4, '削除', 0);
+insert into test_choice values('データベース07', 1, '参照', 0);
+insert into test_choice values('データベース07', 2, '復旧', 1);
+insert into test_choice values('データベース07', 3, '登録', 0);
+insert into test_choice values('データベース07', 4, '削除', 0);
 
 8.
-insert into test_question values('SQL08', 'ユーザーテーブル（user）で既存データを更新したいとき正しいものはどれか');
+insert into test_question values('データベース08', 'ユーザーテーブル（user）で既存データを更新したいとき正しいものはどれか');
 
-insert into test_choice values('SQL08', 1, 'update user set ...', 1);
-insert into test_choice values('SQL08', 2, 'update user from...', 0);
-insert into test_choice values('SQL08', 3, 'update user for...', 0);
-insert into test_choice values('SQL08', 4, 'update user where...', 0);
+insert into test_choice values('データベース08', 1, 'update user set ...', 1);
+insert into test_choice values('データベース08', 2, 'update user from...', 0);
+insert into test_choice values('データベース08', 3, 'update user for...', 0);
+insert into test_choice values('データベース08', 4, 'update user where...', 0);
 
 9.
-insert into test_question values('SQL09', 'データベースを設計するときに、データの関連を整理して表現することを目的として使われる図はどれか。');
+insert into test_question values('データベース09', 'データベースを設計するときに、データの関連を整理して表現することを目的として使われる図はどれか。');
 
-insert into test_choice values('SQL09', 1, 'フローチャート', 0);
-insert into test_choice values('SQL09', 2, 'E-R図', 1);
-insert into test_choice values('SQL09', 3, '正規形', 0);
-insert into test_choice values('SQL09', 4, 'アローダイアグラム', 0);
+insert into test_choice values('データベース09', 1, 'フローチャート', 0);
+insert into test_choice values('データベース09', 2, 'E-R図', 1);
+insert into test_choice values('データベース09', 3, '正規形', 0);
+insert into test_choice values('データベース09', 4, 'アローダイアグラム', 0);
 
 10.
-insert into test_question values('SQL10', 'データベースにおいて、主キーの性質として正しいものはどれか。');
+insert into test_question values('データベース10', 'データベースにおいて、主キーの性質として正しいものはどれか。');
 
-insert into test_choice values('SQL10', 1, '主キーとした列に対して検索条件を指定しなければ、行の検索はできない。', 0);
-insert into test_choice values('SQL10', 2, '一つの表の中に、主キーの値が同じ行が複数存在することはない', 1);
-insert into test_choice values('SQL10', 3, '複数の列からなる主キーを構成することはできない。', 0);
-insert into test_choice values('SQL10', 4, '数値型の列を主キーに指定すると、その列は算術演算の対象としては使えない。', 0);
+insert into test_choice values('データベース10', 1, '主キーとした列に対して検索条件を指定しなければ、行の検索はできない。', 0);
+insert into test_choice values('データベース10', 2, '一つの表の中に、主キーの値が同じ行が複数存在することはない', 1);
+insert into test_choice values('データベース10', 3, '複数の列からなる主キーを構成することはできない。', 0);
+insert into test_choice values('データベース10', 4, '数値型の列を主キーに指定すると、その列は算術演算の対象としては使えない。', 0);
 
 11.
-insert into test_question values('SQL11', 'あいまい条件に合致したレコードだけを取り出したいときに利用しないキーワードはどれか');
+insert into test_question values('データベース11', 'あいまい条件に合致したレコードだけを取り出したいときに利用しないキーワードはどれか');
 
-insert into test_choice values('SQL11', 1, 'where', 0);
-insert into test_choice values('SQL11', 2, 'for', 1);
-insert into test_choice values('SQL11', 3, 'like;', 0);
-insert into test_choice values('SQL11', 4, 'from', 0);
+insert into test_choice values('データベース11', 1, 'where', 0);
+insert into test_choice values('データベース11', 2, 'for', 1);
+insert into test_choice values('データベース11', 3, 'like;', 0);
+insert into test_choice values('データベース11', 4, 'from', 0);
 
 
 12.
-insert into test_question values('SQL12', 'データベースがユーザーからのコマンド受付可能なことを示す「sql>」のような文字列を何と呼ぶか');
+insert into test_question values('データベース12', 'データベースがユーザーからのコマンド受付可能なことを示す「sql>」のような文字列を何と呼ぶか');
 
-insert into test_choice values('SQL12', 1, 'プロンプト', 1);
-insert into test_choice values('SQL12', 2, 'プロトン', 0);
-insert into test_choice values('SQL12', 3, 'プロテイン', 0);
-insert into test_choice values('SQL12', 4, 'プロント', 0);
+insert into test_choice values('データベース12', 1, 'プロンプト', 1);
+insert into test_choice values('データベース12', 2, 'プロトン', 0);
+insert into test_choice values('データベース12', 3, 'プロテイン', 0);
+insert into test_choice values('データベース12', 4, 'プロント', 0);
 
 13.
-insert into test_question values('SQL13', 'トランザクションの４つの特性の頭文字を示す略語はどれか');
+insert into test_question values('データベース13', 'トランザクションの４つの特性の頭文字を示す略語はどれか');
 
-insert into test_choice values('SQL13', 1, 'FTDS', 0);
-insert into test_choice values('SQL13', 2, 'ACID', 1);
-insert into test_choice values('SQL13', 3, 'DBMS', 0);
-insert into test_choice values('SQL13', 4, 'SDGS', 0);
+insert into test_choice values('データベース13', 1, 'FTDS', 0);
+insert into test_choice values('データベース13', 2, 'ACID', 1);
+insert into test_choice values('データベース13', 3, 'DBMS', 0);
+insert into test_choice values('データベース13', 4, 'SDGS', 0);
 
 14.
-insert into test_question values('SQL14', 'トランザクションが完了する前にエラーが発生した場合に、トランザクション開始前の状態にデータの内容を戻すことを何と呼ぶか');
+insert into test_question values('データベース14', 'トランザクションが完了する前にエラーが発生した場合に、トランザクション開始前の状態にデータの内容を戻すことを何と呼ぶか');
 
-insert into test_choice values('SQL14', 1, 'ファイヤーウォール', 0);
-insert into test_choice values('SQL14', 2, 'コネクション', 0);
-insert into test_choice values('SQL14', 3, 'ロールバック', 1);
-insert into test_choice values('SQL14', 4, 'デッドロック', 0);
+insert into test_choice values('データベース14', 1, 'ファイヤーウォール', 0);
+insert into test_choice values('データベース14', 2, 'コネクション', 0);
+insert into test_choice values('データベース14', 3, 'ロールバック', 1);
+insert into test_choice values('データベース14', 4, 'デッドロック', 0);
 
 15.
-insert into test_question values('SQL15', 'テーブルを作成するときに使うものはどれか');
+insert into test_question values('データベース15', 'テーブルを作成するときに使うものはどれか');
 
-insert into test_choice values('SQL15', 1, 'bulid table', 0);
-insert into test_choice values('SQL15', 2, 'create table', 1);
-insert into test_choice values('SQL15', 3, 'make table', 0);
-insert into test_choice values('SQL15', 4, 'write table', 0);
+insert into test_choice values('データベース15', 1, 'bulid table', 0);
+insert into test_choice values('データベース15', 2, 'create table', 1);
+insert into test_choice values('データベース15', 3, 'make table', 0);
+insert into test_choice values('データベース15', 4, 'write table', 0);
 
 16.
-insert into test_question values('SQL16', 'Web3層モデルを構成するコンポーネントでないものはどれか');
+insert into test_question values('データベース16', 'Web3層モデルを構成するコンポーネントでないものはどれか');
 
-insert into test_choice values('SQL16', 1, 'DBサーバ', 0);
-insert into test_choice values('SQL16', 2, 'アプリケーションサーバ', 0);
-insert into test_choice values('SQL16', 3, 'Webサーバ', 0);
-insert into test_choice values('SQL16', 4, 'ソーシャルサーバ', 1);
+insert into test_choice values('データベース16', 1, 'DBサーバ', 0);
+insert into test_choice values('データベース16', 2, 'アプリケーションサーバ', 0);
+insert into test_choice values('データベース16', 3, 'Webサーバ', 0);
+insert into test_choice values('データベース16', 4, 'ソーシャルサーバ', 1);
 
 17.
-insert into test_question values('SQL17', 'あいまい検索の条件で「%Komike」としたときに検索されるものはどれか');
+insert into test_question values('データベース17', 'あいまい検索の条件で「%Komike」としたときに検索されるものはどれか');
 
-insert into test_choice values('SQL17', 1, '掲示板サイトKomike', 0);
-insert into test_choice values('SQL17', 2, '掲示板Komikeサイト', 0);
-insert into test_choice values('SQL17', 3, 'Komike掲示板サイト', 1);
-insert into test_choice values('SQL17', 4, '掲Komike', 0);
+insert into test_choice values('データベース17', 1, '掲示板サイトKomike', 0);
+insert into test_choice values('データベース17', 2, '掲示板Komikeサイト', 0);
+insert into test_choice values('データベース17', 3, 'Komike掲示板サイト', 1);
+insert into test_choice values('データベース17', 4, '掲Komike', 0);
 
 18.
-insert into test_question values('SQL18', '関係データベースにおける正規化において、非正規形の定義として適切なものはどれか');
+insert into test_question values('データベース18', '関係データベースにおける正規化において、非正規形の定義として適切なものはどれか');
 
-insert into test_choice values('SQL18', 1, '部分従属性があること', 0);
-insert into test_choice values('SQL18', 2, '主キーがないこと', 0);
-insert into test_choice values('SQL18', 3, '複合キーがないこと', 0);
-insert into test_choice values('SQL18', 4, '繰り返しがあること', 1);
+insert into test_choice values('データベース18', 1, '部分従属性があること', 0);
+insert into test_choice values('データベース18', 2, '主キーがないこと', 0);
+insert into test_choice values('データベース18', 3, '複合キーがないこと', 0);
+insert into test_choice values('データベース18', 4, '繰り返しがあること', 1);
 
 19.
-insert into test_question values('SQL19', '次のうち取得したデータの並び順を指定するものはどれか');
+insert into test_question values('データベース19', '次のうち取得したデータの並び順を指定するものはどれか');
 
-insert into test_choice values('SQL19', 1, 'delete句', 0);
-insert into test_choice values('SQL19', 2, 'insert句', 0);
-insert into test_choice values('SQL19', 3, 'having句', 0);
-insert into test_choice values('SQL19', 4, 'order句', 1);
+insert into test_choice values('データベース19', 1, 'delete句', 0);
+insert into test_choice values('データベース19', 2, 'insert句', 0);
+insert into test_choice values('データベース19', 3, 'having句', 0);
+insert into test_choice values('データベース19', 4, 'order句', 1);
 
 20.
-insert into test_question values('SQL20', 'トランザクションの同時実行制御における共有ロックと専有ロックの説明として適切なものはどれか。');
+insert into test_question values('データベース20', 'トランザクションの同時実行制御における共有ロックと専有ロックの説明として適切なものはどれか。');
 
-insert into test_choice values('SQL20', 1, '共有ロックがかけられたトランザクションには、専有ロックをかけられる。', 0);
-insert into test_choice values('SQL20', 2, '共有ロックがかけられた資源（表や行）には、共有ロックをかけられる。', 1);
-insert into test_choice values('SQL20', 3, '専有ロックがかけられたトランザクションには、共有ロックをかけられる。', 0);
-insert into test_choice values('SQL20', 4, '専有ロックがかけられたトランザクションには、専有ロックをかけられる。', 0);
+insert into test_choice values('データベース20', 1, '共有ロックがかけられたトランザクションには、専有ロックをかけられる。', 0);
+insert into test_choice values('データベース20', 2, '共有ロックがかけられた資源（表や行）には、共有ロックをかけられる。', 1);
+insert into test_choice values('データベース20', 3, '専有ロックがかけられたトランザクションには、共有ロックをかけられる。', 0);
+insert into test_choice values('データベース20', 4, '専有ロックがかけられたトランザクションには、専有ロックをかけられる。', 0);
 
 

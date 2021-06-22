@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>理解度テスト|選択画面</title>
-<link rel="stylesheet" href="/komike/css/menu.css">
+<link rel="stylesheet" href="/komike/css/test.css">
 </head>
 <body class = "body">
 	<div class="head">
@@ -15,7 +15,7 @@
 				alt="写真">
 		</div>
 	</div>
-<h3>受講者向け掲示板サイト</h3>
+
 <h3>ログアウトはこちら</h3>
 <form method="POST" action="/komike/Tselect">
 <!-- パンくずリストここから -->
@@ -57,22 +57,22 @@
 		</div>
 <!-- パンくずリストここまで -->
 
-	<table>
+	<table class=select>
 
 		<tr>
-			<td><a href="/komike/TestServlet?key=HTML" class="btn-circle-3d-dent">HTML</a><br>
+			<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=css">CSS</a></li><br>
+			<td><a href="/komike/TestServlet?key=css" class="bt-samp44">CSS</a><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=JavaScript">JavaScript</a></li><br>
+			<td><a href="/komike/TestServlet?key=JavaScript"class="bt-samp44">JavaScript</a><br>
 			</td>
 		</tr>
 		<tr>
-			<td><li><a href="/komike/TestServlet?key=java">Java</a></li><br>
+			<td><a href="/komike/TestServlet?key=java"class="bt-samp44">java</a><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=SQL">データベース</a></li><br>
+			<td><a href="/komike/TestServlet?key=データベース"class="bt-samp44">データベース</a><br>
 			</td>
-			<td><li><a href="/komike/TestServlet?key=サーバーサイド">サーバーサイドJava</a></li><br>
+			<td><a href="/komike/TestServlet?key=サーバーサイドjava" class="bt-samp44">サーバーサイドjava</a><br>
 			</td>
 		</tr>
 	</table>

@@ -42,6 +42,7 @@ public class TestsDao {
 									Test_question te = new Test_question();
 									te.setQuestion_number(rs.getString("question_number"));
 									te.setQuestion_sentence(rs.getString("question_sentence"));
+									te.setQuestion_sentence(rs.getString("questions"));
 
 									st_chioce.setString(1, te.getQuestion_number());
 									ResultSet rs_choice = st_chioce.executeQuery();
