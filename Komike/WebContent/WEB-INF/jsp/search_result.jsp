@@ -48,6 +48,7 @@
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
+<!-- 検索結果の表示 -->
  <c:forEach var="e" items="${question}" >
 		<p>QUESTION_ID<c:out value ="${e.question_id}"/></p><br>
 		<b>ID</b><c:out value ="${e.id}"/><br>
@@ -55,13 +56,15 @@
 		<b>名前</b><c:out value ="${e.name}" /><br>
 		<b>本文</b><c:out value="${e.text}" /><br>
 		<b>高評価</b><c:out value="${e.good_number}"/><br>
-
+<hr>
 			<c:forEach var="a" items="${e.answer}" >
 				<p>QUESTION_ID<c:out value ="${a.question_id}"/></p><br>
+				<p>ANSWER_ID<c:out value ="${a.answer_id}"/></p><br>
 				<b>ID</b><c:out value ="${a.id}" /><br>
 				<b>名前</b><c:out value ="${a.name}" /><br>
 				<b>本文</b><c:out value="${a.text}" /><br>
 			</c:forEach>
+<hr>
 </c:forEach>
 </body>
 </html>

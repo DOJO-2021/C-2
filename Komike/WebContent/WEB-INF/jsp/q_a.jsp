@@ -48,13 +48,15 @@
 		</ol>
 	</div>
 	<!-- パンくずリストここまで -->
-	<form method="post" action="/komike/MenuServlet" name="chat">
+	<!-- 検索結果のフォーム -->
+	<form method="post" action="/komike/Q_AServlet" name="chat">
 		<p>
 			<label>キーワード検索：<input type="search" name="key" size="30"
 				maxlength="255"></label>
 		</p>
 		<input type="submit" name="submit" value="検索する">
 	</form>
+	<!-- 検索結果のフォームここまで -->
 
 	<h3>分からないことを質問してみましょう</h3>
 	<p>質問は以下の欄に入力してください</p>
@@ -111,8 +113,16 @@
 		<br>
 		<img src="${'/komike/images/'+=e.image_name}">
 		<br>
-		<b>評価数</b>
-		<c:out value="${e.good_number}" />
+	<!-- 高評価の内容を書き換える処理-->
+		<form method = "post" action="/komike/Q_AServlet">
+		<input type = "hidden" name = "question" value = "<c:out value="${e.question_id}" />">
+		<input type = "hidden" name = "number" value = "<c:out value="${e.good_number}" />">
+		<input type = "submit" name = "submit" value = "グッド">
+		</form>
+		高評価:<c:out value="${e.good_number}" />
+	<!-- 高評価フォームここまで-->
+
+	<!-- 質問に対して、返答するフォーム-->
 		<form method="Post" action="/komike/Q_AServlet">
 			<p>
 				名前<input type="text" name="name1">
@@ -124,7 +134,9 @@
 			<input type = "hidden" name = "question_id" value = "<c:out value="${e.question_id}" />">
 			<input type="submit" name="submit" value="回答する">
 		</form>
+	<!-- 返答フォームここまで-->
 		<hr>
+		<!--返答を表示するフォーム-->
 		<c:forEach var="a" items="${e.answer}">
 			<p>
 				Question_ID
@@ -146,7 +158,7 @@
 			<hr>
 		</c:forEach>
 	</c:forEach>
-
+	<!-- 返答表示ここまで-->
 </body>
 <script>
 //画像を表示させる機能

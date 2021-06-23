@@ -160,16 +160,16 @@ public class FindCommentDao {
 			try {
 			// SQL文を準備する(questionrテーブル)
 				Statement st = conn.createStatement();
-				String sql = "select * from question inner join answer on question.question_id = answer.question_id where title like ? or question.text like ? or answer.text like ?";
+				String sql = "select * from question where title like ? or text like ?";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				pStmt.setString(1, "%" + key + "%");
 				pStmt.setString(2, "%" + key + "%");
-				pStmt.setString(3, "%" + key + "%");
 
 			// SQL文を準備する(answerテーブル)
-				String sql_answer = "select * from answer where question_id = ?";
+				String sql_answer = "select * from answer where question_id = ? and text like ?";
 				PreparedStatement pStmt_answer= conn.prepareStatement(sql_answer);
+				pStmt_answer.setString(2, "%" + key + "%");
 				try {
 				//sqlを送信
 					ResultSet rs = pStmt.executeQuery();
@@ -183,6 +183,7 @@ public class FindCommentDao {
 						q.setName(rs.getString("name"));
 						q.setText(rs.getString("text"));
 						q.setGood_number(rs.getInt("good_number"));
+						new ArrayList<Answer>();
 
 						pStmt_answer.setInt(1, q.getQuestion_id());
 						ResultSet rsr = pStmt_answer.executeQuery();
@@ -233,7 +234,7 @@ public class FindCommentDao {
 	    }
 
 	//ランクを取得するメソッド
-	public static List<Test_result> rank(String id) {
+	public static List<Test_result> rank(Test_result tr) {
 		//id name commnetを書くのするリスト
 		Connection conn = null;
 		List<Test_result> list = new ArrayList<Test_result>();
@@ -251,17 +252,22 @@ public class FindCommentDao {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				try {
-				//sqlを送信
-					pStmt.setString(1, id);
+				//sql文を完成させる
+					if (tr.getId() != null) {
+						pStmt.setString(1, tr.getId());
+					}
+					else {
+						pStmt.setString(1, "null");
+					}
 
 
 					ResultSet rs = st.executeQuery(sql);
 
 					// SQL文を完成させる　〇
 					while(rs.next()) {
-						Test_result ch = new Test_result();
-						ch.setRank(rs.getInt("rank"));
-						list.add(ch);
+						Test_result t_result = new Test_result();
+						t_result.setRank(rs.getInt("rank"));
+						list.add(t_result);
 					}
 
 					rs.close();

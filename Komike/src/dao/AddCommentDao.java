@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Chat;
-import model.Question;
 
 public class AddCommentDao{
 
@@ -133,7 +132,7 @@ public class AddCommentDao{
 
 
 //評価数の更新処理
-	public boolean update(Question q, int number) {
+	public boolean update(int number, int q) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -142,7 +141,7 @@ public class AddCommentDao{
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/komike", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
 			String sql = "update question set good_number =? where question_id=?";
@@ -150,7 +149,7 @@ public class AddCommentDao{
 
 			// SQL文を完成させる
 			pStmt.setInt(1, number);
-			pStmt.setInt(2, q.getQuestion_id());
+			pStmt.setInt(2, q);
 
 
 
