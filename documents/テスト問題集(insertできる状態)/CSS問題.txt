@@ -103,7 +103,7 @@ insert into test_choice values('CSS10', 4, '0 auto auto auto', 0);
 
 
 
-insert into test_question values('CSS11', '画像を中央ぞろえで配置するとき<div class="map">CSSのソースコードは);
+insert into test_question values('CSS11', '画像を中央ぞろえで配置するとき<div class="map">CSSのソースコードは');
 insert into test_choice values('CSS11', 1, 'text-align', 0);
 insert into test_choice values('CSS11', 2, 'text-align: center', 0);
 insert into test_choice values('CSS11', 3, '.map { text-align: center; }', 1);
