@@ -25,21 +25,13 @@ public class Tselect extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/Komike/LoginServlet");
 			return;
-		}
+		}*/
+				request.setCharacterEncoding("UTF-8");
+				String ganre = request.getParameter("ganre");
+				String correct_answer_rate = request.getParameter("correct_answer_rate");
+				String rank = request.getParameter("rank");
 
-		TestresultDao TRDao=new TestresultDao();
-		List<Test_result> resultds =TRDao.select();
 
-
-
-
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("results", results);
-		// TODO Auto-generated method stub
-		//Tselect.javaがpostした内容のデータベースを取得する
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/.jsp");
-		dispatcher.forward(request, response);
-*/
 		// 理解度テスト選択画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
 		dispatcher.forward(request, response);

@@ -60,19 +60,19 @@
 	<table class=select>
 
 		<tr>
-			<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>
+			<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=css" class="bt-samp44">CSS</a><br>
+			<td><a href="/komike/TestServlet?key=css" class="bt-samp44">CSS</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=JavaScript"class="bt-samp44">JavaScript</a><br>
+			<td><a href="/komike/TestServlet?key=JavaScript"class="bt-samp44">JavaScript</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
 		</tr>
 		<tr>
-			<td><a href="/komike/TestServlet?key=java"class="bt-samp44">java</a><br>
+			<td><a href="/komike/TestServlet?key=java"class="bt-samp44">java</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=データベース"class="bt-samp44">データベース</a><br>
+			<td><a href="/komike/TestServlet?key=データベース"class="bt-samp44">データベース</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=サーバーサイドjava" class="bt-samp44">サーバーサイドjava</a><br>
+			<td><a href="/komike/TestServlet?key=サーバーサイドjava" class="bt-samp44">サーバーサイドjava</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
 			</td>
 		</tr>
 	</table>

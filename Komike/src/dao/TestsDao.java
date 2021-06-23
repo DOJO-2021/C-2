@@ -36,13 +36,15 @@ public class TestsDao {
 							try {
 								// SQL文を実行し、結果表を取得する
 								ResultSet rs = st.executeQuery();
+								int number = 1;
 
 								// SQL文を完成させる
 								while(rs.next()) {
 									Test_question te = new Test_question();
 									te.setQuestion_number(rs.getString("question_number"));
+									te.setNumbers(number);
 									te.setQuestion_sentence(rs.getString("question_sentence"));
-									te.setQuestion_sentence(rs.getString("questions"));
+									number++;
 
 									st_chioce.setString(1, te.getQuestion_number());
 									ResultSet rs_choice = st_chioce.executeQuery();
@@ -116,12 +118,15 @@ public class TestsDao {
 							try {
 								// SQL文を実行し、結果表を取得する
 								ResultSet rs = st.executeQuery();
+								int number = 1;
 
 								// SQL文を完成させる
 								while(rs.next()) {
 									Test_question te = new Test_question();
 									te.setQuestion_number(rs.getString("question_number"));
+									te.setNumbers(number);
 									te.setQuestion_sentence(rs.getString("question_sentence"));
+									number++;
 
 									st_chioce.setString(1, te.getQuestion_number());
 									ResultSet rs_choice = st_chioce.executeQuery();
