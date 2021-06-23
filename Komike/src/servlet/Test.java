@@ -89,6 +89,7 @@ public class Test extends HttpServlet {
 			//aが9までは0を抜き出さずそのまま出す(ifの処理は同じ)
 			if(a<=9) {
 				//対応する問題番号の選択した値を取得(1、2、3、4のみ)
+				//この時点で例外発生
 				int answer = Integer.parseInt(request.getParameter(testType + num));
 
 				if (resultDao.select(testType + num, answer)) {
@@ -102,14 +103,14 @@ public class Test extends HttpServlet {
 
 				}
 
-				/*String b = num.substring(0);
-				System.out.println(b);*/
+
 			}
 			//aが10は0を抜き出して出す(ifの処理は同じ)
 			else if(a>9) {
 				String b = num.substring(1);
 				//対応する問題番号の選択した値を取得(1、2、3、4のみ)
 				int answer = Integer.parseInt(request.getParameter(testType + b));
+
 				if (resultDao.select(testType + b, answer)) {
 					//正解
 					score++;
@@ -122,24 +123,47 @@ public class Test extends HttpServlet {
 				}
 
 
-			//System.out.println(b);
 			}
 
 		}
 
 			//System.out.println(a.substring(0));
+		//正解率を求める
 		double rate ;
 
+		//int型のscoreをdouble型のrateに入れる(rateの値を一度あるものにする)
 		rate = score;
 
+		//代入した数を問題数20で割り百分率
 		rate = ((rate / 20) * 100);
 
+				//ランクを決める
+		String rank;
 
+		rank = "ビギナー";
 
+		if(score>10 && score<14) {
+			rank = "ブロンズ";
+
+		}
+
+		if(score>14 && score<17) {
+			rank = "シルバー";
+
+		}
+
+		if(score>17 && score<20) {
+			rank = "ゴールド";
+
+		}
+
+		if(score==20) {
+			rank = "プラチナ";
+
+		}
 
 			request.setAttribute("Test_result",
-					new Test_result(1, score, 2, rate, "reborn", testType));
-
+					new Test_result(rank, score, 2, rate, "reborn", testType));
 
 		//正解数が取得できる
 

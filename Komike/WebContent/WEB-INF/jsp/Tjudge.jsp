@@ -53,7 +53,7 @@
 
 
 <h4>理解度テスト結果</h4>
-<h5>問題ジャンル：<c:out value="${Test_result.genre}" />　(選んだ問題が反映される)　</h5>
+<h5>問題ジャンル：<c:out value="${Test_result.genre}" /></h5>
 
 <table>
 

@@ -34,6 +34,39 @@
 			return false;
 		})
 	});
+
+	//ページ移行時に見せるアラート
+	window.alert('全部答えていません')
+	var radioBtnElements = document.getElementsByName('name');
+
+	//回答ボタンを押したときになるもの
+	//btnNo = 0;
+	//function check(){
+	// if(btnNo == 1){
+//	      window.alert('全部答えていません')
+//	      return false;
+	// //}
+
+	//ラジオボタンの回答数が20未満の場合画面を戻す
+	//var radioBtnElements = document.getElementsByName('${e.question_number}');
+	///for (var i = 0, len = radioBtnElements.length; i < len; i++) {
+//	    if (radioBtnElements[i].checked) {
+//	    	window.alert('全部答えていません')
+//	        return false;
+	 //   }
+	//}
+
+
+	//btnNo = 0;
+	//function check(){
+	 //if(btnNo == 1){
+//		 if(document.SelfReport.querySelectorAll(':checked').length < 20){
+	  //    window.alert('全部答えていません')
+		// }
+	 //}
+	//}
+
+
 </script>
 </head>
 <body class="body">

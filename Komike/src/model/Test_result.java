@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Test_result implements Serializable {
-	private int rank;						//ランク
+	private String rank;					//ランク
 	private int correct_answer;			//正解数
 	private int number;					//受けた回数
 	private double correct_answer_rate;	//正解率
@@ -12,7 +12,7 @@ public class Test_result implements Serializable {
 
 
 	//コンストラクタの生成
-	public Test_result(int rank, int correct_answer, int number, double correct_answer_rate, String id, String genre) {
+	public Test_result(String rank, int correct_answer, int number, double correct_answer_rate, String id, String genre) {
 		super();
 		this.rank = rank;
 		this.correct_answer = correct_answer;
@@ -25,7 +25,7 @@ public class Test_result implements Serializable {
 	//引数がないコンストラクタ
 		public Test_result() {
 			super();
-			this.rank = 0;
+			this.rank = "";
 			this.correct_answer = 0;
 			this.number =  0;
 			this.correct_answer_rate = 0;
@@ -33,12 +33,12 @@ public class Test_result implements Serializable {
 			this.genre = "";
 		}
 
-	public int getRank() {
+	public String getRank() {
 		return rank;
 	}
 
 
-	public void setRank(int rank) {
+	public void setRank(String rank) {
 		this.rank = rank;
 	}
 
