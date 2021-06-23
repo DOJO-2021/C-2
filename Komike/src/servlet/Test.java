@@ -14,6 +14,7 @@ import dao.TestsDao;
 import dao.TestsresultDao;
 import model.Select;
 import model.Test_question;
+import model.Test_result;
 
 /**
  * Servlet implementation class Test
@@ -74,37 +75,77 @@ public class Test extends HttpServlet {
 		int score = 0;
 		//ループ２０回
 
+		//変数の値は1文字扱いなのか
 		// 1  →　01       0 + 1→ 01→01
 		// 2  →　02
 
 		// 20 →　20       0 + 20→ 020→20
-		/*for (int a = 1; a <= 20; a++) {
+		//画面上で0をつける
+		for (int a = 1; a <= 20; a++) {
+			//aを0を付けたString型のnumに変換
+			String num = "0" + a;
 
-			System.out.println("0" + a);
-			String b = a.substring(0);
-			System.out.println(b);*/
 
-
-			//対応する問題番号の選択した値を取得(1、2、3、4のみ)
-			int answer = Integer.parseInt(request.getParameter(testType + "1"));
-			//正解か間違いかを判断
 			TestsresultDao resultDao = new TestsresultDao();
-			//正解していたら＋１
-			if (resultDao.select(testType + "1", answer)) {
-				//正解
-				score++;
-				System.out.println("正解!");
 
-			} else {
-				//不正解
-				System.out.println("不正解・・・");
+			//正解か間違いかを判断
 
+			//System.out.println(num);
+			//aが9までは0を抜き出さずそのまま出す(ifの処理は同じ)
+			if(a<=9) {
+				//対応する問題番号の選択した値を取得(1、2、3、4のみ)
+				int answer = Integer.parseInt(request.getParameter(testType + num));
+
+				if (resultDao.select(testType + num, answer)) {
+					//正解
+					score++;
+					System.out.println("正解!");
+
+				} else {
+					//不正解
+					System.out.println("不正解・・・");
+
+				}
+
+				/*String b = num.substring(0);
+				System.out.println(b);*/
+			}
+			//aが10は0を抜き出して出す(ifの処理は同じ)
+			else if(a>9) {
+				String b = num.substring(1);
+				//対応する問題番号の選択した値を取得(1、2、3、4のみ)
+				int answer = Integer.parseInt(request.getParameter(testType + b));
+				if (resultDao.select(testType + b, answer)) {
+					//正解
+					score++;
+					System.out.println("正解!");
+
+				} else {
+					//不正解
+					System.out.println("不正解・・・");
+
+				}
+
+
+			//System.out.println(b);
 			}
 
-			/*request.setAttribute("Test_result",
-					new Test_result(1, 15, 2, 49, "reborn", "CSS"));*/
+		}
 
-		//}
+			//System.out.println(a.substring(0));
+		double rate ;
+
+		rate = score;
+
+		rate = ((rate / 20) * 100);
+
+
+
+
+			request.setAttribute("Test_result",
+					new Test_result(1, score, 2, rate, "reborn", testType));
+
+
 		//正解数が取得できる
 
 		System.out.println(score);
