@@ -13,183 +13,183 @@ insert into test_choice values('java01', 4, '選択肢の内容', 1);
 
 
 
-insert into test_question values('CSS01', 'CSSで行間を指定するものはどれか');
-insert into test_choice values('CSS01', 1, 'line-height:1.4;', 1);
-insert into test_choice values('CSS01', 2, 'line-width1.4;', 0);
-insert into test_choice values('CSS01', 3, 'height-text-line:1.4;', 0);
-insert into test_choice values('CSS01', 4, 'text-align:1.4;', 0);
+insert into test_question values('css01', 'CSSで行間を指定するものはどれか');
+insert into test_choice values('css01', 1, 'line-height:1.4;', 1);
+insert into test_choice values('css01', 2, 'line-width1.4;', 0);
+insert into test_choice values('css01', 3, 'height-text-line:1.4;', 0);
+insert into test_choice values('css01', 4, 'text-align:1.4;', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS02', 'CSSのボックスモデルにおいて、ボックスの最も外側の領域は何というか');
-insert into test_choice values('CSS02', 1, '内容領域', 0);
-insert into test_choice values('CSS02', 2, 'ボーダー領域', 0);
-insert into test_choice values('CSS02', 3, 'パディング領域', 0);
-insert into test_choice values('CSS02', 4, 'マージン領域', 1);
+insert into test_question values('css02', 'CSSのボックスモデルにおいて、ボックスの最も外側の領域は何というか');
+insert into test_choice values('css02', 1, '内容領域', 0);
+insert into test_choice values('css02', 2, 'ボーダー領域', 0);
+insert into test_choice values('css02', 3, 'パディング領域', 0);
+insert into test_choice values('css02', 4, 'マージン領域', 1);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS03', 'CSSに記述するせれくたの種類の中で、abcというクラスを対象下ものはどれか？');
-insert into test_choice values('CSS03', 1, 'class abc', 0);
-insert into test_choice values('CSS03', 2, '#abc', 0);
-insert into test_choice values('CSS03', 3, 'abc', 0);
-insert into test_choice values('CSS03', 4, '.abc', 1);
+insert into test_question values('css03', 'CSSに記述するせれくたの種類の中で、abcというクラスを対象下ものはどれか？');
+insert into test_choice values('css03', 1, 'class abc', 0);
+insert into test_choice values('css03', 2, '#abc', 0);
+insert into test_choice values('css03', 3, 'abc', 0);
+insert into test_choice values('css03', 4, '.abc', 1);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
-insert into test_question values('CSS04', 'CSSを設定する対象示す構成要素とは何か');
-insert into test_choice values('CSS04', 1, '値', 0);
-insert into test_choice values('CSS04', 2, 'プロパティ', 0);
-insert into test_choice values('CSS04', 3, 'セレクタ', 1);
-insert into test_choice values('CSS04', 4, 'ポイント', 0);
+insert into test_question values('04', 'CSSを設定する対象示す構成要素とは何か');
+insert into test_choice values('css04', 1, '値', 0);
+insert into test_choice values('css04', 2, 'プロパティ', 0);
+insert into test_choice values('css04', 3, 'セレクタ', 1);
+insert into test_choice values('css04', 4, 'ポイント', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
 
-insert into test_question values('CSS05', 'CSSでフォントの種類ゴシックなどを指定するものはどれか');
+insert into test_question values('css05', 'CSSでフォントの種類ゴシックなどを指定するものはどれか');
 test_choiceテーブルへの挿入例
-insert into test_choice values('CSS05', 1, 'set-font:sans-serif;', 0);
-insert into test_choice values('CSS05', 2, 'sylvania-familiy:sans-serif;', 0);
-insert into test_choice values('CSS05', 3, 'font-familiy:sans-serif', 1);
-insert into test_choice values('CSS05', 4, 'font-layout:sans-serif', 0);
+insert into test_choice values('css05', 1, 'set-font:sans-serif;', 0);
+insert into test_choice values('css05', 2, 'sylvania-familiy:sans-serif;', 0);
+insert into test_choice values('css05', 3, 'font-familiy:sans-serif', 1);
+insert into test_choice values('css05', 4, 'font-layout:sans-serif', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
-insert into test_question values('CSS06', 'CSSを設定する対象示す構成要素とは何か');
-insert into test_choice values('CSS06', 1, '値', 0);
-insert into test_choice values('CSS06', 2, 'プロパティ', 0);
-insert into test_choice values('CSS06', 3, 'セレクタ', 1);
-insert into test_choice values('CSS06', 4, 'ポイント', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-insert into test_question values('CSS07', 'text-shadow	プロパティの使い方として誤っているものを選びなさい');
-insert into test_choice values('CSS07', 1, 'text-shadow:2px 2px;', 0);
-insert into test_choice values('CSS07', 2, 'text-shadow:2px 2px 4px black;', 0);
-insert into test_choice values('CSS07', 3, 'text-shadow:2px', 1);
-insert into test_choice values('CSS07', 4, 'text-shadow:#0000 2px 2px 4px, #fffff -2px -2px 4px;', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-insert into test_question values('CSS08', 'CSSを用いることでどのようなことができるか');
-insert into test_choice values('CSS08', 1, '時間を表す', 0);
-insert into test_choice values('CSS08', 2, 'データを呼び出す', 0);
-insert into test_choice values('CSS08', 3, 'フォントサイズや色といった文章の外観を表現にもちいる', 1);
-insert into test_choice values('CSS08', 4, 'そんなものはない', 0);
+insert into test_question values('css06', 'CSSを設定する対象示す構成要素とは何か');
+insert into test_choice values('css06', 1, '値', 0);
+insert into test_choice values('css06', 2, 'プロパティ', 0);
+insert into test_choice values('css06', 3, 'セレクタ', 1);
+insert into test_choice values('css06', 4, 'ポイント', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS09', 'a:link, a:visited { color: red; text-decoration: underline; text-decoration: dashed black underline;}
+insert into test_question values('css07', 'text-shadow	プロパティの使い方として誤っているものを選びなさい');
+insert into test_choice values('css07', 1, 'text-shadow:2px 2px;', 0);
+insert into test_choice values('css07', 2, 'text-shadow:2px 2px 4px black;', 0);
+insert into test_choice values('css07', 3, 'text-shadow:2px', 1);
+insert into test_choice values('css07', 4, 'text-shadow:#0000 2px 2px 4px, #fffff -2px -2px 4px;', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+insert into test_question values('css08', 'CSSを用いることでどのようなことができるか');
+insert into test_choice values('css08', 1, '時間を表す', 0);
+insert into test_choice values('css08', 2, 'データを呼び出す', 0);
+insert into test_choice values('css08', 3, 'フォントサイズや色といった文章の外観を表現にもちいる', 1);
+insert into test_choice values('css08', 4, 'そんなものはない', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+insert into test_question values('css09', 'a:link, a:visited { color: red; text-decoration: underline; text-decoration: dashed black underline;}
 リンクの下線は何色で表示されるか');
-insert into test_choice values('CSS09', 1, 'black', 0);
-insert into test_choice values('CSS09', 2, 'blue', 0);
-insert into test_choice values('CSS09', 3, 'red', 1);
-insert into test_choice values('CSS09', 4, 'green', 0);
+insert into test_choice values('css09', 1, 'black', 0);
+insert into test_choice values('css09', 2, 'blue', 0);
+insert into test_choice values('css09', 3, 'red', 1);
+insert into test_choice values('css09', 4, 'green', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS10', '<div class="wrapper">の最大幅を設定した時、ページが中央ぞろえになるのは次のうちどれ');
-insert into test_choice values('CSS10', 1, 'auto auto auto 0', 0);
-insert into test_choice values('CSS10', 2, '0 auto 0 auto', 1);
-insert into test_choice values('CSS10', 3, '0 0 0 0', 0);
-insert into test_choice values('CSS10', 4, '0 auto auto auto', 0);
+insert into test_question values('css10', '<div class="wrapper">の最大幅を設定した時、ページが中央ぞろえになるのは次のうちどれ');
+insert into test_choice values('css10', 1, 'auto auto auto 0', 0);
+insert into test_choice values('css10', 2, '0 auto 0 auto', 1);
+insert into test_choice values('css10', 3, '0 0 0 0', 0);
+insert into test_choice values('css10', 4, '0 auto auto auto', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS11', '画像を中央ぞろえで配置するとき<div class="map">CSSのソースコードは');
-insert into test_choice values('CSS11', 1, 'text-align', 0);
-insert into test_choice values('CSS11', 2, 'text-align: center', 0);
-insert into test_choice values('CSS11', 3, '.map { text-align: center; }', 1);
-insert into test_choice values('CSS11', 4, 'center', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-
-insert into test_question values('CSS12', 'CSSセレクタで2番目～５番目までの兄弟要素の範囲指定をしているのはどれ？');
-insert into test_choice values('CSS12', 1, 'セレクタ名:nth-child(-n+2):nth-child(-n+5){～}', 0);
-insert into test_choice values('CSS12', 2, 'セレクタ名:nth-child(n+2):nth-child(n+5){～}', 0);
-insert into test_choice values('CSS12', 3, 'セレクタ名:nth-child(n+2):nth-child(-n+5){～}', 1);
-insert into test_choice values('CSS12', 4, 'セレクタ名:nth-child(n+2):nth-child(-n-5){～}', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-insert into test_question values('CSS13', 'CSS「margin」プロパティ下方向に１０px余白を設ける記述はどれ？');
-insert into test_choice values('CSS13', 1, 'margin:0px 10px 0px', 0);
-insert into test_choice values('CSS13', 2, 'margin:0px 10px 10px', 0);
-insert into test_choice values('CSS13', 3, 'margin:0px 0px 10px;', 1);
-insert into test_choice values('CSS13', 4, 'margin:0px 0px 0px 10px', 0);
+insert into test_question values('css11', '画像を中央ぞろえで配置するとき<div class="map">CSSのソースコードは');
+insert into test_choice values('css11', 1, 'text-align', 0);
+insert into test_choice values('css11', 2, 'text-align: center', 0);
+insert into test_choice values('css11', 3, '.map { text-align: center; }', 1);
+insert into test_choice values('css11', 4, 'center', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
 
-insert into test_question values('CSS14', 'CSSの「visibility」プロパティ要素を出非表示にする値は？');
-insert into test_choice values('CSS14', 1, 'none', 0);
-insert into test_choice values('CSS14', 2, 'center', 0);
-insert into test_choice values('CSS14', 3, 'hidden', 1);
-insert into test_choice values('CSS14', 4, 'visible', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-insert into test_question values('CSS15', 'font-variant-positionの説明はどれ？');
-insert into test_choice values('CSS15', 1, 'マーキーの動きの方向', 0);
-insert into test_choice values('CSS15', 2, 'オーバーフロー下テキストの省略表示', 0);
-insert into test_choice values('CSS15', 3, '上付き文字・下付き文字の指定', 1);
-insert into test_choice values('CSS15', 4, '自動生成されるグリッドアイテム', 0);
+insert into test_question values('css12', 'CSSセレクタで2番目～５番目までの兄弟要素の範囲指定をしているのはどれ？');
+insert into test_choice values('css12', 1, 'セレクタ名:nth-child(-n+2):nth-child(-n+5){～}', 0);
+insert into test_choice values('css12', 2, 'セレクタ名:nth-child(n+2):nth-child(n+5){～}', 0);
+insert into test_choice values('css12', 3, 'セレクタ名:nth-child(n+2):nth-child(-n+5){～}', 1);
+insert into test_choice values('css12', 4, 'セレクタ名:nth-child(n+2):nth-child(-n-5){～}', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
-insert into test_question values('CSS16', 'alignment-baseline');
-insert into test_choice values('CSS16', 1, '自動生成されるグリッドアイテム', 0);
-insert into test_choice values('CSS16', 2, 'オーバーフロー下テキストの省略表示', 0);
-insert into test_choice values('CSS16', 3, 'インライン要素の揃えライン', 1);
-insert into test_choice values('CSS16', 4, 'グリッアイテムのド列位置', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-insert into test_question values('CSS17', 'line-stacking-strategy');
-insert into test_choice values('CSS17', 1, '意味はない', 0);
-insert into test_choice values('CSS17', 2, '特定の名前をつけてページを定義', 0);
-insert into test_choice values('CSS17', 3, '行ボックスを重ねる際の基準の高さ', 1);
-insert into test_choice values('CSS17', 4, 'フォントの変更ルール', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-insert into test_question values('CSS18', 'text-alignの説明はどれ？');
-insert into test_choice values('CSS18', 1, '横（水平）方向の文字位置', 1);
-insert into test_choice values('CSS18', 2, 'フォントの変更ルール', 0);
-insert into test_choice values('CSS18', 3, 'マルチカラムの数と横幅', 0);
-insert into test_choice values('CSS18', 4, '横方向におバー下コンテンツの表示', 0);
-正しい選択肢には1を挿入、不正解な選択肢には0を挿入
-
-
-
-insert into test_question values('CSS19', 'columnsの説明はどれ？');
-insert into test_choice values('CSS19', 1, 'テーブルの表示方法', 0);
-insert into test_choice values('CSS19', 2, '左のマージン', 0);
-insert into test_choice values('CSS19', 3, 'マルチカラムの数と横幅', 1);
-insert into test_choice values('CSS19', 4, 'フォントの変更ルール', 0);
+insert into test_question values('css13', 'CSS「margin」プロパティ下方向に１０px余白を設ける記述はどれ？');
+insert into test_choice values('css13', 1, 'margin:0px 10px 0px', 0);
+insert into test_choice values('css13', 2, 'margin:0px 10px 10px', 0);
+insert into test_choice values('css13', 3, 'margin:0px 0px 10px;', 1);
+insert into test_choice values('css13', 4, 'margin:0px 0px 0px 10px', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
 
 
-insert into test_question values('CSS20', 'topの説明はどれ？');
-insert into test_choice values('CSS20', 1, 'ボックスの影付け', 0);
-insert into test_choice values('CSS20', 2, 'テーブルの表示方法', 0);
-insert into test_choice values('CSS20', 3, '基点の上辺からの距離', 1);
-insert into test_choice values('CSS20', 4, '要素重なり時の３D表示', 0);
+insert into test_question values('css14', 'CSSの「visibility」プロパティ要素を出非表示にする値は？');
+insert into test_choice values('css14', 1, 'none', 0);
+insert into test_choice values('css14', 2, 'center', 0);
+insert into test_choice values('css14', 3, 'hidden', 1);
+insert into test_choice values('css14', 4, 'visible', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+insert into test_question values('css15', 'font-variant-positionの説明はどれ？');
+insert into test_choice values('css15', 1, 'マーキーの動きの方向', 0);
+insert into test_choice values('css15', 2, 'オーバーフロー下テキストの省略表示', 0);
+insert into test_choice values('css15', 3, '上付き文字・下付き文字の指定', 1);
+insert into test_choice values('css15', 4, '自動生成されるグリッドアイテム', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+insert into test_question values('css16', 'alignment-baseline');
+insert into test_choice values('css16', 1, '自動生成されるグリッドアイテム', 0);
+insert into test_choice values('css16', 2, 'オーバーフロー下テキストの省略表示', 0);
+insert into test_choice values('css16', 3, 'インライン要素の揃えライン', 1);
+insert into test_choice values('css16', 4, 'グリッアイテムのド列位置', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+insert into test_question values('css17', 'line-stacking-strategy');
+insert into test_choice values('css17', 1, '意味はない', 0);
+insert into test_choice values('css17', 2, '特定の名前をつけてページを定義', 0);
+insert into test_choice values('css17', 3, '行ボックスを重ねる際の基準の高さ', 1);
+insert into test_choice values('css17', 4, 'フォントの変更ルール', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+insert into test_question values('css18', 'text-alignの説明はどれ？');
+insert into test_choice values('css18', 1, '横（水平）方向の文字位置', 1);
+insert into test_choice values('css18', 2, 'フォントの変更ルール', 0);
+insert into test_choice values('css18', 3, 'マルチカラムの数と横幅', 0);
+insert into test_choice values('css18', 4, '横方向におバー下コンテンツの表示', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+insert into test_question values('css19', 'columnsの説明はどれ？');
+insert into test_choice values('css19', 1, 'テーブルの表示方法', 0);
+insert into test_choice values('css19', 2, '左のマージン', 0);
+insert into test_choice values('css19', 3, 'マルチカラムの数と横幅', 1);
+insert into test_choice values('css19', 4, 'フォントの変更ルール', 0);
+正しい選択肢には1を挿入、不正解な選択肢には0を挿入
+
+
+
+
+insert into test_question values('css20', 'topの説明はどれ？');
+insert into test_choice values('css20', 1, 'ボックスの影付け', 0);
+insert into test_choice values('css20', 2, 'テーブルの表示方法', 0);
+insert into test_choice values('css20', 3, '基点の上辺からの距離', 1);
+insert into test_choice values('css20', 4, '要素重なり時の３D表示', 0);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
