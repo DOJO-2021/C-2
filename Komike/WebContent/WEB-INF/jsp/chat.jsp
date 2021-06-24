@@ -63,11 +63,10 @@
 			</ol>
 		</div>
 		<!-- パンくずリストここまで -->
-		<!--  <p>雑談ルームへようこそ</p>-->
-		<!-- データベースから今までの掲示板の内容を全件表示 -->
 		<h1>雑談ルームへようこそ</h1>
 		<section>
 			<h2>新規投稿</h2>
+			<!-- 掲示板への書き込み内容を記入するフォーム -->
 			<form method="post" action="/komike/ChatServlet" name="chat"
 				enctype="multipart/form-data">
 				<div class="name">
@@ -77,12 +76,13 @@
 					<span class="label">添付画像</span><input type="file" name="image"
 						accept="image/*" onchange="previewImage(this);">
 				</div>
+				<!-- 添付画像のプレビューを表示 -->
 				<canvas id="preview" style="max-width: 200px;"></canvas>
 				<div class="honbun">
 					<span class="label">本文:</span>
 					<textarea name="text" id="text" cols="40" rows="6"></textarea>
 				</div>
-				<input type="submit" name="submit" value="投稿"
+				<input type="submit" name="submit" value="書き込む"
 					onclick="return cancelsubmit()">
 			</form>
 		</section>
@@ -112,6 +112,8 @@
 						</ul>
 						<ul class="comcom">
 							<li class="comtxt"><c:out value="${e.text}" /></li>
+							<img src="${'/komike/images/'+=e.image_name}" width="500" height="180"
+					alt="写真">
 							<!--  -<li class="comreturn">
 								<form action="index.php" method="post" style="display: inline">
 									<input type="hidden" name="returnno" value="12"> <input
@@ -125,29 +127,6 @@
 					<div class="break"></div>
 				</c:forEach>
 			</div>
-
-			<!-- 掲示板への書き込み内容を記入するフォーム -->
-			<!--  <table class=chat>
-		<form method="post" action="/komike/ChatServlet" name="chat"
-			enctype="multipart/form-data">
-			<tr>
-				<td>名前<input type="text" name="name"></td>
-			</tr>
-			<tr>
-				<td>添付画像<input type="file" name="image" accept="image/*"
-					onchange="previewImage(this);"></td>
-			</tr>
-			<!-- 添付画像のプレビューを表示 -->
-			<!--<canvas id="preview" style="max-width: 200px;"></canvas>
-			<tr>
-				<td>本文<textarea name="text" id="text" cols="40" rows="6"></textarea></td>
-			</tr>
-			<tr>
-				<td><input type="submit" name="submit" value="書き込む"
-					onclick="return cancelsubmit()"></td>
-			</tr>
-		</form>
-	</table>-->
 		</section>
 	</div>
 </body>
