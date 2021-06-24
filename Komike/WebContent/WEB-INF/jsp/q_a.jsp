@@ -48,11 +48,11 @@
 		</ol>
 	</div>
 	<!-- パンくずリストここまで -->
+
 	<!-- 検索結果のフォーム -->
 	<form method="post" action="/komike/Q_AServlet" name="chat">
 		<p>
-			<label>キーワード検索：<input type="search" name="key" size="30"
-				maxlength="255"></label>
+			<label>キーワード検索：<input type="search" name="key" size="30"maxlength="255"></label>
 		</p>
 		<input type="submit" name="submit" value="検索する">
 	</form>
@@ -60,14 +60,9 @@
 
 	<h3>分からないことを質問してみましょう</h3>
 	<p>質問は以下の欄に入力してください</p>
-	<!-- 質問ルームへの書き込み内容を記入するフォーム -->
-
 	<p>質問ルームへようこそ</p>
-
 	<!-- 質問ルームへの書き込み内容を記入するフォーム -->
 	<form method="post" action="/komike/Q_AServlet" name="q_a" enctype="multipart/form-data">
-
-
 		<p>
 			id<input type="text" name="id">
 		</p>
@@ -88,19 +83,16 @@
 			<textarea name="text"></textarea>
 		</p>
 		<input type="submit" name="submit" value="書き込む">
-
-
 	</form>
 	<br>
+	<!-- 質問ルームへの書き込み内容を記入するフォームここまで -->
 	<!-- データベースから今までの掲示板の内容を全件表示 -->
-
 	<c:forEach var="e" items="${questionList}">
 		<p>
-			Question_ID
-			<c:out value="${e.question_id}" />
+			Question_ID<c:out value="${e.question_id}" />
 		</p>
 		<br>
-       ID<c:out value="${e.id}" />
+      	 ID<c:out value="${e.id}" />
 		<br>
 		<b>タイトル</b>
 		<c:out value="${e.title}" />
@@ -147,8 +139,14 @@
 				Answer_ID
 				<c:out value="${a.answer_id}" />
 			</p>
-				ID<c:out value="${e.id}" />
+				ID<c:out value="${a.id}" />
 			<br>
+				<c:forEach var="b" items="${a.test_result}">
+					<b>ジャンル</b>
+					<c:out value="${b.genre}" />
+					<b>ランク</b>
+					<c:out value="${b.rank}" />
+				</c:forEach>
 			<b>名前</b>
 			<c:out value="${a.name}" />
 			<br>

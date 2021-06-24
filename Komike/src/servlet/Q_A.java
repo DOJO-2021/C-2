@@ -41,16 +41,12 @@ public class Q_A extends HttpServlet {
 
 		//質問の一覧を取得する
 		//DAOを使う→Q_AsDaoのインスタンス化
-		Q_AsDao dao = new Q_AsDao();
+		FindCommentDao dao = new FindCommentDao();
 		List<Question> questionList = dao.select();
-
-		//ランクを取得
-		//List <Test_result> question = FindCommentDao.rank(new Test_result(0, 0, 0, 0, , ""));
 
 		//質問の一覧をjspに渡す
 		request.setAttribute("questionList", questionList);
 
-		//request.setAttribute("questionList", question);
 
 		// 質問ルームにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/q_a.jsp");
@@ -103,7 +99,7 @@ public class Q_A extends HttpServlet {
 				String text1 = request.getParameter("text1");
 				int ans =  Integer.parseInt(request.getParameter("question_id"));
 				//ファイルの書込み
-				dao.a_insert(new Answer(ans, 0, id, name1, text1));
+				dao.a_insert(new Answer(ans, 0, id, name1, text1,null));
 			}
 
 

@@ -233,74 +233,110 @@ public class FindCommentDao {
 
 	    }
 
-	//ランクを取得するメソッド
-	public static List<Test_result> rank(Test_result tr) {
-		//id name commnetを書くのするリスト
+	//ランクを含めた質問、返答の全件を取得するメソッド
+	public List<Question> select() {
 		Connection conn = null;
-		List<Test_result> list = new ArrayList<Test_result>();
+		List<Question> QuestionList = new ArrayList<Question>();
+
 
 		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
+	       //JDBCドライバを読み込む
+	       Class.forName("org.h2.Driver");
 
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
-			try {
-			// SQL文を準備する
-				Statement st = conn.createStatement();
-				String sql = "select rank from test_result where id = ?";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+	       // データベースに接続する
+	        conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
-				try {
-				//sql文を完成させる
-					if (tr.getId() != null) {
-						pStmt.setString(1, tr.getId());
+	      // SQL文を準備する
+	       String sql = "select * from Question";
+	       PreparedStatement pStmt = conn.prepareStatement(sql);
+
+	       // SQL文を準備するAnswerテーブル
+	       String sql_1 = "select * from Answer where question_id = ?";
+	       PreparedStatement pStmt1 = conn.prepareStatement(sql_1);
+
+	       // SQL文を準備するAnswerテーブル
+	       String sql_2 = "select distinct rank, genre from test_result inner join answer on test_result.id = answer.id where answer.id = ?";
+	       PreparedStatement pStmt2 = conn.prepareStatement(sql_2);
+
+
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// SQL文を完成させる
+			while(rs.next()) {
+				Question comment = new Question(
+						rs.getInt("question_id"),
+						rs.getString("id"),
+						rs.getString("title"),
+						rs.getString("name"),
+						rs.getString("text"),
+						rs.getString("image_name"),
+						rs.getInt("good_number"),
+						new ArrayList<Answer>()
+						);
+
+				pStmt1.setInt(1, comment.getQuestion_id());
+				ResultSet rsr = pStmt1.executeQuery();
+
+					while(rsr.next()) {
+						Answer ans = new Answer(
+								rsr.getInt("question_id"),
+								rsr.getInt("answer_id"),
+								rsr.getString("id"),
+								rsr.getString("name"),
+								rsr.getString("text"),
+								new ArrayList<Test_result>()
+								);
+						pStmt2.setString(1, ans.getId());
+						ResultSet rsrs = pStmt2.executeQuery();
+
+						while(rsrs.next()) {
+							Test_result tr = new Test_result();
+							  tr.setRank(rsrs.getString("rank"));
+							  tr.setGenre(rsrs.getString("genre"));
+//							  tr.setCorrect_answer(rsrs.getInt("correct_answer"));
+//							  tr.setNumber(rsrs.getInt("number"));
+//							  tr.setCorrect_answer_rate(rsrs.getDouble("correct_answer_rate"));
+//							  tr.setId(rsrs.getString("id"));
+
+							  ans.getTest_result().add(tr);
+						}
+						  comment.getAnswer().add(ans);
 					}
-					else {
-						pStmt.setString(1, "null");
-					}
+
+					QuestionList.add(comment);
+			}
+			rs.close();
 
 
-					ResultSet rs = st.executeQuery(sql);
-
-					// SQL文を完成させる　〇
-					while(rs.next()) {
-						Test_result t_result = new Test_result();
-						t_result.setRank(rs.getInt("rank"));
-						list.add(t_result);
-					}
-
-					rs.close();
-					st.close();
-
-				}catch(SQLException e) {
-                    e.printStackTrace();
-                }
-			} catch (SQLException e) {
-	                e.printStackTrace();
-	            }finally {
-	                // データベース接続の切断
-	                if (conn != null) {
-	                    try {
-	                        conn.close();
-
-	                    } catch (SQLException e) {
-	                        e.printStackTrace();
-	                    }
-	                }
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            System.out.println("Connection Failed.");
-	            return null;
-	        }
-			catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			list = null;
 		}
-	        return list;
+		catch (SQLException e) {
+			e.printStackTrace();
+			QuestionList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			QuestionList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					QuestionList = null;
+				}
+			}
+		}
+		// 結果を返す
+		return QuestionList;
 
-	    }
+	}
+
+
 
 
 
