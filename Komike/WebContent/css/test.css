@@ -20,7 +20,7 @@
 
 /*ページ全てに適用*/
 .body {
-	background-color: #F0FFFF;
+	background-color: white;
 	font-family: Quicksand, 游ゴシック体, YuGothic, 'ヒラギノ角ゴシック Pro', メイリオ, Meiryo,
 		'ＭＳ Ｐゴシック', sans-serif;
 	text-align: center;
@@ -34,7 +34,7 @@
 
 .wrapper {
 	margin: 0 auto 0 auto;
-	max-width: 960px;
+	max-width: 1000px;
 	background:  white;
 	min-height: 100vh;
 	position: relative; /*←相対位置*/
@@ -100,7 +100,7 @@
 	text-align: center;
 	padding: 30px 0;
 	position: absolute; /*←絶対位置*/
-	bottom: 0; /*下に固定*/
+
 }
 
 
@@ -108,13 +108,52 @@
 	color:	#333333;
 }
 
-/*選択画面*/
+/*選択,テスト画面*/
 .select {
 	margin-left: auto;
     margin-right: auto;
-	padding:100px;
-	position:50px;
+	padding:50px;
+
 }
+/*結果画面表*/
+
+.result{
+	margin-left: auto;
+    margin-right: auto;
+	padding:50px;
+}
+
+.result th {
+	 padding : 20px 10px;/*セルの幅*/
+	 border:double 1px #aaaaaa;
+}
+
+.result td {
+	 padding : 20px 10px;
+	 border:double 1px #aaaaaa;
+}
+
+.result th{
+  color:white; /*文字色*/
+  background-color: #B0C4DE; /*背景色*/
+}
+
+.result {
+    border-collapse:  collapse;     /* セルの線を重ねる */
+}
+/*ジャンル選択*/
+a:link {
+
+}
+
+a:hover{
+	color: #4682b4;
+}
+a:active{
+	color: #B0C4DE;
+}
+
+
 
 /*ボタン*/
 a.bt-samp44{
@@ -125,8 +164,8 @@ a.bt-samp44{
   width: 150px;
   line-height: 100px;
   text-align: center;
-  color: #5194ce;
-  border: solid 1px #5194ce;
+  color: #B0C4DE;
+  border: solid 1px #B0C4DE;
   border-radius: 10%;
   overflow: hidden;
   z-index: 1;
@@ -136,7 +175,7 @@ a.bt-samp44:after{
   position: absolute;
   top: -100%;
   left: -100%;
-  background : #5194ce;
+  background : #B0C4DE;
   opacity: 0;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -146,7 +185,7 @@ a.bt-samp44:after{
   z-index: -1;
 }
 a.bt-samp44:hover{
-  color: #fff;
+  color: black;
 }
 a.bt-samp44:hover:after{
   top: 0;

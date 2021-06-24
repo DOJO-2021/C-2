@@ -6,10 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>結果画面</title>
+<link rel="stylesheet" href="/komike/css/test.css">
 </head>
 <body>
-<h1>Komike</h1><h2>受講者向け掲示板サイト</h2>
-<h4>ログアウトはこちら</h4>
+<body class = "body">
+<div class="wrapper">
+	<div class="head">
+		<div>
+			<img src="/komike/images/Komike2.png" width="500" height="180"
+				alt="写真">
+		</div>
+	</div>
+
 <form method="POST" action="/komike/Tjudge">
 
 <!-- パンくずリストここから -->
@@ -47,27 +55,37 @@
 					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
+						<!-- 6つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/LogoutServlet"> <span itemprop="name">ログアウトはこちら</span>
+				</a>
+					<meta itemprop="position" content="6" /></li>
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
 
 
-<h4>理解度テスト結果</h4>
-<h5>問題ジャンル：<c:out value="${Test_result.genre}" /></h5>
+<h2>理解度テスト結果</h2>
+			<h3>問題ジャンル:<c:out value="${Test_result.genre}" /></h3><br>
 
-<table>
+			<table class=result>
 
-		<tr>
-			<td>正解数/問題数<br><c:out value="${Test_result.correct_answer}" />問/20問<br>
-			</td>
-			<td>正解数<br><c:out value="${Test_result.correct_answer_rate}" />%<br>
-			</td>
-			<td>今回のランク<br><c:out value="${Test_result.rank}" /><br>
-			</td>
-		</tr>
-</table>
 
-<a  href="/komike/Tjudge">ジャンル選択</a>
+				<tr>
+					<th>正解数/問題数</th>
+					<th>正解数</th>
+					<th>今回のランク</th>
+				</tr>
+				<tr>
+					<td><c:out value="${Test_result.correct_answer}" />問/20問</td>
+					<td><c:out value="${Test_result.correct_answer_rate}" />%</td>
+					<td><c:out value="${Test_result.rank}" /></td>
+				</tr>
+			</table><br>
+
+			<a  href="/komike/Tselect">ジャンル選択</a>
 </form>
+<div class="wrapper">
 </body>
 </html>

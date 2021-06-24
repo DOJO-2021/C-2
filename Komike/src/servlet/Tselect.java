@@ -26,16 +26,13 @@ public class Tselect extends HttpServlet {
 			response.sendRedirect("/Komike/LoginServlet");
 			return;
 		}*/
-				request.setCharacterEncoding("UTF-8");
-				String ganre = request.getParameter("ganre");
-				String correct_answer_rate = request.getParameter("correct_answer_rate");
-				String rank = request.getParameter("rank");
 
 
-		// 理解度テスト選択画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
-		dispatcher.forward(request, response);
+				// 理解度テストページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
+				dispatcher.forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

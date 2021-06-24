@@ -8,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
 /**
  * Servlet implementation class Tjudge
  */
@@ -45,12 +43,15 @@ public class Tjudge extends HttpServlet {
 				String ganre = request.getParameter("ganre");
 				String correct_answer_rate = request.getParameter("correct_answer_rate");
 				String rank = request.getParameter("rank");
-				String correct_answer = request.getParameter("correct_answer");
+
+
+				request.setAttribute("correct_answer_rate", correct_answer_rate);
+				request.setAttribute("rank", rank);
 
 
 
 				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tselect.jsp");
 				dispatcher.forward(request, response);
 
 
