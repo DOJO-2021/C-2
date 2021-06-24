@@ -26,7 +26,7 @@ public class AddCommentDao{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into chat values (null, ?, ?, ?, ?, current_timestamp)";
+			String sql = "insert into chat values (null, ?, ?, ?, ?, now(0))";
 			PreparedStatement pStmt = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 

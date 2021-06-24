@@ -44,7 +44,7 @@ public class FindCommentDao {
 						ch.setName(rs.getString("name"));
 						ch.setText(rs.getString("text"));
 						ch.setImage_name(rs.getString("image_name"));
-						ch.setTime(rs.getDate("time"));
+						ch.setTime(rs.getTimestamp("time"));
 
 						list.add(ch);
 					}

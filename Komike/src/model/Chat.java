@@ -1,7 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Chat implements Serializable {
 	private int chat_id;
@@ -9,11 +9,11 @@ public class Chat implements Serializable {
 	private String name;
 	private String text;
 	private String image_name;
-	private Date time  ;
+	private Timestamp time  ;
 
 
 //コンストラクタの生成
-	public Chat(int chat_id, String id, String name, String text, String image_name, Date time) {
+	public Chat(int chat_id, String id, String name, String text, String image_name, Timestamp time) {
 		super();
 		this.chat_id = chat_id;
 		this.id = id;
@@ -68,11 +68,11 @@ public class Chat implements Serializable {
 		this.image_name = image_name;
 	}
 
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 
