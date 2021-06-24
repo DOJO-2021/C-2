@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>メニュー</title>
+<title>メニュー￤Komike</title>
 <link rel="stylesheet" href="/komike/css/menu.css">
 </head>
-<body class = "body">
+<body class="body">
+	<div class="wrapper">
 	<div class="head">
 		<div>
 			<img src="/komike/images/Komike2.png" width="500" height="180"
@@ -50,6 +51,12 @@
 				href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 			</a>
 				<meta itemprop="position" content="5" /></li>
+			<!-- 6つめ -->
+			<li itemprop="itemListElement" itemscope
+				itemtype="https://schema.org/ListItem"><a itemprop="item"
+				href="/komike/LogoutServlet"> <span itemprop="name">ログアウトはこちら</span>
+			</a>
+				<meta itemprop="position" content="6" /></li>
 		</ol>
 	</div>
 	<!-- パンくずリストここまで -->
@@ -86,5 +93,6 @@
 		<p>&copy;Copyright DOJO2021. All rights reserved.</p>
 	</div>
 	<!-- フッター（ここまで） -->
+	</div>
 </body>
 </html>

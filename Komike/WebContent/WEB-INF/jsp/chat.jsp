@@ -1,19 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/jquery.pagination.js"></script>
-<title>雑談ルーム</title>
+<title>雑談ルーム￤Komike</title>
+<link rel="stylesheet" href="/komike/css/menu.css">
 </head>
-<body>
-<h1>Komike</h1>
-<h2>受講者向け掲示板サイト</h2>
-<!-- パンくずリストここから -->
-	<div class="ol">
+<body class="body">
+	<div class="wrapper">
+		<div class="head">
+			<div>
+				<img src="/komike/images/Komike2.png" width="500" height="180"
+					alt="写真">
+			</div>
+		</div>
+		<!-- パンくずリストここから -->
+		<div class="ol">
 			<ol class="breadcrumb" itemscope
 				itemtype="https://schema.org/BreadcrumbList">
 				<!-- 1つめ -->
@@ -41,54 +48,108 @@
 					href="/komike/Tselect"> <span itemprop="name">理解度テスト</span>
 				</a>
 					<meta itemprop="position" content="4" /></li>
-				<!-- 4つめ -->
+				<!-- 5つめ -->
 				<li itemprop="itemListElement" itemscope
 					itemtype="https://schema.org/ListItem"><a itemprop="item"
 					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
+				<!-- 6つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/LogoutServlet"> <span itemprop="name">ログアウトはこちら</span>
+				</a>
+					<meta itemprop="position" content="6" /></li>
 			</ol>
 		</div>
-<!-- パンくずリストここまで -->
-<p>雑談ルームへようこそ</p>
-<!-- データベースから今までの掲示板の内容を全件表示 -->
-<div class="items">
-<c:forEach var="e" items="${infList}" >
-<div class = "item">
-		<p>Chat_ID<c:out value ="${e.chat_id}"/></p><br>
-		<b>名前</b><c:out value ="${e.name}" /><br>
-		<b>本文</b><c:out value="${e.text}" /><br>
-		<img src="${'/komike/images/'+=e.image_name}"><br>
-		<b>時間</b><c:out value="${e.time}"/><br>
-	 <form method = "post" action="/komike/ChatServlet" name="chat2">
-	 	<input type="hidden" name="chat_id" value="<c:out value ="${e.chat_id}"/>">
-	 		<input type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
-		<input type = "submit" name = "submit" value = "削除" onclick = "return deletesubmit()">
-	</form>
-	<hr>
-</div>
-</c:forEach>
-</div>
+		<!-- パンくずリストここまで -->
+		<!--  <p>雑談ルームへようこそ</p>-->
+		<!-- データベースから今までの掲示板の内容を全件表示 -->
+		<h1>雑談ルームへようこそ</h1>
+		<section>
+			<h2>新規投稿</h2>
+			<form method="post" action="/komike/ChatServlet" name="chat"
+				enctype="multipart/form-data">
+				<div class="name">
+					<span class="label">お名前:</span><input type="text" name="name">
+				</div>
+				<div class="image">
+					<span class="label">添付画像</span><input type="file" name="image"
+						accept="image/*" onchange="previewImage(this);">
+				</div>
+				<canvas id="preview" style="max-width: 200px;"></canvas>
+				<div class="honbun">
+					<span class="label">本文:</span>
+					<textarea name="text" id="text" cols="40" rows="6"></textarea>
+				</div>
+				<input type="submit" name="submit" value="投稿"
+					onclick="return cancelsubmit()">
+			</form>
+		</section>
+		<section class="toukou">
+			<br>
+			<hr>
+			<br>
+			<h2>投稿一覧</h2>
+			<br> <br>
+			<div class="items">
+				<c:forEach var="e" items="${infList}">
+					<div class="comment">
+						<ul class="combox">
+							<li class="comno"><c:out value="${e.chat_id}" /></li>
+							<li class="comname"><c:out value="${e.name}" /></li>
+							<li class="comtime"><c:out value="${e.time}" /></li>
+							<li class="comdele">
+								<form method="post" action="/komike/ChatServlet" name="chat2">
+									<input type="hidden" name="chat_id"
+										value="<c:out value 	="${e.chat_id}"/>"> <input
+										type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
+									<input type="submit" name="submit" value="削除"
+										onclick="return deletesubmit()">
+								</form>
+							</li>
+							<li class="break"></li>
+						</ul>
+						<ul class="comcom">
+							<li class="comtxt"><c:out value="${e.text}" /></li>
+							<!--  -<li class="comreturn">
+								<form action="index.php" method="post" style="display: inline">
+									<input type="hidden" name="returnno" value="12"> <input
+										type="submit" class="RETURNBT" value="返信">
+								</form>
+							</li>
+							<li class="returncnt">0</li>-->
+							<li class="break"></li>
+						</ul>
+					</div>
+					<div class="break"></div>
+				</c:forEach>
+			</div>
 
-<!-- 掲示板への書き込み内容を記入するフォーム -->
-<table class = chat>
-	<form method = "post" action="/komike/ChatServlet" name="chat" enctype="multipart/form-data">
-		<tr>
-			<td>名前<input type = "text" name = "name"></td>
-		</tr>
-		<tr>
-		<td>添付画像<input type = "file" name  = "image" accept = "image/*" onchange ="previewImage(this);"></td>
-		</tr>
-		<!-- 添付画像のプレビューを表示 -->
-		<canvas id = "preview" style ="max-width:200px;"></canvas>
-		<tr>
-			<td>本文<textarea name = "text" id = "text" cols = "40" rows = "6"></textarea></td>
-		</tr>
-		<tr>
-			<td><input type = "submit" name = "submit" value = "書き込む"  onclick  ="return cancelsubmit()"></td>
-		</tr>
-	</form>
-</table>
+			<!-- 掲示板への書き込み内容を記入するフォーム -->
+			<!--  <table class=chat>
+		<form method="post" action="/komike/ChatServlet" name="chat"
+			enctype="multipart/form-data">
+			<tr>
+				<td>名前<input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>添付画像<input type="file" name="image" accept="image/*"
+					onchange="previewImage(this);"></td>
+			</tr>
+			<!-- 添付画像のプレビューを表示 -->
+			<!--<canvas id="preview" style="max-width: 200px;"></canvas>
+			<tr>
+				<td>本文<textarea name="text" id="text" cols="40" rows="6"></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="書き込む"
+					onclick="return cancelsubmit()"></td>
+			</tr>
+		</form>
+	</table>-->
+		</section>
+	</div>
 </body>
 <script>
 //「書き込み」を押したときに、本文が空であったらfalseを返し、書き込み出来なくする機能
@@ -146,7 +207,7 @@ $(function() {
 */
 
 $('.items').pagination({
-    itemElement : '> .item' // アイテムの要素
+    itemElement : '> .comment' // アイテムの要素
 });
 
 </script>

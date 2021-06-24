@@ -19,7 +19,7 @@
 				</div>
 				<div class="form-item">
 					<label for="password"></label>
-					 <input type="text" name="password2"placeholder="新規パスワード"></input>
+					 <input type="text" name="password2" required="required" placeholder="新規パスワード"></input>
 				</div>
 				<div class="button-panel">
 					<input type="submit" class="button" title="change" value="変更"></input>
