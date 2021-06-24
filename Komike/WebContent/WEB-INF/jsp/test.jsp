@@ -35,34 +35,93 @@
 		})
 	});
 
-	//ページ移行時に見せるアラート
-	window.alert('全部答えていません')
-	var radioBtnElements = document.getElementsByName('name');
+	//ページ移行時に見せるアラート(起動できるかの判断をする)
+	//window.alert('全部答えていません')
+
 
 	//回答ボタンを押したときになるもの
-	//btnNo = 0;
-	//function check(){
-	// if(btnNo == 1){
-	//	      window.alert('全部答えていません')
-	//	      return false;
-	// //}
+	btnNo = 0;
+	function check(){
 
+		      window.alert('全部答えていません')
+		      return false;
+
+	}
+	//radionamesを宣言
 	let radioNames = [];
-	radioNames.push('java01');
-	radioNames.push('java02');
+	//jstlをつかったforeachで、radioNamesにquestion_numberを格納
+	<c:forEach var="a" items="${questions}">
+
+	radioNames.push('${a.question_number}');
+	</c:forEach>
 
 	console.log('java01');
 	console.log(radioNames);
 	//ラジオボタンの回答数が20未満の場合画面を戻す
-	var radioBtnElements = document.getElementsByName('java01');
-	var radioBtnElements = document.getElementsByName('${e.question_number}');
-	for (var i = 0, len = radioBtnElements.length; i < len; i++) {
-		if (radioBtnElements[i].checked) {
-			console.log(radioBtnElements[i].value);
-			//	    	window.alert('全部答えていません')
-			//return false;
-		}
+
+	//radioNamesの配列をforで回しながら、値が設定されているか確認
+
+	//OK
+	function check(){
+
+
+
+	for (var i = 0;  i < 20;  i++) {
+
+	var radioBtnElements = document.getElementsByName(radioNames[i]);
+	console.log(radioBtnElements);
+
+	                          }
+
+
 	}
+
+	function check(){
+	if(btnNo === 1){
+		window.alert('全部答えていません')
+    }
+	}
+
+
+
+
+	//checkedがfalseでアラートを出す。
+	function check(){
+
+	if (radioBtnElements === false) {
+        //console.log(radioBtnElements[].checked);
+        window.alert('全部答えていません')
+     }else{
+
+       }
+
+     }
+	//value
+	//function check(){
+	//if ( checked === true ) {
+		// 未選択状態
+	//	window.alert('全部答えていません')
+	//} else {
+		// aには選択状態の値が代入されている
+		//console.log( a ) ;
+	//   }
+
+
+	//}
+
+	//console.log(radioBtnElements);
+
+	//if (radioBtnElements.checked = false) {
+	//	window.alert('全部答えていません')
+	//	console.log(radioBtnElements);
+	//	console.log(radioNames);
+		//console.log(radioBtnElements[i].value);
+		//	    	window.alert('全部答えていません')
+		//return false;
+	 // }
+
+
+	//}
 
 	//btnNo = 0;
 	//function check(){
@@ -83,7 +142,7 @@
 	</div>
 
 	<br>
-	<form method="POST" action="/komike/TestServlet">
+	<form method="POST" action="/komike/TestServlet" onSubmit="return check()">
 		<!-- パンくずリストここから -->
 		<div class="ol">
 			<ol class="breadcrumb" itemscope
@@ -100,7 +159,7 @@
 		<!-- パンくずリストここまで -->
 
 
-		<form method="POST" action="/komike/TestServlet">
+
 			<input type="hidden" name="testType" value="${Select.genre}">
 			<h2>理解度テスト</h2>
 			<h3>問題ジャンル:${key}</h3>
@@ -123,7 +182,7 @@
 				</c:forEach>
 
 				<tr>
-					<td><input type="submit" name="JUDGE" value="回答終了"></td>
+					<td><input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1"></td>
 				</tr>
 			</table>
 
