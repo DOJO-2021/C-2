@@ -39,7 +39,7 @@ insert into test_choice values('css03', 4, '.abc', 1);
 正しい選択肢には1を挿入、不正解な選択肢には0を挿入
 
 
-insert into test_question values('04', 'CSSを設定する対象示す構成要素とは何か');
+insert into test_question values('css04', 'CSSを設定する対象示す構成要素とは何か');
 insert into test_choice values('css04', 1, '値', 0);
 insert into test_choice values('css04', 2, 'プロパティ', 0);
 insert into test_choice values('css04', 3, 'セレクタ', 1);
