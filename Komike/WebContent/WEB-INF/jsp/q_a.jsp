@@ -64,9 +64,6 @@
 	<!-- 質問ルームへの書き込み内容を記入するフォーム -->
 	<form method="post" action="/komike/Q_AServlet" name="q_a" enctype="multipart/form-data">
 		<p>
-			id<input type="text" name="id">
-		</p>
-		<p>
 			タイトル<input type="text" name="title">
 		</p>
 		<p>
