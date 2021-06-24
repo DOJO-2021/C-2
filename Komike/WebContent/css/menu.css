@@ -126,7 +126,7 @@
 	box-shadow: 0px 0px 0px 5px #DDEEFF;
 }
 
-/*.returnbox {
+.returnbox {
 	left:0;
 	line-height:1;
 	width:98%;
@@ -145,17 +145,19 @@
 	font-size: 12px;
 	margin: 0px 0px 0px 30px;
 }
-/*.passin {
+.passin {
 	font-size: 13px;
 	border-radius: 3px;
 	border: 2px solid #CDCDCD;
-	box-sizing: border-box; /
+	box-sizing: border-box;
 	}
 .passin:focus {
 	border: 2px solid #B0D0FF;
 	z-index: 10;
 	outline: 0;
-	}*/
+	}
+
+
 .comno {
 	text-align: left;
 	display: inline-block;
@@ -179,7 +181,15 @@
 	font-weight: bold;
 	color: #696969;
 }
-
+.comtitle {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	padding:6px 0px 0px 0px;
+	margin:0px 0px 0px 10px;
+	font-size:17px;
+	font-weight:bold;
+	}
 .comtime {
 	text-align: left;
 	display: inline-block;
@@ -217,7 +227,7 @@
 	padding:3px 3px 3px 15px;
 	background-color: #FFEEEE;
 	}*/
-/*.comreturn{
+.comreturn{
 	float: left;
 	display: inline-block;
 	vertical-align: middle;
@@ -232,7 +242,7 @@
 	border : 1px solid #999999;
 	border-width : 1px 1px 1px 1px;
 	border-radius:3px;
-	}*/
+	}
 ul, ol, li {
 	margin: 0;
 	list-style: none;
