@@ -1,5 +1,4 @@
-
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -64,16 +63,11 @@
 	//OK
 	function check(){
 
-
-
 	for (var i = 0;  i < 20;  i++) {
 
 	var radioBtnElements = document.getElementsByName(radioNames[i]);
 	console.log(radioBtnElements);
-
 	                          }
-
-
 	}
 
 	function check(){
@@ -83,54 +77,6 @@
 	}
 
 
-
-
-	//checkedがfalseでアラートを出す。
-	function check(){
-
-	if (radioBtnElements === false) {
-        //console.log(radioBtnElements[].checked);
-        window.alert('全部答えていません')
-     }else{
-
-       }
-
-     }
-	//value
-	//function check(){
-	//if ( checked === true ) {
-		// 未選択状態
-	//	window.alert('全部答えていません')
-	//} else {
-		// aには選択状態の値が代入されている
-		//console.log( a ) ;
-	//   }
-
-
-	//}
-
-	//console.log(radioBtnElements);
-
-	//if (radioBtnElements.checked = false) {
-	//	window.alert('全部答えていません')
-	//	console.log(radioBtnElements);
-	//	console.log(radioNames);
-		//console.log(radioBtnElements[i].value);
-		//	    	window.alert('全部答えていません')
-		//return false;
-	 // }
-
-
-	//}
-
-	//btnNo = 0;
-	//function check(){
-	//if(btnNo == 1){
-	//		 if(document.SelfReport.querySelectorAll(':checked').length < 20){
-	//    window.alert('全部答えていません')
-	// }
-	//}
-	//}
 </script>
 </head>
 <body class="body">
@@ -142,7 +88,7 @@
 	</div>
 
 	<br>
-	<form method="POST" action="/komike/TestServlet" onSubmit="return check()">
+	<form method="POST" action="/komike/TestServlet" onClick="return check()">
 		<!-- パンくずリストここから -->
 		<div class="ol">
 			<ol class="breadcrumb" itemscope
