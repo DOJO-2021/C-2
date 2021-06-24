@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.pagination.js"></script>
 <title>質問ルーム</title>
 </head>
 <body>
@@ -77,14 +80,16 @@
 		<br>
 		<p>
 			本文<br>
-			<textarea name="text"></textarea>
+			<textarea name="text" id = "text"></textarea>
 		</p>
-		<input type="submit" name="submit" value="書き込む">
+		<input type="submit" name="submit" value="質問する" onclick="return cancelsubmit()">
 	</form>
 	<br>
 	<!-- 質問ルームへの書き込み内容を記入するフォームここまで -->
 	<!-- データベースから今までの掲示板の内容を全件表示 -->
+<div class = "items">
 	<c:forEach var="e" items="${questionList}">
+		<div class = "comment">
 		<p>
 			Question_ID<c:out value="${e.question_id}" />
 		</p>
@@ -118,10 +123,10 @@
 			</p>
 			<p>
 				本文<br>
-				<textarea name="text1"></textarea>
+				<textarea name="text1" id = "text1"></textarea>
 			</p>
 			<input type = "hidden" name = "question_id" value = "<c:out value="${e.question_id}" />">
-			<input type="submit" name="submit" value="回答する">
+			<input type="submit" name="submit" value="回答する" onclick ="return cancelsubmit1()">
 		</form>
 	<!-- 返答フォームここまで-->
 		<hr>
@@ -152,10 +157,28 @@
 			<br>
 			<hr>
 		</c:forEach>
+		</div>
 	</c:forEach>
+</div>
 	<!-- 返答表示ここまで-->
 </body>
 <script>
+function cancelsubmit(){
+	if(document.getElementById("text").value === ""){
+		window.alert("コメントを入力してください");
+		return false;
+	}
+}
+
+function cancelsubmit1(){
+	if(document.getElementById("text1").value === ""){
+		window.alert("コメントを入力してください");
+		return false;
+	}else{
+		return true;
+	}
+
+}
 //画像を表示させる機能
 function previewImage(obj){
 	var fileReader = new FileReader();
@@ -179,6 +202,10 @@ function previewImage(obj){
 	fileReader.readAsDataURL(obj.files[0]);
 	console.log(fileReader.result)　　//確認用
 }
+
+$('.items').pagination({
+    itemElement : '> .comment' // アイテムの要素
+});
 
 
 </script>

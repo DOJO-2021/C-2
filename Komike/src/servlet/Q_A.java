@@ -72,19 +72,25 @@ public class Q_A extends HttpServlet {
 
 
 		// 登録処理を行う
-		if (request.getParameter("submit").equals("書き込む")) {
+		if (request.getParameter("submit").equals("質問する")) {
 			String title = request.getParameter("title");
 			String name = request.getParameter("name");
 			String text = request.getParameter("text");
+			//名前が空欄の場合、匿名と入力される
+			if(request.getParameter("name").equals("")) {
+				name = "匿名";
+			}else {
+				name = request.getParameter("name");
+			}
 
 			//画像のファイル名のパラメータを取得
 			Part part = request.getPart("image");//画像のパラメータを取得
 			String image = this.getFileName(part);//画像のファイル名の取得
 			//ファイルの書込み
-			if (!image.equals("")) {
-				part.write(image);
-			}
-			dao.insert(new Question(0, id, title, name, text, image, 0, null));
+				if (!image.equals("")) {
+					part.write(image);
+				}
+				dao.insert(new Question(0, id, title, name, text, image, 0, null));
 
 		}
 			//answerのinsertの命令文を書く
@@ -97,8 +103,13 @@ public class Q_A extends HttpServlet {
 			if (request.getParameter("submit").equals("回答する")) {
 				String name1 = request.getParameter("name1");
 				String text1 = request.getParameter("text1");
+				//名前が空欄の場合、匿名と入力される
+				if(request.getParameter("name1").equals("")) {
+					name1 = "匿名";
+				}else {
+					name1 = request.getParameter("name1");
+				}
 				int ans =  Integer.parseInt(request.getParameter("question_id"));
-				//ファイルの書込み
 				dao.a_insert(new Answer(ans, 0, id, name1, text1,null));
 			}
 
@@ -118,6 +129,7 @@ public class Q_A extends HttpServlet {
 				String key = request.getParameter("key");
 				List<Question> question = FindCommentDao.search(key);
 				request.setAttribute("question", question);
+
 				//search_result.jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
 				dispatcher.forward(request, response);

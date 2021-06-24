@@ -39,7 +39,6 @@ public class ChatServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 
-
 		//データベースから全件取得 　〇
 		List<Chat> infList = FindCommentDao.findcomment();
 
@@ -91,6 +90,7 @@ public class ChatServlet extends HttpServlet {
 		//書き込みボタンを押されたら、登録処理を行う
 		else if(request.getParameter("submit").equals("書き込む")) {
 			String name;
+			//名前が入力されていない場合、匿名と表示
 			if(request.getParameter("name").equals("")) {
 				name = "匿名";
 			}else {

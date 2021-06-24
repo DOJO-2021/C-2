@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Chat;
+import model.Test_result;
 
 public class AddCommentDao{
 
@@ -179,6 +180,68 @@ public class AddCommentDao{
 		// 結果を返す
 		return result;
 	}
+
+	public boolean update(Test_result tr) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update test_result set rank = ?, correct_answer = ?, correct_answer_rate = ? where id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (tr.getRank() != null) {
+				pStmt.setString(1, tr.getRank());
+			}
+			else {
+				pStmt.setString(1, "null");
+			}
+			pStmt.setInt(2, tr.getCorrect_answer());
+
+			pStmt.setDouble(3, tr.getCorrect_answer_rate());
+
+			if (tr.getId() != null) {
+				pStmt.setString(4, tr.getId());
+			}
+			else {
+				pStmt.setString(4, "null");
+			}
+
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 }
 
 
