@@ -86,45 +86,50 @@
 					onclick="return cancelsubmit()">
 			</form>
 		</section>
-		<section class="toukou">
+		<section>
 			<br>
 			<hr>
 			<br>
 			<h2>投稿一覧</h2>
-			<br> <br>
+			<br>
 			<div class="items">
+				<br> <br>
 				<c:forEach var="e" items="${infList}">
-					<div class="comment">
-						<ul class="combox">
-							<li class="comno"><c:out value="${e.chat_id}" /></li>
-							<li class="comname"><c:out value="${e.name}" /></li>
-							<li class="comtime"><c:out value="${e.time}" /></li>
-							<li class="comdele">
-								<form method="post" action="/komike/ChatServlet" name="chat2">
-									<input type="hidden" name="chat_id"
-										value="<c:out value 	="${e.chat_id}"/>"> <input
-										type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
-									<input type="submit" name="submit" value="削除"
-										onclick="return deletesubmit()">
-								</form>
-							</li>
-							<li class="break"></li>
-						</ul>
-						<ul class="comcom">
-							<li class="comtxt"><c:out value="${e.text}" /></li>
-							<img src="${'/komike/images/'+=e.image_name}" width="500" height="180"
-					alt="写真">
-							<!--  -<li class="comreturn">
-								<form action="index.php" method="post" style="display: inline">
-									<input type="hidden" name="returnno" value="12"> <input
-										type="submit" class="RETURNBT" value="返信">
-								</form>
-							</li>
-							<li class="returncnt">0</li>-->
-							<li class="break"></li>
-						</ul>
+					<div class="comments">
+						<div class="comment">
+							<ul class="combox">
+								<li class="comno"><c:out value="${e.chat_id}" /></li>
+								<li class="comname"><c:out value="${e.name}" /></li>
+								<li class="comtime"><c:out value="${e.time}" /></li>
+								<li class="comdele">
+									<form method="post" action="/komike/ChatServlet" name="chat2">
+										<input type="hidden" name="chat_id"
+											value="<c:out value ="${e.chat_id}"/>"> <input
+											type="hidden" name="getId" value="<c:out value ="${e.id}"/>"><br>
+										<input type="submit" name="submit" value="削除"
+											onclick="return deletesubmit()">
+									</form>
+								</li>
+								<li class="break"></li>
+							</ul>
+							<ul class="comcom">
+								<li class="comtxt"><c:out value="${e.text}" /></li>
+
+								<img src="${'/komike/images/'+=e.image_name}" width="500"
+									height="180" alt="pic">
+
+								<!--  -<li class="comreturn">
+									<form action="index.php" method="post" style="display: inline">
+										<input type="hidden" name="returnno" value="12"> <input
+											type="submit" class="RETURNBT" value="返信">
+									</form>
+								</li>
+								<li class="returncnt">0</li>-->
+								<li class="break"></li>
+							</ul>
+						</div>
+						<div class="break"></div>
 					</div>
-					<div class="break"></div>
 				</c:forEach>
 			</div>
 		</section>
@@ -186,8 +191,9 @@ $(function() {
 */
 
 $('.items').pagination({
-    itemElement : '> .comment' // アイテムの要素
+    itemElement : '> .comments' // アイテムの要素
 });
+
 
 </script>
 </html>

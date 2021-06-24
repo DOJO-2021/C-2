@@ -27,6 +27,7 @@
 .head {
 	text-align: left;
 }
+
 /*雑談ルーム*/
 .image {
 	margin-top: 30px;
@@ -102,17 +103,28 @@
 }
 
 /*パンくずリストここまで*/
+/*雑談ルームページネーション*/
+/*.prev-page disabled {
+	float: left;
+}*/
+
+
 /*掲示板メッセージここから*/
+.items {
+	text-align: left;
+}
 .combox {
-	/*left:0;*/
+	left:0;
 	line-height:1;
 	width:98%;
 	vertical-align: middle;
 	margin:10px 5px 7px 5px;
-	/*z-index:10;*/
+	z-index:10;
 	background: #DDEEFF;
-	box-shadow: 0px 0px 0px 5px ;
-	}
+	color: #454545;
+	border: dashed 2px white;
+	box-shadow: 0px 0px 0px 5px #DDEEFF;
+}
 
 /*.returnbox {
 	left:0;
@@ -126,13 +138,13 @@
 	color: #454545;
 	}*/
 .comdele {
-	float: left;
+	text-align: left;
 	display: inline-block;
 	vertical-align: middle;
-	padding:3px;
-	font-size:12px;
-	margin:0px 0px 0px 30px;
-	}
+	padding: 3px;
+	font-size: 12px;
+	margin: 0px 0px 0px 30px;
+}
 /*.passin {
 	font-size: 13px;
 	border-radius: 3px;
@@ -145,36 +157,38 @@
 	outline: 0;
 	}*/
 .comno {
-	float: left;
+	text-align: left;
 	display: inline-block;
 	vertical-align: middle;
-	margin:6px 0px 0px 5px;
-	padding:3px;
-	font-size:11px;
+	margin: 6px 0px 0px 5px;
+	padding: 3px;
+	font-size: 11px;
 	background-color: #E1E1E1;
-	border : 1px solid #999999;
-	border-width : 0px 1px 1px 0px;
-	border-radius:2px;
-	}
+	border: 1px solid #696969;
+	border-width: 0px 1px 1px 0px;
+	border-radius: 2px;
+}
+
 .comname {
-	float: left;
+	text-align: left;
 	display: inline-block;
 	vertical-align: middle;
-	padding:9px 0px 0px 0px;
-	margin:0px 0px 0px 20px;
-	font-size:11.5px;
-	font-weight:bold;
-	color: #999999;
-	}
+	padding: 9px 0px 0px 0px;
+	margin: 0px 0px 0px 20px;
+	font-size: 11.5px;
+	font-weight: bold;
+	color: #696969;
+}
+
 .comtime {
-	float: left;
+	text-align: left;
 	display: inline-block;
 	vertical-align: middle;
-	padding:9.5px 0px 0px 0px;
-	margin:0px 0px 0px 10px;
-	font-size:11px;
-	color: #999999;
-	}
+	padding: 9.5px 0px 0px 0px;
+	margin: 0px 0px 0px 10px;
+	font-size: 11px;
+	color: #696969;
+}
 /*.category {
 	float: left;
 	display: inline-block;
@@ -185,19 +199,19 @@
 	color: #999999;
 	}*/
 .comcom {
-	float: left;
+	text-align: left;
 	display: inline-block;
 	vertical-align: middle;
-	width:98%;
-	margin:0px 3px 10px 3px;
-	padding:3px;
-	font-size:14px;
+	width: 98%;
+	margin: 0px 3px 10px 3px;
+	padding: 3px;
+	font-size: 14px;
 	background-color: #FFFFFF;
-	text-align:left;
-	border : 1px solid #999999;
-	border-width : 0px 1px 1px 0px;
-	border-radius:3px;
-	}
+	text-align: left;
+	border: 1px solid #999999;
+	border-width: 0px 1px 1px 0px;
+	border-radius: 3px;
+}
 /*.comkanri {
 	color:#5599EE;
 	padding:3px 3px 3px 15px;
@@ -219,15 +233,14 @@
 	border-width : 1px 1px 1px 1px;
 	border-radius:3px;
 	}*/
-
-	ul, ol, li {
+ul, ol, li {
 	margin: 0;
 	list-style: none;
 	padding-top: 0;
 	padding-right: 0;
 	padding-bottom: 0;
 	padding-left: 0;
-	}
+}
 /*  フッターの装飾  */
 .footer {
 	width: 100%;
