@@ -80,6 +80,7 @@
 </script>
 </head>
 <body class="body">
+<div class="wrapper">
 	<div class="head">
 		<div>
 			<img src="/komike/images/Komike2.png" width="500" height="180"
@@ -137,5 +138,10 @@
 
 
 		<div class="pagetop">↑</div>
+		<!-- フッター（ここから） -->
+		<div class="footer">
+			<p>&copy;Copyright DOJO2021. All rights reserved.</p>
+		</div>
+		<!-- フッター（ここまで） -->
 </body>
 </html>
