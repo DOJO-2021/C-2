@@ -165,6 +165,8 @@ public class Test extends HttpServlet {
 			request.setAttribute("Test_result",
 					new Test_result(rank, score, 2, rate, "reborn", testType));
 
+			//ランク、正解率、正解数をupdateする処理
+
 		//正解数が取得できる
 
 		System.out.println(score);

@@ -43,30 +43,35 @@
 	//btnNo = 0;
 	//function check(){
 	// if(btnNo == 1){
-//	      window.alert('全部答えていません')
-//	      return false;
+	//	      window.alert('全部答えていません')
+	//	      return false;
 	// //}
 
-	//ラジオボタンの回答数が20未満の場合画面を戻す
-	//var radioBtnElements = document.getElementsByName('${e.question_number}');
-	///for (var i = 0, len = radioBtnElements.length; i < len; i++) {
-//	    if (radioBtnElements[i].checked) {
-//	    	window.alert('全部答えていません')
-//	        return false;
-	 //   }
-	//}
+	let radioNames = [];
+	radioNames.push('java01');
+	radioNames.push('java02');
 
+	console.log('java01');
+	console.log(radioNames);
+	//ラジオボタンの回答数が20未満の場合画面を戻す
+	var radioBtnElements = document.getElementsByName('java01');
+	var radioBtnElements = document.getElementsByName('${e.question_number}');
+	for (var i = 0, len = radioBtnElements.length; i < len; i++) {
+		if (radioBtnElements[i].checked) {
+			console.log(radioBtnElements[i].value);
+			//	    	window.alert('全部答えていません')
+			//return false;
+		}
+	}
 
 	//btnNo = 0;
 	//function check(){
-	 //if(btnNo == 1){
-//		 if(document.SelfReport.querySelectorAll(':checked').length < 20){
-	  //    window.alert('全部答えていません')
-		// }
-	 //}
+	//if(btnNo == 1){
+	//		 if(document.SelfReport.querySelectorAll(':checked').length < 20){
+	//    window.alert('全部答えていません')
+	// }
 	//}
-
-
+	//}
 </script>
 </head>
 <body class="body">
@@ -107,16 +112,16 @@
 
 						<th><c:out value="${e.question_sentence}" /></th>
 						<!--問題文-->
-						</td>
 					</tr>
 					<tr>
 						<c:forEach var="d" items="${e.choice_detail}">
 							<td><label><input type="radio"
 									name="${e.question_number}" value="${d.choice_number}">
-								<c:out value="${d.choice}" /></label></td>
+									<c:out value="${d.choice}" /></label></td>
+						</c:forEach>
 					</tr>
 				</c:forEach>
-				</c:forEach>
+
 				<tr>
 					<td><input type="submit" name="JUDGE" value="回答終了"></td>
 				</tr>
