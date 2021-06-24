@@ -67,7 +67,7 @@
 		</tr>
 </table>
 
-<a  href="/komike/Tselect">ジャンル選択</a>
+<a  href="/komike/Tjudge">ジャンル選択</a>
 </form>
 </body>
 </html>

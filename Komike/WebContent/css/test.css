@@ -21,13 +21,21 @@
 /*ページ全てに適用*/
 .body {
 	background-color: #F0FFFF;
+	font-family: Quicksand, 游ゴシック体, YuGothic, 'ヒラギノ角ゴシック Pro', メイリオ, Meiryo,
+		'ＭＳ Ｐゴシック', sans-serif;
+	text-align: center;
 	margin: 0 0 0 0;
+}
+
+/*Komikeロゴ　ページ全てに適用*/
+.head {
+	text-align: left;
 }
 
 .wrapper {
 	margin: 0 auto 0 auto;
 	max-width: 960px;
-	background: #fafafa;
+	background:  white;
 	min-height: 100vh;
 	position: relative; /*←相対位置*/
 }
@@ -104,10 +112,11 @@
 .select {
 	margin-left: auto;
     margin-right: auto;
-	padding:30px;
+	padding:100px;
+	position:50px;
 }
 
-/*丸ボタン*/
+/*ボタン*/
 a.bt-samp44{
   display: block;
   position: relative;

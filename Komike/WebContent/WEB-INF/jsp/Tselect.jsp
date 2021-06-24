@@ -16,7 +16,6 @@
 		</div>
 	</div>
 
-<h3>ログアウトはこちら</h3>
 <form method="POST" action="/komike/Tselect">
 <!-- パンくずリストここから -->
 	<div class="ol">
@@ -53,6 +52,12 @@
 					href="/komike/PwchangeServlet"> <span itemprop="name">パスワード変更はこちら</span>
 				</a>
 					<meta itemprop="position" content="5" /></li>
+					<!-- 6つめ -->
+				<li itemprop="itemListElement" itemscope
+					itemtype="https://schema.org/ListItem"><a itemprop="item"
+					href="/komike/LogoutServlet"> <span itemprop="name">ログアウトはこちら</span>
+				</a>
+					<meta itemprop="position" content="6" /></li>
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
@@ -60,19 +65,19 @@
 	<table class=select>
 
 		<tr>
-			<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=css" class="bt-samp44">CSS</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=css" class="bt-samp44">css</a><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=JavaScript"class="bt-samp44">JavaScript</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=JavaScript"class="bt-samp44">JavaScript</a><br>
 			</td>
 		</tr>
 		<tr>
-			<td><a href="/komike/TestServlet?key=java"class="bt-samp44">java</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=java"class="bt-samp44">java</a><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=データベース"class="bt-samp44">データベース</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=データベース"class="bt-samp44">データベース</a><br>
 			</td>
-			<td><a href="/komike/TestServlet?key=サーバーサイドjava" class="bt-samp44">サーバーサイドjava</a><br>正解率<c:out value="${Test_result.correct_answer_rate}" />% <c:out value="${Test_result.rank}" /><br>
+			<td><a href="/komike/TestServlet?key=サーバーサイドjava" class="bt-samp44">サーバーサイドjava</a><br>
 			</td>
 		</tr>
 	</table>
