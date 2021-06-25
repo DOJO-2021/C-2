@@ -69,12 +69,6 @@
 			console.log(radioBtnElements);
 		}
 	}
-
-	function check() {
-		if (btnNo === 1) {
-			window.alert('全部答えていません')
-		}
-	}
 </script>
 </head>
 <body class="body">
@@ -135,7 +129,6 @@
 				</c:forEach>
 			</table>
 			<br>
-			<input type = "text" name = "count" value = "${questionList.count}">
 			<input type="submit" name="JUDGE" value="結果を見る" onClick="btnNo=1" class="button">
 
 		</form><br>
