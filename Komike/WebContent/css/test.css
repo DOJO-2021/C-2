@@ -115,6 +115,13 @@
 	padding:50px;
 
 }
+
+/*テスト画面*/
+.test  {
+	text-align: left;
+	       /* 余白指定 */
+}
+
 /*結果画面表*/
 
 .result{
@@ -134,7 +141,7 @@
 }
 
 .result th{
-  color:white; /*文字色*/
+  color:#333333; /*文字色*/
   background-color: #B0C4DE; /*背景色*/
 }
 
@@ -142,10 +149,6 @@
     border-collapse:  collapse;     /* セルの線を重ねる */
 }
 /*ジャンル選択*/
-a:link {
-
-}
-
 a:hover{
 	color: #4682b4;
 }
@@ -185,7 +188,7 @@ a.bt-samp44:after{
   z-index: -1;
 }
 a.bt-samp44:hover{
-  color: black;
+  color: #333333;
 }
 a.bt-samp44:hover:after{
   top: 0;

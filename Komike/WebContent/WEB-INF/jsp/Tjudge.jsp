@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>結果画面</title>
+<title>テスト結果￤Komike</title>
 <link rel="stylesheet" href="/komike/css/test.css">
 </head>
 <body>

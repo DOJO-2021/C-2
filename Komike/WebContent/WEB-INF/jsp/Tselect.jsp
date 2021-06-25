@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>理解度テスト|選択画面</title>
+<title>テスト選択￤Komike</title>
 <link rel="stylesheet" href="/komike/css/test.css">
 </head>
 <body class="body">

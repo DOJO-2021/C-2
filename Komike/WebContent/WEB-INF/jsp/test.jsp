@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -37,13 +38,12 @@
 	//ページ移行時に見せるアラート(起動できるかの判断をする)
 	//window.alert('全部答えていません')
 
-
 	//回答ボタンを押したときになるもの
 	btnNo = 0;
-	function check(){
+	function check() {
 
-		      window.alert('全部答えていません')
-		      return false;
+		window.alert('全部答えていません')
+		return false;
 
 	}
 	//radionamesを宣言
@@ -61,78 +61,80 @@
 	//radioNamesの配列をforで回しながら、値が設定されているか確認
 
 	//OK
-	function check(){
+	function check() {
 
-	for (var i = 0;  i < 20;  i++) {
+		for (var i = 0; i < 20; i++) {
 
-	var radioBtnElements = document.getElementsByName(radioNames[i]);
-	console.log(radioBtnElements);
-	                          }
+			var radioBtnElements = document.getElementsByName(radioNames[i]);
+			console.log(radioBtnElements);
+		}
 	}
 
-	function check(){
-	if(btnNo === 1){
-		window.alert('全部答えていません')
-    }
+	function check() {
+		if (btnNo === 1) {
+			window.alert('全部答えていません')
+		}
 	}
-
-
 </script>
 </head>
 <body class="body">
-<div class="wrapper">
-	<div class="head">
-		<div>
-			<img src="/komike/images/Komike2.png" width="500" height="180"
-				alt="写真">
+	<div class="wrapper">
+		<div class="head">
+			<div>
+				<img src="/komike/images/Komike2.png" width="500" height="180"
+					alt="写真">
+			</div>
 		</div>
-	</div>
 
-	<br>
-	<form method="POST" action="/komike/TestServlet" onClick="return check()">
-		<!-- パンくずリストここから -->
-		<div class="ol">
-			<ol class="breadcrumb" itemscope
-				itemtype="https://schema.org/BreadcrumbList">
-				<!-- 1つめ -->
-				<li itemprop="itemListElement" itemscope
-					itemtype="https://schema.org/ListItem"><a itemprop="item"
-					href="/komike/MenuServlet"> <span itemprop="name">メニュー</span>
-				</a>
-					<meta itemprop="position" content="1" /></li>
+		<br>
+		<form method="POST" action="/komike/TestServlet"
+			onClick="return check()">
+			<!-- パンくずリストここから -->
+			<div class="ol">
+				<ol class="breadcrumb" itemscope
+					itemtype="https://schema.org/BreadcrumbList">
+					<!-- 1つめ -->
+					<li itemprop="itemListElement" itemscope
+						itemtype="https://schema.org/ListItem"><a itemprop="item"
+						href="/komike/MenuServlet"> <span itemprop="name">メニュー</span>
+					</a>
+						<meta itemprop="position" content="1" /></li>
 
-			</ol>
-		</div>
-		<!-- パンくずリストここまで -->
+				</ol>
+			</div>
+			<!-- パンくずリストここまで -->
 
 
 
 			<input type="hidden" name="testType" value="${Select.genre}">
 			<h2>理解度テスト</h2>
 			<h3>問題ジャンル:${key}</h3>
-			<table class=select>
+			<h5>何も選択しない場合、４が選択されます。</h5>
+			<br>
+			<table class="test">
 				<c:forEach var="e" items="${questions}">
 					<tr>
 
-						<th>問題<c:out value="${e.number}" /></th>
+						<td>
+						<th colspan="3">問題<c:out value="${e.number}" /></th>
 
-						<th><c:out value="${e.question_sentence}" /></th>
+						<th colspan="2"><c:out value="${e.question_sentence}" /></th>
+						</td>
 						<!--問題文-->
 					</tr>
 					<tr>
 						<c:forEach var="d" items="${e.choice_detail}">
-							<td><label><input type="radio"
+							<td colspan="4"><label><input type="radio" checked
 									name="${e.question_number}" value="${d.choice_number}">
-									<c:out value="${d.choice}" /></label></td>
-						</c:forEach>
+									<c:out value="${d.choice_number}" />.<c:out
+										value="${d.choice}" /></label></td>
 					</tr>
+						</c:forEach>
+
 				</c:forEach>
-
-				<tr>
-					<td><input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1"></td>
-				</tr>
+<br>
 			</table>
-
+			<input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1">
 
 		</form>
 
