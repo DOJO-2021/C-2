@@ -182,7 +182,7 @@
 	color: #696969;
 }
 .comtitle {
-	float: left;
+	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
 	padding:6px 0px 0px 0px;
@@ -228,13 +228,13 @@
 	background-color: #FFEEEE;
 	}*/
 .comreturn{
-	float: left;
+	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
 	padding:3px;
 	}
 .returncnt{
-	float: left;
+	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
 	padding:3px;
@@ -259,5 +259,5 @@ ul, ol, li {
 	text-align: center;
 	padding: 30px 0;
 	position: absolute; /*←絶対位置*/
-	bottom: 0; /*下に固定*/
+	/*bottom: 0; /*下に固定*/
 }

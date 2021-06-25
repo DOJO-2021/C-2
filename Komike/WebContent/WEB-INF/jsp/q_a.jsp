@@ -114,7 +114,6 @@
 								<li class="comno"><c:out value="${e.question_id}" /></li>
 								<li class="title"><c:out value="${e.title}" /></li>
 								<li class="comname"><c:out value="${e.name}" /></li>
-								<br>
 								<!-- 高評価の内容を書き換える処理-->
 								<form method="post" action="/komike/Q_AServlet">
 									<input type="hidden" name="question"
@@ -130,7 +129,6 @@
 								<li class="comtxt"><c:out value="${e.text}" /></li>
 								<img src="${'/komike/images/'+=e.image_name}" width="500"
 									height="180" alt="pic">
-
 								<!-- 高評価フォームここまで-->
 								<!-- 質問に対して、返答するフォーム-->
 								<form method="Post" action="/komike/Q_AServlet">
@@ -146,6 +144,7 @@
 										type="submit" name="submit" value="回答する"
 										onclick="return cancelsubmit1()">
 								</form>
+								</ul>
 								<!-- 返答フォームここまで-->
 								<!--返答を表示するフォーム-->
 								<c:forEach var="a" items="${e.answer}">
