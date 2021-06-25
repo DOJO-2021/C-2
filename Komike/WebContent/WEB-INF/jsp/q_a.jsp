@@ -66,28 +66,32 @@
 
 		<!-- 検索結果のフォーム -->
 		<section>
-			<form method="post" action="/komike/Q_AServlet" name="chat">
-				<p>
+			<br>
+			<div class="search">
+				<form method="post" action="/komike/Q_AServlet" name="chat">
 					<label>キーワード検索：<input type="search" name="key" size="30"
 						maxlength="255"></label>
-				</p>
-				<input type="submit" name="submit" value="検索する">
-			</form>
+					<li class="searchbotan"><input class="BT" type="submit"
+						name="submit" value="検索する">
+				</form>
+			</div>
+			<br>
 			<!-- 検索結果のフォームここまで -->
 
-			<h3>分からないことを質問してみましょう</h3>
-			<p>質問は以下の欄に入力してください</p>
+			<h2>分からないことを質問してみましょう</h2>
+			<br>
+
 			<!-- 質問ルームへの書き込み内容を記入するフォーム -->
 			<form method="post" action="/komike/Q_AServlet" name="q_a"
 				enctype="multipart/form-data">
 				<div class="title">
-					<span class="label">タイトル</span><input type="text" name="title">
+					<span class="label">タイトル:</span><input type="text" name="title">
 				</div>
 				<div class="name">
 					<span class="label">お名前:</span><input type="text" name="name">
 				</div>
 				<div class="image">
-					<span class="label">添付画像</span><input type="file" name="image"
+					<span class="label">添付画像:</span><input type="file" name="image"
 						accept="image/*" onchange="previewImage(this);">
 				</div>
 				<!-- 添付画像のプレビューを表示 -->
@@ -99,8 +103,12 @@
 				<input type="submit" name="submit" value="質問する"
 					onclick="return cancelsubmit()">
 			</form>
+			<br>
 		</section>
 		<section>
+			<br>
+			<hr>
+			<br>
 			<!-- 質問ルームへの書き込み内容を記入するフォームここまで -->
 			<!-- データベースから今までの掲示板の内容を全件表示 -->
 			<h2>投稿一覧</h2>
@@ -108,29 +116,37 @@
 			<div class="items">
 				<br> <br>
 				<c:forEach var="e" items="${questionList}">
-					<div class="comment">
+					<div class="comments">
 						<div class="comment">
 							<ul class="combox">
-								<li class="comno"><c:out value="${e.question_id}" /></li>
+								<li class="comno">Question<c:out value="${e.question_id}" /></li>
 								<li class="title"><c:out value="${e.title}" /></li>
 								<li class="comname"><c:out value="${e.name}" /></li>
 								<!-- 高評価の内容を書き換える処理-->
-								<form method="post" action="/komike/Q_AServlet">
-									<input type="hidden" name="question"
-										value="<c:out value="${e.question_id}" />">
-									<li class="returncnt"><input type="hidden" name="number"
-										value="<c:out value="${e.good_number}" />"></li> <input
-										type="submit" name="submit" value="グッド">
-									<li class="returncnt"><c:out value="${e.good_number}" /></li>
-								</form>
+								<li class="returncnt">
+									<form method="post" action="/komike/Q_AServlet">
+										<input type="hidden" name="question"
+											value="<c:out value="${e.question_id}" />"> <input
+											type="hidden" name="number"
+											value="<c:out value="${e.good_number}" />">
+										<button type="submit" name="submit" value="グッド">
+											高評価:
+											<c:out value="${e.good_number}" />
+										</button>
+									</form>
+								</li>
 								<li class="break"></li>
 							</ul>
 							<ul class="comcom">
 								<li class="comtxt"><c:out value="${e.text}" /></li>
-								<img src="${'/komike/images/'+=e.image_name}" width="500"
-									height="180" alt="pic">
+								<img src="${'/komike/images/'+=e.image_name}" max width="400"
+									 alt="pic">
 								<!-- 高評価フォームここまで-->
 								<!-- 質問に対して、返答するフォーム-->
+								<br>
+								<br>
+								<hr>
+								<br>
 								<form method="Post" action="/komike/Q_AServlet">
 									<div class="name">
 										<span class="label">お名前:</span><input type="text" name="name1">
@@ -139,29 +155,34 @@
 										<span class="label">本文:</span>
 										<textarea name="text1" id="text1" cols="40" rows="6"></textarea>
 									</div>
-									<input type="hidden" name="question_id"
-										value="<c:out value="${e.question_id}" />"> <input
-										type="submit" name="submit" value="回答する"
-										onclick="return cancelsubmit1()">
 								</form>
+								<li class="comreturn">
+									<form>
+										<input type="hidden" name="question_id"
+											value="<c:out value="${e.question_id}" />"> <input
+											type="submit" name="submit" value="回答する"
+											onclick="return cancelsubmit1()">
+									</form>
+								</li>
+							</ul>
+							<!-- 返答フォームここまで-->
+							<!--返答を表示するフォーム-->
+							<c:forEach var="a" items="${e.answer}">
+								<ul class="combox2">
+									<li class="comno">Answer<c:out value="${a.answer_id}" /></li>
+									<li class="comname"><c:out value="${a.name}" /></li>
+									<c:forEach var="b" items="${a.test_result}">
+										<li class="comname">ジャンル<c:out value="${b.genre}" /></li>
+										<li class="comname">ランク<c:out value="${b.rank}" /></li>
+									</c:forEach>
+									<li class="break"></li>
 								</ul>
-								<!-- 返答フォームここまで-->
-								<!--返答を表示するフォーム-->
-								<c:forEach var="a" items="${e.answer}">
-									<ul class="combox">
-										<li class="comno"><c:out value="${a.answer_id}" /></li>
-										<li class="comname"><c:out value="${a.name}" /></li>
-										<c:forEach var="b" items="${a.test_result}">
-											<li class="comname">ジャンル<c:out value="${b.genre}" /></li>
-											<li class="comname">ランク<c:out value="${b.rank}" /></li>
-										</c:forEach>
-										<li class="break"></li>
-									</ul>
-									<ul class="comcom">
-										<li class="comtxt"><c:out value="${a.text}" /></li>
-									</ul>
-								</c:forEach>
+								<ul class="comcom">
+									<li class="comtxt"><c:out value="${a.text}" /></li>
+								</ul>
+							</c:forEach>
 						</div>
+					</div>
 				</c:forEach>
 			</div>
 			<!-- 返答表示ここまで-->
@@ -209,7 +230,7 @@ function previewImage(obj){
 }
 
 $('.items').pagination({
-    itemElement : '> .comment' // アイテムの要素
+    itemElement : '> .comments' // アイテムの要素
 });
 
 

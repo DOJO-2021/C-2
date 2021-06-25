@@ -63,9 +63,9 @@
 			</ol>
 		</div>
 		<!-- パンくずリストここまで -->
-		<h1>雑談ルームへようこそ</h1>
 		<section>
-			<h2>新規投稿</h2>
+		<br>
+			<h2>雑談ルームへようこそ</h2>
 			<!-- 掲示板への書き込み内容を記入するフォーム -->
 			<form method="post" action="/komike/ChatServlet" name="chat"
 				enctype="multipart/form-data">

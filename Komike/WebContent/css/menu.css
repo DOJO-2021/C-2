@@ -34,6 +34,11 @@
 	margin-bottom: 12px;
 }
 
+.pic {
+	float: left;
+	padding: 0 1em 1em 0;
+}
+
 .honbun {
 	margin-top: 30px;
 	margin-bottom: 12px;
@@ -43,7 +48,33 @@
 	vertical-align: top;
 	margin-right: 5px;
 }
+/*Q＆Aルームの検索ボタン*/
+.BT {
+	line-height: 140%;
+	cursor: pointer;
+	font-size: 12px;
+	padding: 3px;
+	margin: 2px;
+	color: #555555;
+	background-image: linear-gradient(#FAFAFA, #CCCCCC);
+	border: 1px solid #999999;
+	border-width: 0px 1px 1px 0px;
+	border-radius: 5px;
+}
 
+/*Q＆Aルームの検索機能*/
+.search {
+	width: 98%;
+	margin: 10px 3px 0px 3px;
+	text-align: center;
+	background-color: #DDEEFF;
+	border: 1px solid #999999;
+	border-width: 0px 1px 1px 0px;
+	border-radius: 5px;
+}
+.searchbotan {
+	display: inline;
+}
 /*雑談ルームここまで*/
 .wrapper {
 	margin: 0 auto 0 auto;
@@ -108,35 +139,49 @@
 	float: left;
 }*/
 
-
 /*掲示板メッセージここから*/
 .items {
 	text-align: left;
 }
+
 .combox {
-	left:0;
-	line-height:1;
-	width:98%;
+	left: 0;
+	/*line-height:1;*/
+	width: 98%;
 	vertical-align: middle;
-	margin:10px 5px 7px 5px;
-	z-index:10;
+	margin: 10px 5px 7px 5px;
+	z-index: 10;
 	background: #DDEEFF;
 	color: #454545;
 	border: dashed 2px white;
 	box-shadow: 0px 0px 0px 5px #DDEEFF;
 }
 
+.combox2 {
+	left: 0;
+	line-height: 1;
+	width: 98%;
+	vertical-align: middle;
+	margin: 10px 5px 7px 5px;
+	z-index: 10;
+	background: #eee8aa;
+	color: #454545;
+	border: dashed 2px white;
+	box-shadow: 0px 0px 0px 5px #eee8aa;
+}
+
 .returnbox {
-	left:0;
-	line-height:1;
-	width:98%;
-	margin:25px 5px 10px 5px;
-	z-index:10;
+	left: 0;
+	line-height: 1;
+	width: 98%;
+	margin: 25px 5px 10px 5px;
+	z-index: 10;
 	background: #E0FFD0;
 	box-shadow: 0px 0px 0px 5px #E0FFD0;
 	border: dashed 2px white;
 	color: #454545;
-	}*/
+}
+
 .comdele {
 	text-align: left;
 	display: inline-block;
@@ -145,18 +190,19 @@
 	font-size: 12px;
 	margin: 0px 0px 0px 30px;
 }
+
 .passin {
 	font-size: 13px;
 	border-radius: 3px;
 	border: 2px solid #CDCDCD;
 	box-sizing: border-box;
-	}
+}
+
 .passin:focus {
 	border: 2px solid #B0D0FF;
 	z-index: 10;
 	outline: 0;
-	}
-
+}
 
 .comno {
 	text-align: left;
@@ -181,15 +227,17 @@
 	font-weight: bold;
 	color: #696969;
 }
+
 .comtitle {
 	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
-	padding:6px 0px 0px 0px;
-	margin:0px 0px 0px 10px;
-	font-size:17px;
-	font-weight:bold;
-	}
+	padding: 6px 0px 0px 0px;
+	margin: 0px 0px 0px 10px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 .comtime {
 	text-align: left;
 	display: inline-block;
@@ -227,29 +275,36 @@
 	padding:3px 3px 3px 15px;
 	background-color: #FFEEEE;
 	}*/
-.comreturn{
+.comreturn {
 	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
-	padding:3px;
-	}
-.returncnt{
+	padding: 3px;
+}
+
+.returncnt {
 	/*float: left;*/
 	display: inline-block;
 	vertical-align: middle;
-	padding:3px;
-	margin:3px 0px 0px 3px;
-	border : 1px solid #999999;
-	border-width : 1px 1px 1px 1px;
-	border-radius:3px;
-	}
+	padding: 3px;
+	margin: 3px 0px 0px 3px;
+	border: 1px solid #999999;
+	border-width: 1px 1px 1px 1px;
+	border-radius: 3px;
+}
+
 ul, ol, li {
 	margin: 0;
+	/*display:inline;*/
 	list-style: none;
 	padding-top: 0;
 	padding-right: 0;
 	padding-bottom: 0;
 	padding-left: 0;
+}
+
+li {
+	display: inline;
 }
 /*  フッターの装飾  */
 .footer {
