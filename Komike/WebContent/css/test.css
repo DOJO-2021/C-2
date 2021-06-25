@@ -121,7 +121,10 @@
 	text-align: left;
 	       /* 余白指定 */
 }
+.test td {
 
+	text-indent: 2.0em;
+}
 /*回答終了ボタン*/
 .button {
   display       : inline-block;
