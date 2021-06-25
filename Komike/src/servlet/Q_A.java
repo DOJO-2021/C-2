@@ -105,6 +105,8 @@ public class Q_A extends HttpServlet {
 			if (request.getParameter("submit").equals("回答する")) {
 				String name1 = request.getParameter("name1");
 				String text1 = request.getParameter("text1");
+				System.out.println(name1);
+				System.out.println(text1);
 				//名前が空欄の場合、匿名と入力される
 				if(request.getParameter("name1").equals("")) {
 					name1 = "匿名";
@@ -112,6 +114,8 @@ public class Q_A extends HttpServlet {
 					name1 = request.getParameter("name1");
 				}
 				int ans =  Integer.parseInt(request.getParameter("question_id"));
+
+				System.out.println(ans);
 				dao.a_insert(new Answer(ans, 0, id, name1, text1,null));
 			}
 

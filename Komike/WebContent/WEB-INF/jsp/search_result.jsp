@@ -64,13 +64,12 @@
 			<li class ="returncnt"><c:out value="${e.good_number}"/></li>
 		</ul>
 			<c:forEach var="a" items="${e.answer}" >
-		<ul class = "combox">
-			<li class = "comno"><c:out value ="${a.answer_id}"/></li>
-			<li class = "comname"><c:out value ="${a.name}" /></li>
-			<li class = "comtext"><c:out value="${a.text}" /></li>
-		</ul>
+				<ul class = "combox2">
+					<li class = "comno">Answer<c:out value ="${a.answer_id}"/></li>
+					<li class = "comname"><c:out value ="${a.name}" /></li>
+					<li class = "comtext"><c:out value="${a.text}" /></li>
+				</ul>
 			</c:forEach>
-<hr>
 	</div>
 </c:forEach>
 </div>
