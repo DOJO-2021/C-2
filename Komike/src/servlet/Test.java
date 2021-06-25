@@ -9,9 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dao.AddCommentDao;
 import dao.TestsDao;
 import dao.TestsresultDao;
+import model.Login_user;
 import model.Select;
 import model.Test_question;
 import model.Test_result;
@@ -54,9 +57,9 @@ public class Test extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		/*HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		Login_user user = (Login_user)session.getAttribute("id");
-		String id = user.getId();*/
+		String id = user.getId();
 
 		// リクエストパラメータを取得する
 		//■requestスコープからジャンルとIDを取得
@@ -168,23 +171,18 @@ public class Test extends HttpServlet {
 		int i = 1;
 
 			request.setAttribute("Test_result",
-					new Test_result(rank, score, i++, rate, "reborn", testType));
+					new Test_result("reborn",testType,rate, rank, score, i++));
 
-			/*//ランク、正解率、正解数をupdateする処理
-			if(request.getParameter("submit").equals("回答終了")) {
+			//ランク、正解率、正解数をupdateする処理
+			if(request.getParameter("JUDGE").equals("回答終了")) {
 				AddCommentDao acdao = new AddCommentDao();
-				acdao.update(new Test_result(rank, score, i++, rate, id, testType));
-			}*/
+				acdao.update(new Test_result("reborn",testType,rate, rank, score, i++));
+			}
 
 		//正解数が取得できる
 
 		System.out.println(score);
-		if (false) {
-			//エラーメッセージの出力
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
-			dispatcher.forward(request, response);
-			return;
-		}
+
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Tjudge.jsp");
