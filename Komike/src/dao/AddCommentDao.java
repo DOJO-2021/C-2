@@ -190,7 +190,7 @@ public class AddCommentDao{
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
 			String sql = "update test_result set rank = ?, correct_answer = ?, correct_answer_rate = ? where id = ?";
