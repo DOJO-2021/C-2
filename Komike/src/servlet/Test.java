@@ -168,15 +168,22 @@ public class Test extends HttpServlet {
 
 		}
 
+
+
 		int i = 1;
 
 			request.setAttribute("Test_result",
 					new Test_result(rank, score, i , rate, id ,testType ));
 
 			//ランク、正解率、正解数をupdateする処理
-			if(request.getParameter("JUDGE").equals("回答終了")) {
+			if(request.getParameter("JUDGE").equals("結果を見る")) {
+				System.out.println(rank);
+				System.out.println(score);
+				System.out.println(rate);
+				System.out.println(id);
+				System.out.println(testType);
 				AddCommentDao acdao = new AddCommentDao();
-				acdao.update(new Test_result(rank, score, i , rate, id ,testType));
+				acdao.update(new Test_result(rank, score , i , rate, id ,testType));
 			}
 
 		//正解数が取得できる

@@ -44,6 +44,8 @@ public class Q_A extends HttpServlet {
 		FindCommentDao dao = new FindCommentDao();
 		List<Question> questionList = dao.select();
 
+
+
 		//質問の一覧をjspに渡す
 		request.setAttribute("questionList", questionList);
 
@@ -133,10 +135,11 @@ public class Q_A extends HttpServlet {
 				//search_result.jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
 				dispatcher.forward(request, response);
+			}else {
+				//質問ルームにリダイレクトする　
+				response.sendRedirect("/komike/Q_AServlet");
 			}
-			
-			//質問ルームにリダイレクトする　〇
-			response.sendRedirect("/komike/Q_AServlet");
+
 
 
 

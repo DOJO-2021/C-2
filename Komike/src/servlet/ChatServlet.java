@@ -38,6 +38,12 @@ public class ChatServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		//ログインしていなければ、ログインページにリダイレクトする。
+//		HttpSession session = request.getSession();
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/komike/Login");
+//			return;
+//		}
 
 		//データベースから全件取得 　〇
 		List<Chat> infList = FindCommentDao.findcomment();
@@ -71,7 +77,7 @@ public class ChatServlet extends HttpServlet {
 		String id = user.getId();
 		String text = request.getParameter("text");
 
-		//削除機能の実装　〇
+		//削除機能の実装
 		//削除ボタンが押されたらchat_idをもとに削除する
 		if(request.getParameter("submit").equals("削除")) {
 			String getId = request.getParameter("getId");
@@ -100,7 +106,7 @@ public class ChatServlet extends HttpServlet {
 			//画像のファイル名のパラメータを取得
 			Part part = request.getPart("image");//画像のパラメータを取得
 			String image = this.getFileName(part);//画像のファイル名の取得
-			//ファイルの書込み(ファイルが選択されていなかったら、NULLを挿入)
+			//ファイルの書込み(ファイルが選択されていなかったら、ファイルの書き込みを中止)
 			if(!image.equals("")) {
 				part.write(image);
 			}
