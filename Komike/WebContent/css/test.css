@@ -122,6 +122,27 @@
 	       /* 余白指定 */
 }
 
+/*回答終了ボタン*/
+.button {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 17px;   /* 余白       */
+  background    : #e6e6fa;     /* 背景色     */
+  color         : #333333;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 8px 8px 15px #666666;  /* 影の設定 */
+  border        : 2px solid #e6e6fa;    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #333333;     /* 背景色     */
+  background    : #e6e6fa;     /* 文字色     */
+}
+
 /*結果画面表*/
 
 .result{

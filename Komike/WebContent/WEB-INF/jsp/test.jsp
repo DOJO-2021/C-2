@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>テスト</title>
+<title>テスト￤Komike</title>
 <link rel="stylesheet" href="/komike/css/test.css">
 <script>
 	'use strict';
@@ -123,7 +123,7 @@
 						<!--問題文-->
 					</tr>
 					<tr>
-						<c:forEach var="d" items="${e.choice_detail}">
+						&nbsp;<c:forEach var="d" items="${e.choice_detail}">
 							<td colspan="4">
 								<label><input type="radio" checked name="${e.question_number}" value="${d.choice_number}">
 										<c:out value="${d.choice_number}" />.<c:out value="${d.choice}" />
@@ -136,9 +136,9 @@
 			</table>
 			<br>
 			<input type = "text" name = "count" value = "${questionList.count}">
-			<input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1">
+			<input type="submit" name="JUDGE" value="結果を見る" onClick="btnNo=1" class="button">
 
-		</form>
+		</form><br>
 
 
 		<div class="pagetop">↑</div>
