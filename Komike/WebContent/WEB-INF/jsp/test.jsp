@@ -114,26 +114,27 @@
 			<table class="test">
 				<c:forEach var="e" items="${questions}">
 					<tr>
-
 						<td>
-						<th colspan="3">問題<c:out value="${e.number}" /></th>
-
-						<th colspan="2"><c:out value="${e.question_sentence}" /></th>
+							<th colspan="2"><c:out value="${e.number}" />.
+							</th>
+							<th colspan="3"><c:out value="${e.question_sentence}" />
+							</th>
 						</td>
 						<!--問題文-->
 					</tr>
 					<tr>
 						<c:forEach var="d" items="${e.choice_detail}">
-							<td colspan="4"><label><input type="radio" checked
-									name="${e.question_number}" value="${d.choice_number}">
-									<c:out value="${d.choice_number}" />.<c:out
-										value="${d.choice}" /></label></td>
+							<td colspan="4">
+								<label><input type="radio" checked name="${e.question_number}" value="${d.choice_number}">
+										<c:out value="${d.choice_number}" />.<c:out value="${d.choice}" />
+								</label>
+							</td>
 					</tr>
 						</c:forEach>
 
 				</c:forEach>
-<br>
 			</table>
+			<br>
 			<input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1">
 
 		</form>
