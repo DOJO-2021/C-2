@@ -135,6 +135,7 @@
 				</c:forEach>
 			</table>
 			<br>
+			<input type = "text" name = "count" value = "${questionList.count}">
 			<input type="submit" name="JUDGE" value="回答終了" onClick="btnNo=1">
 
 		</form>

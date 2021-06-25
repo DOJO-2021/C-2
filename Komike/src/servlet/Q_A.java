@@ -134,6 +134,7 @@ public class Q_A extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
 				dispatcher.forward(request, response);
 			}
+			
 			//質問ルームにリダイレクトする　〇
 			response.sendRedirect("/komike/Q_AServlet");
 

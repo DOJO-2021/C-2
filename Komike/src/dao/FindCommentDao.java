@@ -336,7 +336,68 @@ public class FindCommentDao {
 
 	}
 
+	//回数を取得するメソッド
+	public static List<Test_result> count(String id) {
+		//id name commnetを書くのするリスト
+		Connection conn = null;
+		List<Test_result> list = new ArrayList<Test_result>();
 
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
+			try {
+			// SQL文を準備する
+				Statement st = conn.createStatement();
+				String sql = "select number from test_result where id = ?";
+				 PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				try {
+					pStmt.setString(1, id);
+				//sqlを送信
+					ResultSet rs = st.executeQuery(sql);
+
+					// SQL文を完成させる　〇
+					while(rs.next()) {
+						Test_result tr = new Test_result();
+						tr.setId(rs.getString("id"));
+
+						list.add(tr);
+					}
+
+					rs.close();
+					st.close();
+
+				}catch(SQLException e) {
+                    e.printStackTrace();
+                }
+			} catch (SQLException e) {
+	                e.printStackTrace();
+	            }finally {
+	                // データベース接続の切断
+	                if (conn != null) {
+	                    try {
+	                        conn.close();
+
+	                    } catch (SQLException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            System.out.println("Connection Failed.");
+	            return null;
+	        }
+			catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			list = null;
+		}
+	        return list;
+
+	    }
 
 
 

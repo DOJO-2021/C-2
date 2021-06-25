@@ -193,7 +193,7 @@ public class AddCommentDao{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update test_result set rank = ?, correct_answer = ?, correct_answer_rate = ? where id = ?";
+			String sql = "update test_result set rank = ?, correct_answer = ?, correct_answer_rate = ? where id = ? and genre = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -213,6 +213,13 @@ public class AddCommentDao{
 			else {
 				pStmt.setString(4, "null");
 			}
+			if (tr.getGenre() != null) {
+				pStmt.setString(5, tr.getGenre());
+			}
+			else {
+				pStmt.setString(5, "null");
+			}
+
 
 
 			// SQL文を実行する
