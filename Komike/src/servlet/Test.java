@@ -171,12 +171,12 @@ public class Test extends HttpServlet {
 		int i = 1;
 
 			request.setAttribute("Test_result",
-					new Test_result("reborn",testType,rate, rank, score, i++));
+					new Test_result(rank, score, i , rate, id ,testType ));
 
 			//ランク、正解率、正解数をupdateする処理
 			if(request.getParameter("JUDGE").equals("回答終了")) {
 				AddCommentDao acdao = new AddCommentDao();
-				acdao.update(new Test_result("reborn",testType,rate, rank, score, i++));
+				acdao.update(new Test_result(rank, score, i , rate, id ,testType));
 			}
 
 		//正解数が取得できる
