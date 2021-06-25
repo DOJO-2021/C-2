@@ -100,8 +100,7 @@
 					<span class="label">本文:</span>
 					<textarea name="text" id="text" cols="40" rows="6"></textarea>
 				</div>
-				<input type="submit" name="submit" value="質問する"
-					onclick="return cancelsubmit()">
+				<input type="submit" name="submit" value="質問する" onclick="return cancelsubmit()">
 			</form>
 			<br>
 		</section>
@@ -155,15 +154,13 @@
 										<span class="label">本文:</span>
 										<textarea name="text1" id="text1" cols="40" rows="6"></textarea>
 									</div>
-								</form>
+								<!--  </form>  -->
 								<li class="comreturn">
-									<form>
-										<input type="hidden" name="question_id"
-											value="<c:out value="${e.question_id}" />"> <input
-											type="submit" name="submit" value="回答する"
-											onclick="return cancelsubmit1()">
-									</form>
+								<!--  	<form>  -->
+										<input type="hidden" name="question_id" value="<c:out value="${e.question_id}" />">
+										<input type="submit" name="submit" value="回答する" onclick="return cancelsubmit1()">
 								</li>
+								</form>
 							</ul>
 							<!-- 返答フォームここまで-->
 							<!--返答を表示するフォーム-->
@@ -185,6 +182,7 @@
 					</div>
 				</c:forEach>
 			</div>
+			</section>
 			<!-- 返答表示ここまで-->
 	</div>
 </body>
