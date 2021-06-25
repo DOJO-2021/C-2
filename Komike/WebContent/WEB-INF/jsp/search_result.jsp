@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.pagination.js"></script>
 <title>検索結果</title>
+<link rel="stylesheet" href="/komike/css/menu.css">
 </head>
 <body>
 <h1>Komike</h1>
@@ -48,23 +51,33 @@
 			</ol>
 		</div>
 <!-- パンくずリストここまで -->
+<h2>検索結果</h2>
 <!-- 検索結果の表示 -->
+<div class ="items">
  <c:forEach var="e" items="${question}" >
-		<p>QUESTION_ID<c:out value ="${e.question_id}"/></p><br>
-		<b>ID</b><c:out value ="${e.id}"/><br>
-		<b>件名</b><c:out value ="${e.title}" /><br>
-		<b>名前</b><c:out value ="${e.name}" /><br>
-		<b>本文</b><c:out value="${e.text}" /><br>
-		<b>高評価</b><c:out value="${e.good_number}"/><br>
-<hr>
+ 	<div class ="comments">
+ 		<ul class = "combox">
+			<li class ="comno"><c:out value ="${e.question_id}"/></li>
+			<li class ="title"><c:out value ="${e.title}" /></li>
+			<li class ="comname"><c:out value ="${e.name}" /></li>
+			<li class ="comtext"><c:out value="${e.text}" /></li>
+			<li class ="returncnt"><c:out value="${e.good_number}"/></li>
+		</ul>
 			<c:forEach var="a" items="${e.answer}" >
-				<p>QUESTION_ID<c:out value ="${a.question_id}"/></p><br>
-				<p>ANSWER_ID<c:out value ="${a.answer_id}"/></p><br>
-				<b>ID</b><c:out value ="${a.id}" /><br>
-				<b>名前</b><c:out value ="${a.name}" /><br>
-				<b>本文</b><c:out value="${a.text}" /><br>
+		<ul class = "combox">
+			<li class = "comno"><c:out value ="${a.answer_id}"/></li>
+			<li class = "comname"><c:out value ="${a.name}" /></li>
+			<li class = "comtext"><c:out value="${a.text}" /></li>
+		</ul>
 			</c:forEach>
 <hr>
+	</div>
 </c:forEach>
+</div>
 </body>
+<script>
+$('.items').pagination({
+    itemElement : '> .comments' // アイテムの要素
+});
+</script>
 </html>
