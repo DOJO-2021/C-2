@@ -17,7 +17,7 @@
 						required="required" placeholder="ID"></input>
 				</div>
 				<div class="form-item">
-					<label for="password"></label> <input type="text" name="password"
+					<label for="password"></label> <input type="password" name="password"
 						required="required" placeholder="Password"></input>
 				</div>
 				<div class="button-panel">
