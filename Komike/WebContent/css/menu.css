@@ -17,7 +17,7 @@
 }
 
 .body { /*ログイン画面以外のページ全てに適用*/
-	background-color: #F0FFFF;
+	background-color: #D3D3D3;
 	font-family: Quicksand, 游ゴシック体, YuGothic, 'ヒラギノ角ゴシック Pro', メイリオ, Meiryo,
 		'ＭＳ Ｐゴシック', sans-serif;
 	text-align: center;
@@ -314,5 +314,5 @@ li {
 	text-align: center;
 	padding: 30px 0;
 	position: absolute; /*←絶対位置*/
-	/*bottom: 0; /*下に固定*/
+	bottom: 0;
 }
