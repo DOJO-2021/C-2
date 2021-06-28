@@ -90,6 +90,7 @@
 				<div class="name">
 					<span class="label">お名前:</span><input type="text" name="name">
 				</div>
+				<p>※名前を記入しない場合は「匿名」と表示されます</p>
 				<div class="image">
 					<span class="label">添付画像:</span><input type="file" name="image"
 						accept="image/*" onchange="previewImage(this);">
@@ -150,6 +151,7 @@
 									<div class="name">
 										<span class="label">お名前:</span><input type="text" name="name1">
 									</div>
+									<p>※名前を記入しない場合は「匿名」と表示されます</p>
 									<div class="honbun">
 										<span class="label">本文:</span>
 										<textarea name="text1" id="text1" cols="40" rows="6"></textarea>

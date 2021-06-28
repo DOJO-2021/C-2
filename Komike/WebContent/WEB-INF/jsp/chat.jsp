@@ -72,6 +72,7 @@
 				<div class="name">
 					<span class="label">お名前:</span><input type="text" name="name">
 				</div>
+				<p>※名前を記入しない場合は「匿名」と表示されます</p>
 				<div class="image">
 					<span class="label">添付画像</span><input type="file" name="image"
 						accept="image/*" onchange="previewImage(this);">

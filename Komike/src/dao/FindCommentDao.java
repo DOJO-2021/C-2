@@ -247,14 +247,17 @@ public class FindCommentDao {
 	        conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
 
 	      // SQL文を準備する
+	      //Questionテーブルから全件取得
 	       String sql = "select * from Question";
 	       PreparedStatement pStmt = conn.prepareStatement(sql);
 
 	       // SQL文を準備するAnswerテーブル
+	       //Answerテーブルから全件取得
 	       String sql_1 = "select * from Answer where question_id = ?";
 	       PreparedStatement pStmt1 = conn.prepareStatement(sql_1);
 
 	       // SQL文を準備するAnswerテーブル
+	       //AnswerテーブルとTesu_resultテーブルを結合し、ランクとジャンルを取得
 	       String sql_2 = "select distinct rank, genre from test_result inner join answer on test_result.id = answer.id where answer.id = ?";
 	       PreparedStatement pStmt2 = conn.prepareStatement(sql_2);
 
@@ -264,6 +267,7 @@ public class FindCommentDao {
 			ResultSet rs = pStmt.executeQuery();
 
 			// SQL文を完成させる
+			//Questionのデータを全て取得
 			while(rs.next()) {
 				Question comment = new Question(
 						rs.getInt("question_id"),
@@ -336,68 +340,68 @@ public class FindCommentDao {
 
 	}
 
-	//回数を取得するメソッド
-	public static List<Test_result> count(String id) {
-		//id name commnetを書くのするリスト
-		Connection conn = null;
-		List<Test_result> list = new ArrayList<Test_result>();
-
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
-
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
-			try {
-			// SQL文を準備する
-				Statement st = conn.createStatement();
-				String sql = "select number from test_result where id = ?";
-				 PreparedStatement pStmt = conn.prepareStatement(sql);
-
-				try {
-					pStmt.setString(1, id);
-				//sqlを送信
-					ResultSet rs = st.executeQuery(sql);
-
-					// SQL文を完成させる　〇
-					while(rs.next()) {
-						Test_result tr = new Test_result();
-						tr.setId(rs.getString("id"));
-
-						list.add(tr);
-					}
-
-					rs.close();
-					st.close();
-
-				}catch(SQLException e) {
-                    e.printStackTrace();
-                }
-			} catch (SQLException e) {
-	                e.printStackTrace();
-	            }finally {
-	                // データベース接続の切断
-	                if (conn != null) {
-	                    try {
-	                        conn.close();
-
-	                    } catch (SQLException e) {
-	                        e.printStackTrace();
-	                    }
-	                }
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            System.out.println("Connection Failed.");
-	            return null;
-	        }
-			catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			list = null;
-		}
-	        return list;
-
-	    }
+//	//回数を取得するメソッド
+//	public static List<Test_result> count(String id) {
+//		//id name commnetを書くのするリスト
+//		Connection conn = null;
+//		List<Test_result> list = new ArrayList<Test_result>();
+//
+//		try {
+//			// JDBCドライバを読み込む
+//			Class.forName("org.h2.Driver");
+//
+//			// データベースに接続する
+//			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-2/komike", "sa", "");
+//			try {
+//			// SQL文を準備する
+//				Statement st = conn.createStatement();
+//				String sql = "select number from test_result where id = ?";
+//				 PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//				try {
+//					pStmt.setString(1, id);
+//				//sqlを送信
+//					ResultSet rs = st.executeQuery(sql);
+//
+//					// SQL文を完成させる　〇
+//					while(rs.next()) {
+//						Test_result tr = new Test_result();
+//						tr.setId(rs.getString("id"));
+//
+//						list.add(tr);
+//					}
+//
+//					rs.close();
+//					st.close();
+//
+//				}catch(SQLException e) {
+//                    e.printStackTrace();
+//                }
+//			} catch (SQLException e) {
+//	                e.printStackTrace();
+//	            }finally {
+//	                // データベース接続の切断
+//	                if (conn != null) {
+//	                    try {
+//	                        conn.close();
+//
+//	                    } catch (SQLException e) {
+//	                        e.printStackTrace();
+//	                    }
+//	                }
+//	            }
+//	        } catch (SQLException e) {
+//	            e.printStackTrace();
+//	            System.out.println("Connection Failed.");
+//	            return null;
+//	        }
+//			catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//			list = null;
+//		}
+//	        return list;
+//
+//	    }
 
 
 
