@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Tselect
@@ -20,12 +21,13 @@ public class Tselect extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Komike/LoginServlet");
-			return;
-		}*/
+
+		//ログインしていなければ、ログインページにリダイレクトする。
+				HttpSession session = request.getSession();
+				if (session.getAttribute("id") == null) {
+					response.sendRedirect("/komike/Login");
+					return;
+				}
 
 
 				// 理解度テストページにフォワードする
