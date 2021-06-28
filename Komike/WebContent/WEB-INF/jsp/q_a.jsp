@@ -160,7 +160,7 @@
 								<li class="comreturn">
 								<!--  	<form>  -->
 										<input type="hidden" name="question_id" value="<c:out value="${e.question_id}" />">
-										<input type="submit" name="submit" value="回答する" onclick="return cancelsubmit1()">
+										<input type="submit" name="submit" value="回答する">
 								</li>
 								</form>
 							</ul>
@@ -195,16 +195,15 @@ function cancelsubmit(){
 		return false;
 	}
 }
-
+/*
+onclick="return cancelsubmit1()"
 function cancelsubmit1(){
 	if(document.getElementById("text1").value === ""){
 		window.alert("コメントを入力してください");
 		return false;
-	}else{
-		return true;
 	}
-
 }
+*/
 //画像を表示させる機能
 function previewImage(obj){
 	var fileReader = new FileReader();
