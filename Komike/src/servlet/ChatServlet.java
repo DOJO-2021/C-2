@@ -39,11 +39,11 @@ public class ChatServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		//ログインしていなければ、ログインページにリダイレクトする。
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/komike/Login");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/komike/Login");
+			return;
+		}
 
 		//データベースから全件取得 　〇
 		List<Chat> infList = FindCommentDao.findcomment();
