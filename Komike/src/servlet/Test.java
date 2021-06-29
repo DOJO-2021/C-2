@@ -182,7 +182,7 @@ public class Test extends HttpServlet {
 				System.out.println(id);
 				System.out.println(testType);
 				AddCommentDao acdao = new AddCommentDao();
-				acdao.insert(new Test_result(rank, score , i , rate, id ,testType));
+				acdao.insert2(new Test_result(rank, score , i , rate, id ,testType));
 			}
 
 			//ランク、正解率、正解数をupdateする処理

@@ -249,7 +249,7 @@ public class AddCommentDao{
 		return result;
 	}
 
-	public boolean insert(Test_result tr) {
+	public boolean insert2(Test_result tr) {
 		Connection conn = null;
 		boolean result = false;
 
