@@ -175,6 +175,16 @@ public class Test extends HttpServlet {
 			request.setAttribute("Test_result",
 					new Test_result(rank, score, i , rate, id ,testType ));
 
+			if(request.getParameter("JUDGE").equals("結果を見る")) {
+				System.out.println(rank);
+				System.out.println(score);
+				System.out.println(rate);
+				System.out.println(id);
+				System.out.println(testType);
+				AddCommentDao acdao = new AddCommentDao();
+				acdao.insert(new Test_result(rank, score , i , rate, id ,testType));
+			}
+
 			//ランク、正解率、正解数をupdateする処理
 			if(request.getParameter("JUDGE").equals("結果を見る")) {
 				System.out.println(rank);
