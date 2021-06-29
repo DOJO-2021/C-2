@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 
@@ -20,7 +19,7 @@
 
 /*ページ全てに適用*/
 .body {
-	background-color:#D3D3D3;
+	background-color: #D3D3D3;
 	font-family: Quicksand, 游ゴシック体, YuGothic, 'ヒラギノ角ゴシック Pro', メイリオ, Meiryo,
 		'ＭＳ Ｐゴシック', sans-serif;
 	text-align: center;
@@ -35,7 +34,7 @@
 .wrapper {
 	margin: 0 auto 0 auto;
 	max-width: 1000px;
-	background:  white;
+	background: white;
 	min-height: 100vh;
 	position: relative; /*←相対位置*/
 }
@@ -73,7 +72,7 @@
 
 .breadcrumb li a {
 	text-decoration: none;
-	color:	#333333;
+	color: #333333;
 }
 
 .breadcrumb li:first-child a:before {
@@ -91,7 +90,6 @@
 
 /*パンくずリストここまで*/
 
-
 /*  フッターの装飾  */
 .footer {
 	width: 100%;
@@ -100,138 +98,165 @@
 	text-align: center;
 	padding: 30px 0;
 	position: absolute; /*←絶対位置*/
-
 }
 
-
-*{
-	color:	#333333;
+* {
+	color: #333333;
 }
 
 /*選択,テスト画面*/
 .select {
 	margin-left: auto;
-    margin-right: auto;
-	padding:50px;
-
+	margin-right: auto;
 }
 
 /*テスト画面*/
-.test  {
+.test {
 	text-align: left;
-	       /* 余白指定 */
+	/* 余白指定 */
 }
-.test td {
 
+.test td {
 	text-indent: 2.0em;
 }
 /*回答終了ボタン*/
 .button {
-  display       : inline-block;
-  border-radius : 20%;          /* 角丸       */
-  font-size     : 13pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 17px;   /* 余白       */
-  background    : #e6e6fa;     /* 背景色     */
-  color         : #333333;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 8px 8px 15px #666666;  /* 影の設定 */
-  border        : 2px solid #e6e6fa;    /* 枠の指定 */
+	display: inline-block;
+	border-radius: 20%; /* 角丸       */
+	font-size: 13pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 12px 17px; /* 余白       */
+	background: #e6e6fa; /* 背景色     */
+	color: #333333; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 8px 8px 15px #666666; /* 影の設定 */
+	border: 2px solid #e6e6fa; /* 枠の指定 */
 }
+
 .button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #333333;     /* 背景色     */
-  background    : #e6e6fa;     /* 文字色     */
+	box-shadow: none; /* カーソル時の影消去 */
+	color: #333333; /* 背景色     */
+	background: #e6e6fa; /* 文字色     */
 }
 
 /*結果画面表*/
-
-.result{
+.result {
 	margin-left: auto;
-    margin-right: auto;
-	padding:50px;
+	margin-right: auto;
+	padding: 50px;
 }
 
 .result th {
-	 padding : 20px 10px;/*セルの幅*/
-	 border:double 1px #aaaaaa;
+	padding: 20px 10px; /*セルの幅*/
+	border: double 1px #aaaaaa;
 }
 
 .result td {
-	 padding : 20px 10px;
-	 border:double 1px #aaaaaa;
+	padding: 20px 10px;
+	border: double 1px #aaaaaa;
 }
 
-.result th{
-  color:#333333; /*文字色*/
-  background-color: #B0C4DE; /*背景色*/
+.result th {
+	color: #333333; /*文字色*/
+	background-color: #B0C4DE; /*背景色*/
 }
 
 .result {
-    border-collapse:  collapse;     /* セルの線を重ねる */
+	border-collapse: collapse; /* セルの線を重ねる */
 }
 /*ジャンル選択*/
-a:hover{
+a:hover {
 	color: #4682b4;
 }
-a:active{
+
+a:active {
 	color: #B0C4DE;
 }
 
+table.type06 {
+	border-collapse: collapse;
+	line-height: 1.5;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 
+table.type06 th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	background: #3f3f3f;
+	color: #ffffff;
+	border: 1px solid #ccc;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+table.type06 td {
+	width: 350px;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 
 /*ボタン*/
-a.bt-samp44{
-  display: block;
-  position: relative;
-  text-decoration: none;
-  height:100px;
-  width: 150px;
-  line-height: 100px;
-  text-align: center;
-  color: #B0C4DE;
-  border: solid 1px #B0C4DE;
-  border-radius: 10%;
-  overflow: hidden;
-  z-index: 1;
+a.bt-samp44 {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	height: 100px;
+	width: 150px;
+	line-height: 100px;
+	text-align: center;
+	color: #333333;;
+	border: solid 1px #B0C4DE;
+	border-radius: 10%;
+	background : #B0C4DE;
+	overflow: hidden;
+	z-index: 1;
 }
-a.bt-samp44:after{
-  content:"";
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  background : #B0C4DE;
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
-  z-index: -1;
+
+a.bt-samp44:after {
+	content: "";
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	background:white;
+	opacity: 0;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-ms-transition: 0.3s;
+	transition: 0.3s;
+	z-index: -1;
 }
-a.bt-samp44:hover{
-  color: #333333;
+
+a.bt-samp44:hover {
+	color: #333333;
 }
-a.bt-samp44:hover:after{
-  top: 0;
-  left: 0;
-  height:100px;
-  width: 150px;
-  border-radius: 10%;
-  opacity: 1;
-}/*ここまで*/
 
+a.bt-samp44:hover:after {
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 150px;
+	border-radius: 10%;
+	opacity: 1;
 
-
-
+} /*ここまで*/
 
 /*テスト画面*/
 /* 上に戻るボタン */
 .pagetop {
 	color: #fff;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0, 0, 0, 0.3);
 	text-decoration: none;
 	display: none;
 	position: fixed;

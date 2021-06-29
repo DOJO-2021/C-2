@@ -62,10 +62,10 @@
 				</ol>
 			</div>
 			<!-- パンくずリストここまで -->
-<br>
-<h2>テスト一覧</h2>
+			<br>
+			<h2>テスト一覧</h2>
+			<h3>受験したいテストを選択してください</h3>
 			<table cellspacing="30" class=select>
-
 				<tr>
 					<td><a href="/komike/TestServlet?key=HTML" class="bt-samp44">HTML</a><br>
 					</td>
@@ -77,18 +77,42 @@
 				<tr>
 					<td><a href="/komike/TestServlet?key=java" class="bt-samp44">java</a><br>
 					</td>
-					<td><a href="/komike/TestServlet?key=データベース" class="bt-samp44">データベース</a><br>
-					</td>
+					<td><a href="/komike/TestServlet?key=データベース" class="bt-samp44">データベース</a><br></td>
 					<td><a href="/komike/TestServlet?key=サーバーサイドjava"
 						class="bt-samp44">サーバーサイドjava</a><br></td>
 				</tr>
 			</table>
+			<h2>プラチナ目指して頑張ろう！</h2>
+			<h3>正解数によってランクが変わります</h3>
+			<br>
+			<table class="type06">
+				<tr>
+					<td>ビギナー 🔰</td>
+					<td>10問以下</td>
+				</tr>
+				<tr>
+					<td>ブロンズ ⭐</td>
+					<td>11問以上14問未満</td>
+				</tr>
+				<tr>
+					<td>シルバー 🌟</td>
+					<td>14問以上17問未満</td>
+				</tr>
+				<tr>
+					<td>ゴールド 🔱</td>
+					<td>17問以上20問未満</td>
+				</tr>
+				<tr>
+					<td>プラチナ 👑</td>
+					<td>20問</td>
+			</table>
+			<br> <br>
 		</form>
 		<!-- フッター（ここから） -->
 		<div class="footer">
 			<p>&copy;Copyright DOJO2021. All rights reserved.</p>
 		</div>
 		<!-- フッター（ここまで） -->
-		</div>
+	</div>
 </body>
 </html>
